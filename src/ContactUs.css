@@ -1,0 +1,70 @@
+
+.contactUs-Header
+{ height: 400px;
+    width: 100%; 
+    background-image: url("../public/assets/sliderimgs/contactUsCover.jpg");
+    background-size: cover;
+}
+.contactUs-HeaderLogo
+{
+    width: 20%;
+    height: 90px;
+    position: relative;
+    top: 60%;
+    left:5%;
+    background-color:#F2963A;
+    opacity: 0.9;
+    border-radius: 3px;
+
+}
+.contactUs-HeaderLogo h1{
+    margin: 0px;
+    text-align: center;
+    padding: 25px 0px;
+    color: white;
+    font-family: 'Roboto slab';
+}
+.contactUs-row-2
+{
+    width: 100%;
+}
+.contactInfo
+{
+    width: 90%;
+    height: 550px;
+    margin: 0px 5%;
+}
+.contactInfoLeft
+{    
+    width: 30%;
+
+    float: left;
+}
+.contactInfoRight
+{
+    width: 70%;
+    height: 400px;
+
+    background-color: blueviolet;
+    float: left;
+}
+.contactInfoLeft-details
+{
+    margin: 50px 0px;
+}
+.contactInfoLeft-details h1
+{
+ color: #212121;
+ margin: 0px;
+
+}
+.contactUs-row-3
+{
+    background-color: chocolate;
+}
+.contactMap
+{
+    width: 100%;
+    height: 550px;
+    background-color: cornflowerblue;
+}

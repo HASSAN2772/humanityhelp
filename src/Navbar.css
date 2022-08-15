@@ -1,0 +1,138 @@
+header {
+    width: 100%;
+    height: 200px;
+    ;
+}
+
+.m-header {
+    width: 100%;
+    height: 50px;
+    background-color: #f7941d;
+}
+
+.header-container {
+    width: 90%;
+    margin: 0px 5%;
+}
+
+.header-nav {
+    height: 50px;
+    width: 100%;
+}
+
+.header-ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.header-ul li {
+    display: inline-block;
+}
+
+.header-ul li a {
+    display: block;
+    padding: 12px 13px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.header-btn {
+    float: right;
+}
+
+.h-loginbtn,
+.h-registerbtn {
+    padding: 17px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    transition-duration: 1s;
+}
+
+.h-registerbtn:hover {
+    color: #18534e;
+
+}
+
+.h-loginbtn:hover {
+    color: #18534e;
+
+}
+
+.headerlogo {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul-menu {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+
+}
+
+.ul-menu li {
+    display: inline-block;
+
+
+}
+
+.ul-menu li a {
+    display: block;
+    padding: 14px 20px;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition-duration: 1s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.ul-menu li a:hover {
+    color: #f7941d;
+
+}
+
+.logoimg-div {
+    height: 50px;
+    padding: 5px 20px;
+    margin-top: 50px;
+}
+
+.ul-menu {
+    height: 50px;
+    margin-top: 50px;
+}
+
+.h-donatebtn {
+    margin-top: 45px;
+    height: 50px;
+    width: 130px;
+    font-size: 15px;
+    background-color: #f7941d;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-right: 5px;
+    transition-duration: 1.2s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.h-donatebtn:hover {
+    color: #f7941d;
+    background-color: white;
+    border: 1px solid #f7941d;
+
+}

@@ -1,0 +1,115 @@
+.main-footer {
+    width: 100%;
+    background: #191919;
+}
+
+.footer-Container {
+    width: 90%;
+    margin: 0px 5%;
+    padding: 50px 0px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer-Container h2 {
+    text-align: center;
+    color: white;
+}
+
+#footer-home-links-h2 {
+    color: #f7941d;
+
+}
+
+.ul {
+    list-style: none;
+    color: white;
+    padding: 0px;
+}
+
+.ul li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 12px 40px;
+    transition-duration: 1s;
+}
+
+.footerActive:active {
+    color: #f7941d;
+
+}
+
+.ul li a:hover {
+    color: #f7941d;
+}
+
+/* footer copy right div  */
+
+.footer-copyright {
+    height: 124px;
+    width: 100%;
+    background-color: #212121;
+
+}
+
+.copyrightPara {
+    width: 50%;
+    float: left;
+}
+
+.copyrightPara-span {
+
+    color: #f7941d;
+}
+
+.copyright-Links {
+    width: 50%;
+    float: left;
+}
+
+.ul-copyright-Links {
+    list-style-type: none;
+    float: right;
+
+
+}
+
+.ul-copyright-Links li {
+    display: inline-block;
+}
+
+.ul-copyright-Links li a {
+    color: white;
+    line-height: 92px;
+    text-decoration: none;
+    padding: 10px 10px;
+    transition-duration: 1.5s;
+    cursor: pointer;
+}
+
+.ul-copyright-Links li a:hover {
+    background-color: #f7941d;
+    border-radius: 3px;
+}
+
+/* div left css  copyrightPara*/
+.copyrightPara {
+    color: white;
+
+    line-height: 92px;
+
+}
+
+.copyrightPara p {
+    padding: 0px 50px;
+}
+
+#link-faInsta {
+    margin-right: 50px;
+}
+
+#fahouseIcon {
+    padding-right: 5px;
+}

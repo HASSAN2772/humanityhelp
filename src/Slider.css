@@ -1,0 +1,109 @@
+.img {
+    height: 480px;
+    width: 100%;
+    background-size: cover;
+
+}
+
+#banner-Img {
+    opacity: 0.8;
+}
+
+.bnr-Img1 {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 350px;
+}
+
+.bnr-Img1Para {
+    margin: 0px;
+    color: white;
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.bnr-Img1Paraspan {
+    color: #f7941d;
+    font-style: italic;
+}
+
+.bnr-Img1Para::after {
+
+    display: block;
+    content: "";
+    height: 3px;
+    width: 40%;
+    background: #f7941d;
+    margin: 3px 0px;
+}
+
+.bnr-Img1Para2 {
+    margin: 3px 0px 30px 0px;
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.bnr1-Btn {
+    float: right;
+    height: 50px;
+    width: 130px;
+    font-size: 15px;
+    background-color: #f7941d;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    transition-duration: 1.2s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.bnr1-Btn:hover {
+    background-color: transparent;
+    border: 2px solid #f7941d;
+}
+
+.bnr-Img2 {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 350px;
+}
+
+.bnr-Img2Para {
+    margin: 0px;
+    color: white;
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.bnr-Img2Para2 {
+    margin: 3px 0px 30px 0px;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.bnr1-Btn {
+    float: right;
+    height: 50px;
+    width: 130px;
+    font-size: 15px;
+    background-color: #f7941d;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    transition-duration: 1.2s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.bnr1-Btn:hover {
+    background-color: transparent;
+    border: 2px solid #f7941d;
+}
