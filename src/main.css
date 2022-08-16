@@ -64,6 +64,22 @@
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
+.donationBox-1 p {
+    margin: 0px 5px;
+}
+
+.donationBox-2 p {
+    margin: 0px 5px;
+}
+
+.donationBox-3 p {
+    margin: 0px 5px;
+}
+
+.donationBox-4 p {
+    margin: 0px 5px;
+}
+
 .donationBox-2 {
     border-radius: 10px;
     padding-top: 30px;
@@ -75,9 +91,9 @@
 }
 
 .donationBox-3 {
-    border-radius: 10px;
     margin: 10px 10px;
     padding-top: 30px;
+    border-radius: 10px;
     transition: 1s;
     background-color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -159,6 +175,11 @@
 .aboutDonationRight-span {
 
     color: #f7941d;
+}
+
+.aboutDonationRight p {
+    color: #999;
+
 }
 
 .aboutDonationBtn {
@@ -252,9 +273,14 @@
 }
 
 .recentCauses h1 {
-    margin: 0px;
+    /* margin: 0px;
     color: white;
-    padding-top: 50px;
+    padding-top: 50px; */
+    color: white;
+    margin: 0px;
+    padding: 80px 0px 22px 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px
 }
 
 .recentCauses h1::after {
@@ -269,8 +295,18 @@
 }
 
 .recentCauses p {
+    /* color: white;
+    margin: 20px 90px 50px 90px; */
+    /* color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+ */
+    display: flex;
     color: white;
-    margin: 20px 90px 50px 90px;
+    white-space: normal;
+    width: 90%;
+    margin: 10px 24.5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .recentCausesBoxes {
@@ -313,69 +349,112 @@
     margin: 10px 10px;
 }
 
+#owl-theme-recentCause .owl-dots
+{
+   margin-top: 57px;
+   
+
+
+}
 /* btn hover on img of recent cause */
 
 /* row 5 here some of companies we are displaing in oir slider  */
 
 .row-5 {
     width: 100%;
-    
-    background-color: blue;
+
 }
 
 .companiesOrg {
     width: 70%;
+    height: 700px;
     margin: 0px 15%;
-    background-color: #f7941d;
 }
 
 .companiesOrgDiv {
     width: 100%;
     height: 450px;
-    background-color: brown;
+    
 }
-.companiesOrg h1{
+
+.companiesOrg h1 {
     margin: 0px;
-    color: white;
+    color: #f7941d;
     text-align: center;
     padding-top: 50px;
 }
-.companiesOrg p{
+
+.companiesOrg p {
     text-align: center;
-    color: white;
+    color: #212121;
 }
-.companiesOrgDetails{
+
+.companiesOrgDetails {
     width: 100%;
     height: 400px;
     background-color: darkslategray;
     position: relative;
+    
 }
-.companiesOrgDetails p{
+
+.companiesOrgDetails p {
     color: white;
     margin: 0px 50px;
     padding: 50px;
 }
-.companiesOrgDiv
-{
+
+.companiesOrgDiv {
     position: relative;
-    z-index: 2;
 }
-.companiesOrgOwnersImg
-{
-    margin: 100px auto 0px auto;
+
+.companiesOrgOwnersImg {
+    margin: 75px auto 0px auto;
     left: 37.5%;
     top: 90%;
-    z-index: 1;
     height: 230px;
     width: 25%;
     border-radius: 150px;
     background-color: aliceblue;
 }
-.companiesOrgDiv{
+
+.companiesOrgDiv {
     /* position: absolute; */
 }
-.companiesOrgDetails
-{
+
+.companiesOrgDetails {
     position: relative;
     z-index: 3;
 }
+/* owl dosts css */
+#owl-theme-companiesOrg .owl-dots
+{
+    display: none;
+}
+#owl-theme-companiesOrg .owl-nav
+{
+    margin: 0px;
+    background-color: #212121;
+}
+#owl-theme-companiesOrg .owl-nav .owl-prev
+
+{
+    position: absolute;
+    top: 35%;
+    left: 0;
+    color: white;
+    width: 30px;
+    height: 40px;
+    background-color: #212121;
+}
+#owl-theme-companiesOrg .owl-nav .owl-next
+
+{
+    color: white;
+    width: 30px;
+    height: 40px;
+    background-color: #212121;
+    position: absolute;
+    top: 35%;
+    right: 0;
+}       
+

@@ -11,7 +11,8 @@ export default function
       <div className='main-slider'>
         <OwlCarousel items={1}
           className="owl-theme"
-          loop
+          loop={true}
+          // nav={true}
           autoPlay
           autoplayTimeout={2000}
           autoplayHoverPause={true}

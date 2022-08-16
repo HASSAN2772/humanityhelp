@@ -5,16 +5,19 @@ import Main from './main';
 import Footer from './Footer';
 import './Home.css';
 import ContactUs from './ContactUs';
+import CommentForm from './CommentForm';
+import Gallery from './Gallery';
 
 export default function Home() {
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/>
         <Slider/>
         <Main/>
-        <Footer/>
-        <ContactUs/>
-
+        <Footer/> */}
+        {/* <ContactUs/> */}
+        <Gallery/>
+        {/* <commentForm/> */}
     </div>
   )
 }

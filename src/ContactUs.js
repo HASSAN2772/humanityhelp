@@ -2,6 +2,7 @@ import React from 'react'
 import './ContactUs.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import CommentForm from './CommentForm'
 
 export default function ContactUs() {
   return (
@@ -32,7 +33,7 @@ export default function ContactUs() {
             </div>
           </div>
           <div className='contactInfoRight'>
-            
+            <CommentForm/>
           </div>
         </div>
       </div>

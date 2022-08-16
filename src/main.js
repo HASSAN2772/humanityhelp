@@ -46,11 +46,7 @@ export default function main() {
 
                             <h1>If you didn't know,
                                 Here's a bit <span className='aboutDonationRight-span'>about us.</span></h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
+                            <p>The Donate Happiness network is the nation’s largest domestic poverty-relief organization, working to connect people with food & other things and end poverty. Donors, staff, and volunteers all play an important role in our efforts to end poverty in the United States.</p>
                             <button className='aboutDonationBtn'>For More</button>
                         </div>
                     </div>
@@ -96,10 +92,9 @@ export default function main() {
                 <div className='row-4'>
                     <div className='recentCauses'>
                         <h1>Recent Causes</h1>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-                            corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,</p>
+                        <p>"There could be no definition of a successful life that does not include service to others."</p>
                         <OwlCarousel items={3}
-                            className="owl-theme"
+                            className="owl-theme" id='owl-theme-recentCause'
                             loop
                             autoPlay
                             autoplayTimeout={2000}
@@ -165,11 +160,13 @@ export default function main() {
                             corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
                         </p>
                         <OwlCarousel items={1}
-                            className="owl-theme"
-                            
+                            className="owl-theme" id='owl-theme-companiesOrg'
+                            nav={true}
+                            loop={true}
                             margin={0}
                         >
                             <div className='companiesOrgDiv'>
+                            
                                 <div className='companiesOrgDetails'><p>At vero eos et accusamus et
                                      iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
                                     excepturi sint occaecati cupiditate non provident,</p>
@@ -178,10 +175,22 @@ export default function main() {
                                     </div>
                             </div>
                             <div className='companiesOrgDiv'>
-                                <div className='companiesOrgDetails'>imgs</div>
+                                <div className='companiesOrgDetails'>
+                                <p>At vero eos et accusamus et
+                                     iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+                                    excepturi sint occaecati cupiditate non provident,</p>
+                                    <div className='companiesOrgOwnersImg'>
+                                    </div>
+                                </div>
                             </div>
                             <div className='companiesOrgDiv'>
-                                <div className='companiesOrgDetails'>imgs</div>
+                                <div className='companiesOrgDetails'>
+                                <p>At vero eos et accusamus et
+                                     iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+                                    excepturi sint occaecati cupiditate non provident,</p>
+                                    <div className='companiesOrgOwnersImg'>
+                                    </div>
+                                </div>
                             </div>
                         </OwlCarousel>
                     </div>

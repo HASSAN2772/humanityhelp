@@ -107,3 +107,13 @@
     background-color: transparent;
     border: 2px solid #f7941d;
 }
+.owl-theme .owl-dots
+{
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    height: 45px;
+    width: 10%;
+
+
+}
