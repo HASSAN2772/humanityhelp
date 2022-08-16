@@ -31,7 +31,7 @@
 .contactInfo
 {
     width: 90%;
-    height: 550px;
+    height: 500px;
     margin: 0px 5%;
 }
 .contactInfoLeft
@@ -40,12 +40,70 @@
 
     float: left;
 }
+
+#contactInfoLeft-logo
+{
+    color: #F2963A;
+}
+
+.contactInfoLeft-details p
+{
+    color: #999;
+}
+
 .contactInfoRight
 {
     width: 70%;
-    height: 400px;
-
+background-color: #F2963A;
     float: left;
+}
+.commentForm
+{
+    width: 100%;
+    padding: 52.5px 0px;
+    margin: 0px 0px;
+}
+/*  comment box text field */
+#commentFormNameField
+{
+    float: left;
+    height: 90px;
+    width: 40%;
+    margin: 0px 5%;
+
+}
+#commentFormLastNameField
+{
+    float: left;
+    height: 90px;
+    width: 40%;
+    margin: 0px 5%;
+}
+#commentFormEmailField
+{
+    height: 90px;
+    width: 90%;
+    float: left;
+    margin: 0px 5%;
+}
+#commentFormCommentField
+{
+    width: 90%;
+    float: left;
+    margin: 0px 5%;
+}
+.commentFormSumbitBtn
+{
+    width: 90%;
+    height: 50px;
+    margin: 20px 5%;
+    font-weight: bold;
+    color: #F2963A;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #212121;
 }
 .contactInfoLeft-details
 {
@@ -66,4 +124,11 @@
     width: 100%;
     height: 550px;
     background-color: cornflowerblue;
+}
+/* comment form  css*/
+
+.contactInfoRight
+{
+    background-color: #F2963A;
+
 }

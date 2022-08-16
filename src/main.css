@@ -343,10 +343,12 @@
 
 .recentCausesBoxDetails h3 {
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .recentCausesBoxDetails p {
     margin: 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #owl-theme-recentCause .owl-dots

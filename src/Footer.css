@@ -28,21 +28,45 @@
     padding: 0px;
 }
 
+.ul p
+{
+    color: white;
+    padding: 2px 40px;
+}
+
 .ul li a {
     text-decoration: none;
     display: block;
     color: white;
     padding: 12px 40px;
-    transition-duration: 1s;
+    /* transition-duration: 1s; */
 }
 
-.footerActive:active {
-    color: #f7941d;
-
+.footer-logo-Downdetials
+{
+    cursor: text;
 }
 
-.ul li a:hover {
+/* .footerActive:active {
     color: #f7941d;
+
+} */
+
+/* .ul li a:hover {
+    color: #f7941d;
+} */
+.ul-footer-tags
+{
+ transition: 1s;
+}
+
+.ul-footer-tags:hover
+{
+    color: #f7941d;
+}
+
+#fahouseIcon {
+    padding-right: 5px;
 }
 
 /* footer copy right div  */
@@ -57,6 +81,13 @@
 .copyrightPara {
     width: 50%;
     float: left;
+    color: white;
+    line-height: 92px;
+}
+
+.copyrightPara p {
+
+    padding: 0px 20px;
 }
 
 .copyrightPara-span {
@@ -94,23 +125,26 @@
     border-radius: 3px;
 }
 
-/* div left css  copyrightPara*/
-.copyrightPara {
-    color: white;
+#link-faInsta {
+    margin-right: 50px;
+}
 
+/* div left css  copyrightPara*/
+/* .copyrightPara {
+    color: white;
     line-height: 92px;
 
 }
 
 .copyrightPara p {
-    padding: 0px 50px;
-    font-size: 16px;
-}
+    padding: 0px 20px;
+    /* font-size: 16px; */
 
-#link-faInsta {
+
+/* #link-faInsta {
     margin-right: 50px;
-}
+} */
 
-#fahouseIcon {
+/* #fahouseIcon {
     padding-right: 5px;
-}
+} */

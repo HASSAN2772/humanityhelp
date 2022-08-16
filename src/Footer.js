@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebookSquare, faWhatsapp, faInstagram, } from '@fortawesome/free-brands-svg-icons'
-import { faHandHoldingDollar, faHouse, faBookOpen, faHouseMedical, faHouseCircleXmark, faHandsHoldingChild, faPhone, faEnvelope, faLocationDot, faClipboardQuestion, faCommentAlt, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons'
+import { faHandHoldingDollar, faHouse, faBookOpen, faHouseMedical, faHouseCircleXmark, faHandsHoldingChild, faPhone, faEnvelope, faLocationDot, faClipboardQuestion, faUpRightAndDownLeftFromCenter, faPerson,  } from '@fortawesome/free-solid-svg-icons'
 import { faImage, faAddressBook, } from '@fortawesome/free-regular-svg-icons'
 export default function Footer() {
     return (
@@ -11,21 +11,21 @@ export default function Footer() {
             <div className='main-footer'>
                 <div className='footer-Container'>
                     <div className='footerLogo'>
-                        <h3>Lofo</h3>
+                        <h3>Logo</h3>
                         <ul className='ul'>
-                            <li><a href=''><FontAwesomeIcon icon={faEnvelope} size="gl" /> <label>Email :</label> Webdevsofttechnologies@gmail.com</a></li>
-                            <li><a href=''><address><FontAwesomeIcon icon={faLocationDot} size="gl" /> Street 21 Gulberg 3 Lahore,Pakistan.</address></a></li>
-                            <li><a href=''><FontAwesomeIcon icon={faPhone} size="gl" /> Ph : +923131499465</a></li>
+                            <li><p><FontAwesomeIcon icon={faEnvelope} size="gl" /> <label>Email :</label> Webdevsofttechnologies@gmail.com</p></li>
+                            <li><p><address><FontAwesomeIcon icon={faLocationDot} size="gl" /> Street 21 Gulberg 3 Lahore,Pakistan.</address></p></li>
+                            <li><p><FontAwesomeIcon icon={faPhone} size="gl" /> Ph : +923131499465</p></li>
                         </ul>
                     </div>
                     <div className='footer-home-Link'>
                         <div className='home-Links'>
                             <h2 id='footer-home-links-h2'>About Us</h2>
                             <ul className='ul'>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faHouse} size="gl" /> Home</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faImage} size="gl" />Gallery</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faHandHoldingDollar} size="gl" />Donate Now</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faAddressBook} size="gl" />Contact Us</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faHouse} size="gl" /> Home</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faImage} size="gl" />Gallery</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faHandHoldingDollar} size="gl" />Donate Now</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faAddressBook} size="gl" />Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -34,10 +34,10 @@ export default function Footer() {
                             <h2>Our Services </h2>
 
                             <ul className='ul'>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faBookOpen} size="gl" />For Education</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faHouseMedical} size="gl" />For Health</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faHouseCircleXmark} size="gl" />For Homeless</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faHandsHoldingChild} size="gl" />For Save Childs</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faBookOpen} size="gl" />For Education</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faHouseMedical} size="gl" />For Health</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faHouseCircleXmark} size="gl" />For Homeless</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faHandsHoldingChild} size="gl" />For Save Childs</a></li>
                             </ul>
                         </div>
                     </div>
@@ -46,10 +46,10 @@ export default function Footer() {
                             <h2>Get in Touch</h2>
 
                             <ul className='ul'>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faAddressBook} size="gl" />Get Supports</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faUpRightAndDownLeftFromCenter} size="gl" />Community</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faClipboardQuestion} size="gl" />For Query</a></li>
-                                <li><a href=''><FontAwesomeIcon id='fahouseIcon' icon={faAddressBook} size="gl" />Contact Us</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faPerson} size="gl" />Get Supports</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faUpRightAndDownLeftFromCenter} size="gl" />Community</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faClipboardQuestion} size="gl" />For Query</a></li>
+                                <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faAddressBook} size="gl" />Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

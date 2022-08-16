@@ -15,9 +15,9 @@ export default function Home() {
         <Slider/>
         <Main/>
         <Footer/> */}
-        {/* <ContactUs/> */}
-        <Gallery/>
-        {/* <commentForm/> */}
+         <ContactUs/> 
+        {/* <Gallery/> */}
+         {/* <CommentForm/> */}
     </div>
   )
 }

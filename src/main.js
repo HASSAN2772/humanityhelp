@@ -46,7 +46,7 @@ export default function main() {
 
                             <h1>If you didn't know,
                                 Here's a bit <span className='aboutDonationRight-span'>about us.</span></h1>
-                            <p>The Donate Happiness network is the nation’s largest domestic poverty-relief organization, working to connect people with food & other things and end poverty. Donors, staff, and volunteers all play an important role in our efforts to end poverty in the United States.</p>
+                            <p>The Donate Happiness network is the nation’s largest domestic poverty-relief organization, working to connect people with food & other things and end poverty. Donors, staff, and volunteers all play an important role in our efforts to end poverty in all over the world.</p>
                             <button className='aboutDonationBtn'>For More</button>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ export default function main() {
                             className="owl-theme" id='owl-theme-recentCause'
                             loop
                             autoPlay
-                            autoplayTimeout={2000}
+                            autoplayTimeout={2}
                             autoplayHoverPause={true}
                             margin={40} >
                             <div className='recentCausesBoxes'>
@@ -106,8 +106,7 @@ export default function main() {
                                 </div>
                                 <div className='recentCausesBoxDetails'>
                                     <h3>Donate for Needy</h3>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos
-                                        ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    <p>Donate or Help out the needy in whatever way you can.</p>
                                 </div>
                             </div>
                             <div className='recentCausesBoxes'>
@@ -115,9 +114,8 @@ export default function main() {
                                     <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg2.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Needy</h3>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos
-                                        ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    <h3>Donate for Water</h3>
+                                    <p>Water is life, and clean water means health.</p>
                                 </div>
                             </div>
                             <div className='recentCausesBoxes'>
@@ -125,9 +123,8 @@ export default function main() {
                                     <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Needy</h3>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos
-                                        ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    <h3>Donate for Education</h3>
+                                    <p>Education is the key to unlock the golden door of freedom.</p>
                                 </div>
                             </div>
                             <div className='recentCausesBoxes'>
@@ -135,9 +132,8 @@ export default function main() {
                                     <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Needy</h3>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos
-                                        ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    <h3>Donate for Food</h3>
+                                    <p>If you cannnat feed a hundred people,then feed just one.</p>
                                 </div>
                             </div>
                             <div className='recentCausesBoxes'>
@@ -145,9 +141,17 @@ export default function main() {
                                     <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Needy</h3>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos
-                                        ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    <h3>Donate for Clothes</h3>
+                                    <p>Your old clothes don't fit you, but will surely fit for someone else.</p>
+                                </div>
+                            </div>
+                            <div className='recentCausesBoxes'>
+                                <div className='recentCausesImg'>
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
+                                </div>
+                                <div className='recentCausesBoxDetails'>
+                                    <h3>Donate for Poor Family</h3>
+                                    <p>When fate hands us money, let's help poor people.</p>
                                 </div>
                             </div>
                         </OwlCarousel>
@@ -166,18 +170,9 @@ export default function main() {
                             margin={0}
                         >
                             <div className='companiesOrgDiv'>
-                            
+
                                 <div className='companiesOrgDetails'><p>At vero eos et accusamus et
-                                     iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
-                                    excepturi sint occaecati cupiditate non provident,</p>
-                                    <div className='companiesOrgOwnersImg'>
-                                    </div>
-                                    </div>
-                            </div>
-                            <div className='companiesOrgDiv'>
-                                <div className='companiesOrgDetails'>
-                                <p>At vero eos et accusamus et
-                                     iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+                                    iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
                                     excepturi sint occaecati cupiditate non provident,</p>
                                     <div className='companiesOrgOwnersImg'>
                                     </div>
@@ -185,9 +180,18 @@ export default function main() {
                             </div>
                             <div className='companiesOrgDiv'>
                                 <div className='companiesOrgDetails'>
-                                <p>At vero eos et accusamus et
-                                     iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
-                                    excepturi sint occaecati cupiditate non provident,</p>
+                                    <p>At vero eos et accusamus et
+                                        iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                        excepturi sint occaecati cupiditate non provident,</p>
+                                    <div className='companiesOrgOwnersImg'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='companiesOrgDiv'>
+                                <div className='companiesOrgDetails'>
+                                    <p>At vero eos et accusamus et
+                                        iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                        excepturi sint occaecati cupiditate non provident,</p>
                                     <div className='companiesOrgOwnersImg'>
                                     </div>
                                 </div>
@@ -196,10 +200,10 @@ export default function main() {
                     </div>
                 </div>
 
-            
 
 
-        
+
+
             </div>
         </div>
     )

@@ -7,21 +7,15 @@ export default function CommentForm() {
 
     const[firstName,setFirstName] =useState("");
     const[lastName,setLastName] =useState("");
+    console.log(setFirstName)
 
+    
   return (
     <div>
         <div className='commentFormDiv'>
-        <FormControl>
-        <TextField id="firstName" name='firstName' value={firstName} 
-        onChange={(e)=>setFirstName(e.target.value)}
-        label="Name" 
-        variant="outlined" />
-        <TextField id="lastName" name='LastName' value={lastName} 
-        onChange={(e)=>setLastName(e.target.value)}
-        label="Last Name" 
-        variant="outlined" />
-        
-        </FormControl>
+        hello
+        <input placeholder='hello' name='firstName' value={firstName} 
+        onChange={(e)=>setFirstName(e.target.value)}></input>
     </div>
     </div>
   
