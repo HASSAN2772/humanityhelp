@@ -7,6 +7,8 @@ import './Home.css';
 import ContactUs from './ContactUs';
 import CommentForm from './CommentForm';
 import Gallery from './Gallery';
+import Login from './Login';
+import Signup from './Signup';
 
 export default function Home() {
   return (
@@ -15,9 +17,12 @@ export default function Home() {
         <Slider/>
         <Main/>
         <Footer/> */}
-         <ContactUs/> 
-        {/* <Gallery/> */}
+         {/* <ContactUs/>  */}
+        <Gallery/>
          {/* <CommentForm/> */}
+         {/* <Login/> */}
+         {/* <Signup/> */}
+         
     </div>
   )
 }

@@ -1,0 +1,89 @@
+.main-Login
+{
+    width: 100%;
+    background-color: aliceblue;
+}
+.login-Container
+{
+    width: 90%;
+    margin: 0px 5%;
+    background-color: burlywood;
+}
+.loginLeft-details
+{
+    width: 40%;
+    height: 580px;
+    float: left;
+    background-color: antiquewhite;
+    text-align: center;
+    
+    
+}
+.loginRight-Form
+{
+    width: 60%;
+    height: 580px;
+    float: left;
+    background-color: aquamarine;
+}
+/* login left div css */
+.login-Logo
+{
+    height: 80px;
+    width: 200px;
+    background-color: black;
+   margin: 100px auto 0px;
+}
+.loginLeft-details h2{
+    color: white;
+    margin: 10px 0px;
+}
+.loginLeft-details p{
+    margin: 10px 10px;
+    font-size: 14px;
+}
+.loginLeft-details #loginLeft-p
+{
+    margin: 20px 20%;
+}
+.loginLeft-SignupBtn
+{
+    width: 40%;
+    margin: 50px auto 0px;
+    height: 50px;
+    background-color: #212121;
+    border-style: none;
+    border-radius: 5px;
+    color: #F2963A;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+/* login right div css */
+.LoginForm
+{
+    margin: 100px 30% 0px 5%;
+}
+.LoginForm h2{
+    margin: 0px;
+}
+.LoginForm p{
+    margin: 10px 0px 0px;
+}
+.loginBtn
+{
+    width: 40%;
+    margin: 10px 0px 0px;
+    height: 50px;
+    background-color: #212121;
+    border-style: none;
+    border-radius: 5px;
+    color: #F2963A;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+form .forgotPassword-Para
+{
+    margin: 41.5px 0px 0px;
+}

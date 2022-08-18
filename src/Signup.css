@@ -1,0 +1,130 @@
+.main-Signup
+{
+    width: 100%;
+    background-color: aliceblue;
+}
+.Signup-Container
+{
+    width: 90%;
+    margin: 0px 5%;
+    background-color: burlywood;
+}
+.SignupLeft-details
+{
+    width: 40%;
+    height: 580px;
+    float: left;
+    background-color: antiquewhite;
+    text-align: center;
+    
+    
+}
+.SignupRight-Form
+{
+    width: 60%;
+    height: 580px;
+    float: left;
+    background-color: aquamarine;
+}
+/* Signup left div css */
+.Signup-Logo
+{
+    height: 80px;
+    width: 200px;
+    background-color: black;
+   margin: 100px auto 0px;
+}
+.SignupLeft-details h2{
+    color: white;
+    margin: 10px 0px;
+}
+.SignupLeft-details p{
+    margin: 10px 10px;
+    font-size: 14px;
+}
+.SignupLeft-details #SignupLeft-p
+{
+    margin: 20px 20%;
+}
+/* .SignupLeft-SignupBtn
+{
+    width: 40%;
+    margin: 50px auto 0px;
+    height: 50px;
+    background-color: #212121;
+    border-style: none;
+    border-radius: 5px;
+    color: #F2963A;
+    font-weight: bold;
+    font-size: 15px;
+    
+} */
+/* Signup right div css */
+.SignupForm
+{
+    margin: 50px 30% 0px 5%;
+}
+.SignupForm h2{
+    margin: 0px;
+    text-align: center;
+}
+.SignupForm h2::after
+
+{
+    display: block;
+    height: 2px;
+    width: 50%;
+    margin: 7px auto 20px;
+    content: "";
+    background-color: #F2963A;
+}
+.SignupForm p{
+    margin: 10px 0px 0px;
+}
+.LoginBtn
+{
+    width: 40%;
+    margin: 10px 0px 0px;
+    height: 50px;
+    background-color: #212121;
+    border-style: none;
+    border-radius: 5px;
+    color: #F2963A;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+.RegisterBtn
+{
+    width: 40%;
+    margin: 30px 0px 10px;
+    height: 50px;
+    background-color: #212121;
+    border-style: none;
+    border-radius: 5px;
+    color: #F2963A;
+    font-weight: bold;
+    font-size: 15px;
+}
+form .forgotPassword-Para
+{
+    margin: 41.5px 0px 0px;
+}
+
+/* ,,,,,,,,,,,,,,,,,,,, */
+.firstname-Signup
+{
+    float: left;
+}
+.lastname-Signup
+{
+    float: right;
+}
+.password-Signup
+{
+    float: left;
+}
+.cpassword-Signup
+{
+    float: right;
+}
