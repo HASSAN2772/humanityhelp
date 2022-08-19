@@ -2,23 +2,20 @@ import './ContactUs.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { TextField, FormControl } from '@mui/material'
-import CommentForm from './CommentForm'
+// import CommentForm from './CommentForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 
-
-
 export default function ContactUs() {
 
-  const [firstName,setFirstName] = useState('');
-  const [lastName,setLastName] = useState("");
-  const [email,setEmail] = useState("");
-  const [comment,setComment] = useState("");
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("");
 
-  const SaveComment=(e)=>
-  {
-    console.log(lastName,firstName,email,comment)
+  const SaveComment = (e) => {
+    console.log(lastName, firstName, email, comment)
   }
 
   return (
@@ -28,7 +25,6 @@ export default function ContactUs() {
         <div className='contactUs-Header'>
           <div className='contactUs-HeaderLogo'>
             <h1>Contact US</h1>
-
           </div>
         </div>
       </div>
@@ -52,46 +48,41 @@ export default function ContactUs() {
             <div className='commentForm'>
               <form>
                 <div className='form-control' id='commentFormNameField'>
-                  <TextField 
-                  value={firstName}
+                  <TextField
+                    value={firstName}
                     name='firstName'
-                    onChange={(e)=>{
-                     setFirstName(e.target.value)
+                    onChange={(e) => {
+                      setFirstName(e.target.value)
                     }}
-                    
-                  id="outlined-basic"
+                    id="outlined-basic"
                     label="First Name"
                     variant="outlined"
                     fullWidth
-                    
-                    />
-
+                  />
                 </div>
                 <div className='form-control' id='commentFormLastNameField'>
                   <TextField id="outlined-basic"
-                   label="Last Name"
-                  variant="outlined"
-                   fullWidth
-                   value={lastName}
-                   name='lastName'
-                   onChange={(e)=>{
-                    setLastName(e.target.value)
-                   }}
-                   />
-
+                    label="Last Name"
+                    variant="outlined"
+                    fullWidth
+                    value={lastName}
+                    name='lastName'
+                    onChange={(e) => {
+                      setLastName(e.target.value)
+                    }}
+                  />
                 </div>
                 <div className='form-control' id='commentFormEmailField'>
-                  <TextField id="outlined-basic" 
-                  label="Email Address"
-                   variant="outlined" 
-                   fullWidth 
-                   value={email}
+                  <TextField id="outlined-basic"
+                    label="Email Address"
+                    variant="outlined"
+                    fullWidth
+                    value={email}
                     name='email'
-                    onChange={(e)=>{
-                     setEmail(e.target.value)
+                    onChange={(e) => {
+                      setEmail(e.target.value)
                     }}
-                   />
-
+                  />
                 </div>
                 <div className='form-control' id='commentFormCommentField'>
                   <TextField
@@ -103,15 +94,14 @@ export default function ContactUs() {
                     fullWidth
                     value={comment}
                     name='comment'
-                    onChange={(e)=>{
-                     setComment(e.target.value)
+                    onChange={(e) => {
+                      setComment(e.target.value)
                     }}
                   />
                 </div>
                 <button type='button' onClick={SaveComment} className='commentFormSumbitBtn'>Submit</button>
               </form>
             </div>
-
           </div>
         </div>
       </div>

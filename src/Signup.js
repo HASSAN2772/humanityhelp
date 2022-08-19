@@ -1,25 +1,24 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './Signup.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { TextField } from '@mui/material'
 
 export default function Signup() {
-    
-    const [firstname,setFirstname] = useState("");
-    const [lastname,setLastname] = useState("");
-    const [email,setEmail]= useState("");
-    const [password,setPassword] = useState("");
-    const [cpassword,setCPassword] = useState("");
 
-    const SaveUser=()=>
-    {
-       console.log(firstname,lastname,email,password,cpassword)
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [cpassword, setCPassword] = useState("");
+
+    const SaveUser = () => {
+        console.log(firstname, lastname, email, password, cpassword)
     }
-  return (
-    <div>
-        <Navbar/>
-        <div className='main-Signup'>
+    return (
+        <div>
+            <Navbar />
+            <div className='main-Signup'>
                 <div className='Signup-Container'>
                     <div className='SignupLeft-details'>
                         <div className='Signup-Logo'>
@@ -38,105 +37,77 @@ export default function Signup() {
                             <p>Put your details in given fields:</p>
                             <form>
                                 <div className='firstname-Signup'>
-                                    <TextField 
-                                    name='firstname'
-                                    value={firstname}
-                                    onChange={(e)=>
-                                    {
-                                        setFirstname(e.target.value)
-                                    }}
+                                    <TextField
+                                        name='firstname'
+                                        value={firstname}
+                                        onChange={(e) => {
+                                            setFirstname(e.target.value)
+                                        }}
                                         label="First Name"
                                         variant="standard"
                                         margin='normal'
                                     />
-                                      </div>
-                                      <div className='lastname-Signup'>
-
-                                    <TextField 
-                                    name='lastname'
-                                    value={lastname}
-                                    
-                                    onChange={(e)=>
-                                    {
-                                        setLastname(e.target.value)
-                                     }}
+                                </div>
+                                <div className='lastname-Signup'>
+                                    <TextField
+                                        name='lastname'
+                                        value={lastname}
+                                        onChange={(e) => {
+                                            setLastname(e.target.value)
+                                        }}
                                         label="Last Name"
                                         variant="standard"
                                         margin='normal'
                                     />
-                         </div>
-                         <div className='email-Signup'>
-
-                                    <TextField 
-                                    name='email'
-                                    value={email}
-                                    onChange={(e)=>
-                                    {
-                                        setEmail(e.target.value)
+                                </div>
+                                <div className='email-Signup'>
+                                    <TextField
+                                        name='email'
+                                        value={email}
+                                        onChange={(e) => {
+                                            setEmail(e.target.value)
                                         }}
                                         label="Email"
                                         variant="standard"
                                         margin='normal'
                                         fullWidth
                                     />
-                                                                          </div>
-
-                              
+                                </div>
                                 <div className='password-Signup'>
                                     <TextField
                                         label="Password"
                                         type="password"
                                         variant="standard"
-
-                                        
                                         margin='normal'
                                         value={password}
                                         name="password"
-                                        onChange={(e)=>
-                                        {
+                                        onChange={(e) => {
                                             setPassword(e.target.value)
                                         }}
-
                                     />
-                                                                                                              </div>
-
-                                     <div className='cpassword-Signup'>
-
+                                </div>
+                                <div className='cpassword-Signup'>
                                     <TextField
                                         label="Confirm Password"
                                         type="password"
                                         variant="standard"
-                                       
                                         fullWidth
-                                        
                                         margin='normal'
                                         value={cpassword}
                                         name="cpassword"
-                                        onChange={(e)=>
-                                        {
+                                        onChange={(e) => {
                                             setCPassword(e.target.value)
                                         }}
-
                                     />
-                                   
                                 </div>
-                                {/* <p className='forgotPassword-Para'>Here's <a href=''>Forgot Password ?</a></p> */}
-
                                 <button type='button' onClick={SaveUser} className='RegisterBtn'>Register</button>
-
-
-
                             </form>
-
-
                             <button className='LoginBtn'>Login</button>
                         </div>
                     </div>
                 </div>
             </div>
-        <Footer/>
-        
-
-    </div>
-  )
+            <Footer />
+        </div>
+    )
 }

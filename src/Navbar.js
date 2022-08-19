@@ -15,14 +15,11 @@ export default function Navbar() {
                                 <li><a><FontAwesomeIcon icon={faWhatsapp} size="xl" /></a></li>
                                 <li><a><FontAwesomeIcon icon={faTwitter} size="xl" /></a></li>
                                 <li><a><FontAwesomeIcon icon={faInstagram} size="xl" /></a></li>
-
                             </ul>
                             <div className='header-btn'>
                                 <button className='h-loginbtn'>Login</button>
                                 <button className='h-registerbtn'>Register</button>
                             </div>
-
-
                         </nav>
                         <div className='headerlogo'>
                             <div className='logoimg-div'>
@@ -40,6 +37,5 @@ export default function Navbar() {
                 </div>
             </header>
         </div>
-
     )
 }

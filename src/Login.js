@@ -5,14 +5,13 @@ import Footer from './Footer'
 import { TextField } from '@mui/material'
 export default function Login() {
 
-    const [username,setUsername] = useState("");
-    const [password,setPassword] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    const SaveUser=()=>
-    {
-       console.log(username,password)
+    const SaveUser = () => {
+        console.log(username, password)
     }
-    
+
     return (
         <div>
             <Navbar />
@@ -33,20 +32,16 @@ export default function Login() {
                             <p>Put your details in given fields</p>
                             <form>
                                 <div className='username-login'>
-                                    <TextField 
-                                    name='username'
-                                    value={username}
-                                    onChange={(e)=>
-                                    {
-                                        setUsername(e.target.value)
+                                    <TextField
+                                        name='username'
+                                        value={username}
+                                        onChange={(e) => {
+                                            setUsername(e.target.value)
                                         }}
                                         label="Username"
                                         variant="standard"
                                         fullWidth
-
                                         margin='normal'
-                                        
-
                                     />
                                 </div>
                                 <div className='password-login'>
@@ -54,34 +49,24 @@ export default function Login() {
                                         label="Password"
                                         type="password"
                                         variant="standard"
-
                                         fullWidth
                                         margin='normal'
                                         value={password}
                                         name="password"
-                                        onChange={(e)=>
-                                        {
+                                        onChange={(e) => {
                                             setPassword(e.target.value)
                                         }}
-
                                     />
                                 </div>
                                 <p className='forgotPassword-Para'>Here's <a href=''>Forgot Password ?</a></p>
-
                                 <button type='button' onClick={SaveUser} className='loginBtn'>Login</button>
-
-
-
                             </form>
-
                             {/* <button className='SignupBtn'>Sign Up</button> */}
                         </div>
                     </div>
                 </div>
             </div>
             <Footer />
-
-
         </div>
     )
 }

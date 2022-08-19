@@ -2,12 +2,11 @@ import React from 'react'
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebookSquare, faWhatsapp, faInstagram, } from '@fortawesome/free-brands-svg-icons'
-import { faHandHoldingDollar, faHouse, faBookOpen, faHouseMedical, faHouseCircleXmark, faHandsHoldingChild, faPhone, faEnvelope, faLocationDot, faClipboardQuestion, faUpRightAndDownLeftFromCenter, faPerson,  } from '@fortawesome/free-solid-svg-icons'
+import { faHandHoldingDollar, faHouse, faBookOpen, faHouseMedical, faHouseCircleXmark, faHandsHoldingChild, faPhone, faEnvelope, faLocationDot, faClipboardQuestion, faUpRightAndDownLeftFromCenter, faPerson, } from '@fortawesome/free-solid-svg-icons'
 import { faImage, faAddressBook, } from '@fortawesome/free-regular-svg-icons'
 export default function Footer() {
     return (
         <div>
-
             <div className='main-footer'>
                 <div className='footer-Container'>
                     <div className='footerLogo'>
@@ -32,7 +31,6 @@ export default function Footer() {
                     <div className='footer-services'>
                         <div className='services-Links'>
                             <h2>Our Services </h2>
-
                             <ul className='ul'>
                                 <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faBookOpen} size="gl" />For Education</a></li>
                                 <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faHouseMedical} size="gl" />For Health</a></li>
@@ -44,7 +42,6 @@ export default function Footer() {
                     <div className='footer-coantacts'>
                         <div className='conatct-Links'>
                             <h2>Get in Touch</h2>
-
                             <ul className='ul'>
                                 <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faPerson} size="gl" />Get Supports</a></li>
                                 <li><a href='' className='ul-footer-tags'><FontAwesomeIcon id='fahouseIcon' icon={faUpRightAndDownLeftFromCenter} size="gl" />Community</a></li>
@@ -53,14 +50,10 @@ export default function Footer() {
                             </ul>
                         </div>
                     </div>
-
-
                 </div>
                 <div className='footer-copyright'>
                     <div className='copyrightPara'>
-                        <p>© Humainty help all Rights Reserved. Designed by <span className='copyrightPara-span'>WebDev Technologies.</span>
-
-                        </p>
+                        <p>© Humainty help all Rights Reserved. Designed by <span className='copyrightPara-span'>WebDev Technologies.</span></p>
                     </div>
                     <div className='copyright-Links'>
                         <ul className='ul-copyright-Links'>
@@ -68,7 +61,6 @@ export default function Footer() {
                             <li><a><FontAwesomeIcon icon={faWhatsapp} size="xl" /></a></li>
                             <li><a><FontAwesomeIcon icon={faTwitter} size="xl" /></a></li>
                             <li id='link-faInsta'><a><FontAwesomeIcon icon={faInstagram} size="xl" /></a></li>
-
                         </ul>
                     </div>
                 </div>

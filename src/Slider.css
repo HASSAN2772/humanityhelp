@@ -2,7 +2,6 @@
     height: 480px;
     width: 100%;
     background-size: cover;
-
 }
 
 #banner-Img {
@@ -21,7 +20,6 @@
     color: white;
     font-size: 36px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
 
 .bnr-Img1Paraspan {
@@ -30,7 +28,6 @@
 }
 
 .bnr-Img1Para::after {
-
     display: block;
     content: "";
     height: 3px;
@@ -107,13 +104,11 @@
     background-color: transparent;
     border: 2px solid #f7941d;
 }
-.owl-theme .owl-dots
-{
+
+.owl-theme .owl-dots {
     position: absolute;
     top: 90%;
     left: 45%;
     height: 45px;
     width: 10%;
-
-
 }

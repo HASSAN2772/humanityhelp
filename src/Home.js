@@ -5,24 +5,27 @@ import Main from './main';
 import Footer from './Footer';
 import './Home.css';
 import ContactUs from './ContactUs';
-import CommentForm from './CommentForm';
 import Gallery from './Gallery';
 import Login from './Login';
 import Signup from './Signup';
+import DonateBlood from './DonateBlood';
+import DonateForm from './DonateForm';
+import RequestBlood from './RequestBlood';
 
 export default function Home() {
   return (
     <div>
-        {/* <Navbar/>
+      {/* <DonateForm/> */}
+      <DonateBlood />
+      <RequestBlood />
+      {/* <Navbar/>
         <Slider/>
         <Main/>
         <Footer/> */}
-         {/* <ContactUs/>  */}
-        <Gallery/>
-         {/* <CommentForm/> */}
-         {/* <Login/> */}
-         {/* <Signup/> */}
-         
+      {/* <ContactUs/>  */}
+      {/* <Gallery/> */}
+      {/* <Login/> */}
+      {/* <Signup/> */}
     </div>
   )
 }

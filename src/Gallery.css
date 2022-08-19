@@ -1,87 +1,86 @@
-.main-Gallery
-{
+.main-Gallery {
     width: 100%;
     background-color: brown;
     background-image: url("../public/assets/sliderimgs/galleryBackImg.jpg");
-   
-        background-repeat:no-repeat;
-        background-attachment: fixed;
-        background-position-x: center;
-        background-size: 100%;
-    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: 100%;
 }
 
-.main-Gallery
-h1{
+.main-Gallery h1 {
     text-align: center;
     color: white;
     margin: 0px;
     padding: 30px 0px;
 }
-.gallery-imgs
-{
+
+.gallery-imgs {
     width: 100%;
 }
-.gallery-row-1
-{
+
+.gallery-row-1 {
     width: 100%;
     height: 300px;
     display: flex;
     background-color: antiquewhite;
 }
-.galleryRow-1-imgs{
+
+.galleryRow-1-imgs {
     width: 25%;
     height: 250px;
     background-color: brown;
     margin: 25px 5px;
 }
-.gallery-row-2
-{
+
+.gallery-row-2 {
     display: flex;
     width: 100%;
     height: 400px;
     background-color: darkcyan;
 }
-.galleryRow-2-imgs{
+
+.galleryRow-2-imgs {
     width: 33%;
     height: 350px;
     background-color: brown;
     margin: 25px 1%;
 }
-.gallery-row-3
-{
+
+.gallery-row-3 {
     display: flex;
     width: 100%;
     height: 400px;
     background-color: darkcyan;
 }
-.galleryRow-3-imgs{
+
+.galleryRow-3-imgs {
     width: 48%;
     height: 350px;
     background-color: brown;
     margin: 25px 1%;
 }
-.gallery-row-4
-{
+
+.gallery-row-4 {
     width: 100%;
     height: 300px;
     display: flex;
     background-color: antiquewhite;
 }
-.galleryRow-4-imgs{
+
+.galleryRow-4-imgs {
     width: 25%;
     height: 250px;
     background-color: brown;
     margin: 25px 5px;
 }
-.gallerybackimg
-{
+
+.gallerybackimg {
     height: 500px;
     background-color: transparent;
 }
 
-.galleryBackDetails
-{
+.galleryBackDetails {
     width: 30%;
     margin: 40px 50px;
     height: 400px;
@@ -90,8 +89,7 @@ h1{
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
-.gallerySelectOpt
-{
+.gallerySelectOpt {
     width: 80%;
     height: 50px;
     margin: 10px 10%;
@@ -101,16 +99,15 @@ h1{
     border: 1px solid #f7941d;
     font-weight: bold;
 }
-.galleryOptions
-{   
+
+.galleryOptions {
     width: 80%;
     height: 50px;
     margin: 10px 10%;
     background-color: #212121;
-
 }
-.galleryRequestBtn
-{
+
+.galleryRequestBtn {
     width: 80%;
     height: 50px;
     margin: 10px 10%;
@@ -121,8 +118,8 @@ h1{
     border-style: none;
     border-radius: 5px;
 }
-.galleryDonatetBtn
-{
+
+.galleryDonatetBtn {
     width: 80%;
     height: 50px;
     margin: 10px 10%;

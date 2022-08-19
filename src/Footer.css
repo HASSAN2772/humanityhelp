@@ -19,7 +19,6 @@
 
 #footer-home-links-h2 {
     color: #f7941d;
-
 }
 
 .ul {
@@ -28,8 +27,7 @@
     padding: 0px;
 }
 
-.ul p
-{
+.ul p {
     color: white;
     padding: 2px 40px;
 }
@@ -42,8 +40,7 @@
     /* transition-duration: 1s; */
 }
 
-.footer-logo-Downdetials
-{
+.footer-logo-Downdetials {
     cursor: text;
 }
 
@@ -55,13 +52,11 @@
 /* .ul li a:hover {
     color: #f7941d;
 } */
-.ul-footer-tags
-{
- transition: 1s;
+.ul-footer-tags {
+    transition: 1s;
 }
 
-.ul-footer-tags:hover
-{
+.ul-footer-tags:hover {
     color: #f7941d;
 }
 
@@ -75,7 +70,6 @@
     height: 124px;
     width: 100%;
     background-color: #212121;
-
 }
 
 .copyrightPara {
@@ -86,12 +80,10 @@
 }
 
 .copyrightPara p {
-
     padding: 0px 20px;
 }
 
 .copyrightPara-span {
-
     color: #f7941d;
 }
 
@@ -103,8 +95,6 @@
 .ul-copyright-Links {
     list-style-type: none;
     float: right;
-
-
 }
 
 .ul-copyright-Links li {

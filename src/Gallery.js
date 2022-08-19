@@ -2,7 +2,7 @@ import React from 'react'
 import './Gallery.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import {MenuItem,FormControl,InputLabel,Select,Button} from '@mui/material'
+import { MenuItem, FormControl, InputLabel, Select, Button } from '@mui/material'
 export default function Gallery() {
     return (
         <div>
@@ -42,23 +42,20 @@ export default function Gallery() {
                         <div className='galleryRow-3-imgs'>
                             img 3
                         </div>
-
                     </div>
                     <div className='gallerybackimg'>
                         <div className='galleryBackDetails'>
                             <h1>Serve Humanity </h1>
                             <select className='gallerySelectOpt'>
-                            <option className='galleryOptions'>Request Blood </option>
-                            <option className='galleryOptions'>Donate Now </option>
+                                <option className='galleryOptions'>Request Blood </option>
+                                <option className='galleryOptions'>Donate Now </option>
                             </select>
-                           <button className='galleryRequestBtn'>
-                            Request Blood
-                           </button>
-                           <button className='galleryDonatetBtn'>
-                            Donate Now
-                           </button>
-
-
+                            <button className='galleryRequestBtn'>
+                                Request Blood
+                            </button>
+                            <button className='galleryDonatetBtn'>
+                                Donate Now
+                            </button>
                         </div>
                     </div>
                     <div className='gallery-row-4'>
@@ -78,7 +75,6 @@ export default function Gallery() {
                 </div>
             </div>
             <Footer />
-
         </div>
     )
 }

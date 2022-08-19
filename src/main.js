@@ -157,6 +157,7 @@ export default function main() {
                         </OwlCarousel>
                     </div>
                 </div>
+
                 <div className='row-5'>
                     <div className='companiesOrg'>
                         <h1>Companies Serving Us</h1>
@@ -170,7 +171,6 @@ export default function main() {
                             margin={0}
                         >
                             <div className='companiesOrgDiv'>
-
                                 <div className='companiesOrgDetails'><p>At vero eos et accusamus et
                                     iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
                                     excepturi sint occaecati cupiditate non provident,</p>
@@ -199,11 +199,6 @@ export default function main() {
                         </OwlCarousel>
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
     )
