@@ -1,40 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
 .main-Login {
     width: 100%;
-    background-color: aliceblue;
+    padding: 50px 0px;
 }
 
 .login-Container {
     width: 90%;
     margin: 0px 5%;
-    background-color: burlywood;
+    height: 580px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .loginLeft-details {
     width: 40%;
     height: 580px;
     float: left;
-    background-color: antiquewhite;
+    background-color: #212121;
     text-align: center;
+}
+
+.loginLeft-details p{
+    color: white;
+    font-family: 'Spinnaker';
 }
 
 .loginRight-Form {
     width: 60%;
     height: 580px;
     float: left;
-    background-color: aquamarine;
+    background-color: transparent;
 }
 
 /* login left div css */
 .login-Logo {
-    height: 80px;
-    width: 200px;
-    background-color: black;
-    margin: 100px auto 0px;
+    width: 250px;
+    margin: 80px auto 0px;
 }
 
 .loginLeft-details h2 {
     color: white;
     margin: 10px 0px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .loginLeft-details p {
@@ -44,20 +51,33 @@
 
 .loginLeft-details #loginLeft-p {
     margin: 20px 20%;
+    color: #F2963A;
+    text-transform: capitalize;
+    font-family: 'Playball', cursive;
 }
 
 .loginLeft-SignupBtn {
     width: 40%;
-    margin: 50px auto 0px;
+    margin: 10.5px auto 0px;
     height: 50px;
-    background-color: #212121;
+   
+    background-color: #F2963A;
     border-style: none;
     border-radius: 5px;
-    color: #F2963A;
+    color: #212121;
+    border: 1px solid silver;
+    font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
+    cursor: pointer;
+    transition-duration: 1s;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
 }
 
+.loginLeft-SignupBtn:hover {
+
+    color: white
+}
 /* login right div css */
 .LoginForm {
     margin: 100px 30% 0px 5%;
@@ -65,22 +85,42 @@
 
 .LoginForm h2 {
     margin: 0px;
-}
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 
+}
+.LoginForm h2::after {
+    display: block;
+    height: 2px;
+    width: 50%;
+    margin: 7px auto 20px;
+    content: "";
+    background-color: #F2963A;
+}
 .LoginForm p {
     margin: 10px 0px 0px;
+    font-family: 'Spinnaker';
 }
 
 .loginBtn {
     width: 40%;
     margin: 10px 0px 0px;
     height: 50px;
+    color: #F2963A;
     background-color: #212121;
     border-style: none;
     border-radius: 5px;
-    color: #F2963A;
+    border: 1px solid #212121;
+    font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
+    cursor: pointer;
+    transition-duration: 1s;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+
+.loginBtn:hover {
+    color: white;
 }
 
 form .forgotPassword-Para {

@@ -1,14 +1,22 @@
 .main-DonationForm {
     width: 100%;
-    background-color: #212121;
+    background-image: url("../public/assets/sliderimgs/16.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: 100%;
+}
+.textfield
+{
+    background-color: #F2963A;
+    border: white;
+    color: aliceblue;
 }
 
 .donation-conatiner {
     width: 90%;
     padding: 50px 0px;
     margin: 0px 5%;
-    background-color: darkgrey;
-    height: auto;
 }
 
 .donationAmountForm {
@@ -16,11 +24,21 @@
     margin: 0px 5%;
     border: 1px solid silver;
     padding: 50px 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-family: 'Montserrat', sans-serif;
+
     border-radius: 5px;
 }
 
 .donation-conatiner form h1 {
     margin: 0px;
+    color: white;
+
+}
+.donationAmountForm p{
+    margin: 5px 0px 25px 0px;
+    color: white;
 }
 
 .donation-conatiner .donateAmountBtn {
@@ -34,4 +52,21 @@
     border-radius: 5px;
     border-style: none;
     background-color: #212121;
+    transition-duration: 1s;
+}
+.donation-conatiner .donateAmountBtn:hover{
+    color: white;
+
+
+}
+.donationPaymentMethodLogos
+{
+    width: 100%;
+    height: 90px;
+    display: flex;
+}
+.donationPaymentMethodLogos img{
+    
+    width: 75px;
+    height: 90px;
 }

@@ -1,80 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Gallery.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { MenuItem, FormControl, InputLabel, Select, Button } from '@mui/material'
+import GalData from "./GalleryData"
 export default function Gallery() {
+
+    const [data,setData] = useState(GalData)
+    const Alldata =()=>
+    {
+    const allImagesData = GalData.filter((value)=>
+    {
+        return value;
+    });
+
+    setData(allImagesData);
+    }
+
+const ForCategory = (type) =>
+{
+    const typedata = GalData.filter((value)=>{
+        return value.category === type
+    })
+    setData(typedata);
+}
+
     return (
         <div>
-            <Navbar />
+            <Navbar/>
             <div className='main-Gallery'>
+                <div className='Gallery-Container'>
                 <h1>Welcome to Our Gallery</h1>
-                <div className='gallery-imgs'>
-                    <div className='gallery-row-1'>
-                        <div className='galleryRow-1-imgs'>
-                            img 1
-                        </div>
-                        <div className='galleryRow-1-imgs'>
-                            img 1
-                        </div>
-                        <div className='galleryRow-1-imgs'>
-                            img 1
-                        </div>
-                        <div className='galleryRow-1-imgs'>
-                            img 1
-                        </div>
-                    </div>
-                    <div className='gallery-row-2'>
-                        <div className='galleryRow-2-imgs'>
-                            img 2
-                        </div>
-                        <div className='galleryRow-2-imgs'>
-                            img 2
-                        </div>
-                        <div className='galleryRow-2-imgs'>
-                            img 2
-                        </div>
-                    </div>
-                    <div className='gallery-row-3'>
-                        <div className='galleryRow-3-imgs'>
-                            img 3
-                        </div>
-                        <div className='galleryRow-3-imgs'>
-                            img 3
-                        </div>
-                    </div>
-                    <div className='gallerybackimg'>
-                        <div className='galleryBackDetails'>
-                            <h1>Serve Humanity </h1>
-                            <select className='gallerySelectOpt'>
-                                <option className='galleryOptions'>Request Blood </option>
-                                <option className='galleryOptions'>Donate Now </option>
-                            </select>
-                            <button className='galleryRequestBtn'>
-                                Request Blood
-                            </button>
-                            <button className='galleryDonatetBtn'>
-                                Donate Now
-                            </button>
-                        </div>
-                    </div>
-                    <div className='gallery-row-4'>
-                        <div className='galleryRow-4-imgs'>
-                            row-4
-                        </div>
-                        <div className='galleryRow-4-imgs'>
-                            row-4
-                        </div>
-                        <div className='galleryRow-4-imgs'>
-                            row-4
-                        </div>
-                        <div className='galleryRow-4-imgs'>
-                            row-4
-                        </div>
-                    </div>
+                <div className='searchingBtnsGallery'>
+                <button onClick={Alldata}>All Pictures</button>
+                <button onClick={()=>ForCategory("disable")}>Disable Childs</button>
+                <button onClick={()=>ForCategory("homeless")}>Homeless </button>
+                <button onClick={()=>ForCategory("education")}>For Education</button>
                 </div>
+                {
+                    data.map((elem)=>{
+                    const {id,image,category,name} = elem;
+                    return(
+                        <>
+                        <img id='GalleryImgs' src={image} alt='image not '/>
+                        </>
+                        )})
+                }     
             </div>
-            <Footer />
+        </div>
+        <Footer/>
         </div>
     )
 }

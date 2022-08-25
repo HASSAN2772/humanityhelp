@@ -10,7 +10,8 @@ export default function Footer() {
             <div className='main-footer'>
                 <div className='footer-Container'>
                     <div className='footerLogo'>
-                        <h3>Logo</h3>
+                    <img src='/assets/sliderimgs/Logo 2.png' style={{width:"250px" ,height:"130px"}} />
+
                         <ul className='ul'>
                             <li><p><FontAwesomeIcon icon={faEnvelope} size="gl" /> <label>Email :</label> Webdevsofttechnologies@gmail.com</p></li>
                             <li><p><address><FontAwesomeIcon icon={faLocationDot} size="gl" /> Street 21 Gulberg 3 Lahore,Pakistan.</address></p></li>

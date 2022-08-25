@@ -1,10 +1,15 @@
 
 import React from 'react'
 import './main.css'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import Slider from './Slider.js'
 import OwlCarousel from 'react-owl-carousel'
 export default function main() {
     return (
         <div>
+            <Navbar/>
+            <Slider/>
             <div className='main-div'>
                 <div className='row-1'>
                     <div className='row1-welComeToDonate'>
@@ -56,35 +61,27 @@ export default function main() {
                     <div className='countDoantion'>
                         <div className='countDonationBox-1'>
                             <div className='donoCountLogo'>
-                                donation logo
+                               Total $2304
                             </div>
-                            <div className='donoCounter'>
-                                counter
-                            </div>
+                            
                         </div>
                         <div className='countDonationBox-2'>
                             <div className='donoCountLogo'>
-                                donation logo
+                                Doners 32
                             </div>
-                            <div className='donoCounter'>
-                                counter
-                            </div>
+                            
                         </div>
                         <div className='countDonationBox-3'>
                             <div className='donoCountLogo'>
-                                donation logo
+                                Charity Dnr's
                             </div>
-                            <div className='donoCounter'>
-                                counter
-                            </div>
+                            
                         </div>
                         <div className='countDonationBox-4'>
                             <div className='donoCountLogo'>
-                                donation logo
+                                Helped 3843
                             </div>
-                            <div className='donoCounter'>
-                                counter
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -115,18 +112,18 @@ export default function main() {
                                 </div>
                                 <div className='recentCausesBoxDetails'>
                                     <h3>Donate for Water</h3>
-                                    <p>Water is life, and clean water means health.</p>
+                                    <p>Water is life, and clean water means healthy Life So its a Blessing.</p>
                                 </div>
                             </div>
                             <div className='recentCausesBoxes'>
                                 <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/23.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
                                     <h3>Donate for Education</h3>
                                     <p>Education is the key to unlock the golden door of freedom.</p>
                                 </div>
-                            </div>
+                            </div>  
                             <div className='recentCausesBoxes'>
                                 <div className='recentCausesImg'>
                                     <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
@@ -164,42 +161,45 @@ export default function main() {
                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
                             corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
                         </p>
-                        <OwlCarousel items={1}
-                            className="owl-theme" id='owl-theme-companiesOrg'
-                            nav={true}
-                            loop={true}
-                            margin={0}
-                        >
-                            <div className='companiesOrgDiv'>
-                                <div className='companiesOrgDetails'><p>At vero eos et accusamus et
-                                    iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                    excepturi sint occaecati cupiditate non provident,</p>
-                                    <div className='companiesOrgOwnersImg'>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='companiesOrgDiv'>
-                                <div className='companiesOrgDetails'>
-                                    <p>At vero eos et accusamus et
+                        <div className='companiesOrgContent'>
+                            <OwlCarousel items={1}
+                                className="owl-theme" id='owl-theme-companiesOrg'
+                                nav={true}
+                                loop={true}
+                                margin={0}
+                            >
+                                <div className='companiesOrgDiv'>
+                                    <div className='companiesOrgDetails'><p>At vero eos et accusamus et
                                         iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
                                         excepturi sint occaecati cupiditate non provident,</p>
-                                    <div className='companiesOrgOwnersImg'>
+                                        <div className='companiesOrgOwnersImg'>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className='companiesOrgDiv'>
-                                <div className='companiesOrgDetails'>
-                                    <p>At vero eos et accusamus et
-                                        iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                        excepturi sint occaecati cupiditate non provident,</p>
-                                    <div className='companiesOrgOwnersImg'>
+                                <div className='companiesOrgDiv'>
+                                    <div className='companiesOrgDetails'>
+                                        <p>At vero eos et accusamus et
+                                            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                            excepturi sint occaecati cupiditate non provident,</p>
+                                        <div className='companiesOrgOwnersImg'>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </OwlCarousel>
+                                <div className='companiesOrgDiv'>
+                                    <div className='companiesOrgDetails'>
+                                        <p>At vero eos et accusamus et
+                                            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                            excepturi sint occaecati cupiditate non provident,</p>
+                                        <div className='companiesOrgOwnersImg'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </OwlCarousel>
+                        </div>
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

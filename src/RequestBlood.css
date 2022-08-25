@@ -1,31 +1,43 @@
-.main-donateBloodForm {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+.main-requestBloodForm {
     width: 100%;
-    background-color: #212121;
+    background-image: url("../public/assets/sliderimgs/16.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    font-family: 'Montserrat', sans-serif;
+
+    background-size: 100%;
 }
 
-.donateBlood-conatiner {
+
+.requestBlood-conatiner {
     width: 90%;
     padding: 50px 0px;
     margin: 0px 5%;
-    background-color: darkgrey;
     height: auto;
+    
 }
 
-.donateBloodAmountForm {
+.requestBloodAmountForm {
     box-sizing: border-box;
+    color: white;
     width: 80%;
     margin: 0px 10%;
     border: 1px solid silver;
     padding: 50px 50px;
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.donateBlood-conatiner form h1 {
+.requestBlood-conatiner form h1 {
     margin: 0px;
 }
 
-.donateBlood-conatiner .donateAmountBtn {
+.requestBlood-conatiner .requestAmountBtn {
     width: 100%;
     height: 50px;
     margin: 20px 0%;
@@ -39,30 +51,30 @@
 }
 
 /* feilds css */
-.fullName-donateBlood-Field {
+.fullName-requestBlood-Field {
     width: 48%;
     float: left;
 }
 
-.Cnic-donateBlood-Field {
+.Cnic-requestBlood-Field {
     width: 48%;
     float: right;
 }
 
-.bloodCate-donateBlood-Field {
+.bloodCate-requestBlood-Field {
     width: 48%;
 }
 
-.dnrCity-donateBlood-Field {
+.dnrCity-requestBlood-Field {
     width: 48%;
 }
 
-.dnrAge-donateBlood-Field {
+.dnrAge-requestBlood-Field {
     width: 48%;
     float: left;
 }
 
-.dnrPhone-donateBlood-Field {
+.dnrPhone-requestBlood-Field {
     width: 48%;
     float: right;
 }
@@ -72,6 +84,6 @@ form #salaryPara {
     font-size: 15px;
 }
 
-.dnraddress-donateBlood-Field {
+.dnraddress-requestBlood-Field {
     width: 60%;
 }

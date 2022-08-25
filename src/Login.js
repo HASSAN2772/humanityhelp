@@ -19,17 +19,18 @@ export default function Login() {
                 <div className='login-Container'>
                     <div className='loginLeft-details'>
                         <div className='login-Logo'>
-                            <img src='' alt='login-logo' />
+                        <img src='/assets/sliderimgs/Logo 2.png' style={{width:"250px" ,height:"130px"}} />
+
                         </div>
                         <h2>Donate Happiness</h2>
-                        <p>First you have to Login </p>
-                        <p id='loginLeft-p'>djgifkdsfj djfjids fjsdhf dfjsdhfsd fsdfjk ufbdfo fjdbfjd fdjfbd b</p>
+                        <p>First you have to Login</p>
+                        <p id='loginLeft-p'>"The greatness of a community is most accurately measured by the compassionate actions of its members."</p>
                         <button className='loginLeft-SignupBtn'>Sign Up</button>
                     </div>
                     <div className='loginRight-Form'>
                         <div className='LoginForm'>
                             <h2>Welcome Donate Happiness</h2>
-                            <p>Put your details in given fields</p>
+                            <p>Put your details in given fields:</p>
                             <form>
                                 <div className='username-login'>
                                     <TextField
@@ -61,7 +62,6 @@ export default function Login() {
                                 <p className='forgotPassword-Para'>Here's <a href=''>Forgot Password ?</a></p>
                                 <button type='button' onClick={SaveUser} className='loginBtn'>Login</button>
                             </form>
-                            {/* <button className='SignupBtn'>Sign Up</button> */}
                         </div>
                     </div>
                 </div>

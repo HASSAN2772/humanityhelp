@@ -1,3 +1,4 @@
+
 header {
     width: 100%;
     height: 200px;
@@ -7,6 +8,7 @@ header {
     width: 100%;
     height: 50px;
     background-color: #f7941d;
+    
 }
 
 .header-container {
@@ -34,12 +36,14 @@ header {
     display: block;
     padding: 12px 13px;
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
+    
 }
 
 .header-btn {
     float: right;
+    
+    
 }
 
 .h-loginbtn,
@@ -47,11 +51,12 @@ header {
     padding: 17px 10px;
     text-transform: uppercase;
     cursor: pointer;
+    
     background-color: transparent;
     color: white;
     border-style: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+     font-weight: bold;
     transition-duration: 1s;
 }
 
@@ -68,7 +73,6 @@ header {
 .headerlogo {
     height: 150px;
     width: 100%;
-    background-color: white;
     display: flex;
     justify-content: space-between;
 }
@@ -87,25 +91,25 @@ header {
 
 }
 
-.ul-menu li a {
+.ul-menu li #menu-ul-Link {
     display: block;
     padding: 14px 20px;
     color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
     transition-duration: 1s;
     cursor: pointer;
     text-transform: uppercase;
 }
 
-.ul-menu li a:hover {
+.ul-menu li #menu-ul-Link:hover {
     color: #f7941d;
 
 }
 
 .logoimg-div {
-    height: 50px;
-    padding: 5px 20px;
-    margin-top: 50px;
+    height: 40px;
+    margin-top: 10px;
 }
 
 .ul-menu {
@@ -114,7 +118,7 @@ header {
 }
 
 .h-donatebtn {
-    margin-top: 45px;
+    margin-top: 50px;
     height: 50px;
     width: 130px;
     font-size: 15px;
@@ -126,6 +130,7 @@ header {
     margin-right: 5px;
     transition-duration: 1.2s;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 

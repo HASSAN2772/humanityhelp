@@ -1,40 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+/*  for h1 h2 font-family: 'Montserrat', sans-serif;
+ */
+
+/* for specafic p font-family: 'Playball', cursive;
+ */
+
+/* 
+        font-family: 'Spinnaker';
+        for para
+ */
+
 .main-Signup {
     width: 100%;
-    background-color: aliceblue;
+    padding: 50px 0px;
+
+
 }
 
 .Signup-Container {
     width: 90%;
     margin: 0px 5%;
-    background-color: burlywood;
+    height: 580px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
 }
 
 .SignupLeft-details {
     width: 40%;
     height: 580px;
     float: left;
-    background-color: antiquewhite;
+    background-color: #212121;
     text-align: center;
+
+}
+
+.SignupLeft-details p {
+    color: white;
+    font-family: 'Spinnaker';
 }
 
 .SignupRight-Form {
     width: 60%;
     height: 580px;
     float: left;
-    background-color: aquamarine;
+    background-color: transparent;
 }
 
 /* Signup left div css */
 .Signup-Logo {
-    height: 80px;
-    width: 200px;
-    background-color: black;
-    margin: 100px auto 0px;
+    width: 250px;
+    margin: 80px auto 0px;
 }
 
 .SignupLeft-details h2 {
     color: white;
     margin: 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .SignupLeft-details p {
@@ -44,8 +67,34 @@
 
 .SignupLeft-details #SignupLeft-p {
     margin: 20px 20%;
+    color: #F2963A;
+    text-transform: capitalize;
+    font-family: 'Playball', cursive;
 }
 
+.contributionCompLogos {
+    width: 70%;
+    height: 50px;
+    margin: 0px 15%;
+    justify-content: space-between;
+    justify-content: center;
+    display: flex;
+    /* background-color: #F2963A; */
+}
+.signupContrib-Comp-Logos-img1
+{
+  margin: 5px 5px;
+}
+.signupContrib-Comp-Logos-img2
+{
+    margin: 5px 5px;
+
+}
+.signupContrib-Comp-Logos-img3
+{
+    margin: 5px 5px;
+
+}
 /* .SignupLeft-SignupBtn
 {
     width: 40%;
@@ -62,11 +111,14 @@
 /* Signup right div css */
 .SignupForm {
     margin: 50px 30% 0px 5%;
+
 }
 
 .SignupForm h2 {
     margin: 0px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .SignupForm h2::after {
@@ -80,30 +132,29 @@
 
 .SignupForm p {
     margin: 10px 0px 0px;
-}
-
-.LoginBtn {
-    width: 40%;
-    margin: 10px 0px 0px;
-    height: 50px;
-    background-color: #212121;
-    border-style: none;
-    border-radius: 5px;
-    color: #F2963A;
-    font-weight: bold;
-    font-size: 15px;
+    font-family: 'Spinnaker';
 }
 
 .RegisterBtn {
     width: 40%;
     margin: 30px 0px 10px;
     height: 50px;
-    background-color: #212121;
+    
     border-style: none;
     border-radius: 5px;
     color: #F2963A;
+    background-color: #212121;
+    border: 1px solid #212121;
+    font-family: 'Montserrat';
     font-weight: bold;
     font-size: 15px;
+    cursor: pointer;
+    transition-duration: 1s;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+
+.RegisterBtn:hover {
+    color: white;
 }
 
 form .forgotPassword-Para {

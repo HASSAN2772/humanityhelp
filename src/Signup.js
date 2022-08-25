@@ -3,6 +3,7 @@ import './Signup.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { TextField } from '@mui/material'
+import { GoogleFonts } from 'use-google-fonts'
 
 export default function Signup() {
 
@@ -22,19 +23,29 @@ export default function Signup() {
                 <div className='Signup-Container'>
                     <div className='SignupLeft-details'>
                         <div className='Signup-Logo'>
-                            <img src='' alt='Signup-logo' />
+                        <img src='/assets/sliderimgs/Logo 2.png' style={{width:"250px" ,height:"130px"}} />
                         </div>
                         <h2>Donate Happiness</h2>
                         <p>First you have to SignUp</p>
-                        <p id='SignupLeft-p'>djgifkdsfj djfjids fjsdhf dfjsdhfsd fsdfjk ufbdfo fjdbfjd fdjfbd b</p>
+                        <p id='SignupLeft-p'>
+                        "The greatness of a community is most accurately measured by the compassionate actions of its members."                            
+                        </p>
                         <div className='contributionCompLogos'>
-                            compines logo
+                            <div className='signupContrib-Comp-Logos-img1'>
+                                <img src='./assets/sliderimgs/transparentHands (2).png' alt='img 1' />
+                            </div><div className='signupContrib-Comp-Logos-img2'>
+                                <img src='./assets/sliderimgs/shaukatkhanam.png' alt='img 2' />
+                            </div>
+                            {/* <div className='signupContrib-Comp-Logos-img3'>
+                                <img src='./assets/sliderimgs/edhilogo.png' alt='img 2' />
+                            </div> */}
+
                         </div>
                     </div>
                     <div className='SignupRight-Form'>
                         <div className='SignupForm'>
                             <h2>Register Now</h2>
-                            <p>Put your details in given fields:</p>
+                            <p>Welcome, Please Put your details in given fields:</p>
                             <form>
                                 <div className='firstname-Signup'>
                                     <TextField
@@ -102,7 +113,7 @@ export default function Signup() {
                                 </div>
                                 <button type='button' onClick={SaveUser} className='RegisterBtn'>Register</button>
                             </form>
-                            <button className='LoginBtn'>Login</button>
+                            {/* <button className='LoginBtn'>Login</button> */}
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
 .img {
     height: 480px;
     width: 100%;
     background-size: cover;
+    
 }
 
 #banner-Img {
@@ -20,11 +23,11 @@
     color: white;
     font-size: 36px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .bnr-Img1Paraspan {
     color: #f7941d;
-    font-style: italic;
 }
 
 .bnr-Img1Para::after {
@@ -33,13 +36,14 @@
     height: 3px;
     width: 40%;
     background: #f7941d;
-    margin: 3px 0px;
+    margin: 10px 0px;
 }
 
 .bnr-Img1Para2 {
     margin: 3px 0px 30px 0px;
     color: black;
     font-style: italic;
+    font-family: 'Playball', cursive;
     font-weight: bold;
 }
 
@@ -65,24 +69,31 @@
 
 .bnr-Img2 {
     position: absolute;
-    top: 25%;
+    top: 54%;
     left: 5%;
-    width: 350px;
+    width: 70%;
+    margin: 0px 15%;
+    opacity: 0.7;
+    text-transform: capitalize;
+
 }
 
 .bnr-Img2Para {
     margin: 0px;
     color: white;
     font-size: 36px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+        font-weight: bolder;
+
 }
 
 .bnr-Img2Para2 {
     margin: 3px 0px 30px 0px;
     color: white;
-    font-style: italic;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+
+    
 }
 
 .bnr1-Btn {
@@ -111,4 +122,9 @@
     left: 45%;
     height: 45px;
     width: 10%;
+}
+.Slider-Bnr-2-Img img{
+    background-size: auto;
+    background-position: center;
+    background-repeat:  no-repeat;
 }

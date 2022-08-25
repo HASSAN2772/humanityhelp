@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './DonateBlood.css'
+import './RequestBlood.css'
 import { Button, MenuItem, FormControl, Select, makeStyles, PaperComponent, TextField, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog, InputLabel } from '@mui/material'
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -16,12 +16,12 @@ export default function DonateBlood() {
     return (
         <div>
             <Navbar />
-            <div className='main-donateBloodForm'>
-                <div className='donateBlood-conatiner'>
-                    <form className='donateBloodAmountForm' >
+            <div className='main-requestBloodForm'>
+                <div className='requestBlood-conatiner'>
+                    <form className='requestBloodAmountForm' >
                         <h1>Request Blood</h1>
-                        <p>wewge dwugduwb j dugd yuqgiuwb </p>
-                        <div className='fullName-donateBlood-Field'>
+                        <p>Its Our Duty to Help Needy People Who are Facing Problmes Related Bloods or Charity.</p>
+                        <div className='fullName-requestBlood-Field'>
                             <TextField
                                 id="outlined-basic"
                                 label="Full Name"
@@ -31,7 +31,7 @@ export default function DonateBlood() {
                                 margin='normal'
                             />
                         </div>
-                        <div className='Cnic-donateBlood-Field'>
+                        <div className='Cnic-requestBlood-Field'>
                             <TextField
                                 id="outlined-basic"
                                 label="CNIC NO."
@@ -42,7 +42,7 @@ export default function DonateBlood() {
                                 type="number"
                             />
                         </div>
-                        <div className='bloodCate-donateBlood-Field'>
+                        <div className='bloodCate-requestBlood-Field'>
                             <FormControl margin='normal'
                                 fullWidth>
                                 <InputLabel required id="demo-simple-select-label">Blood</InputLabel>
@@ -66,7 +66,7 @@ export default function DonateBlood() {
                                 </Select>
                             </FormControl>
                         </div>
-                        <div className='dnrCity-donateBlood-Field'>
+                        <div className='dnrCity-requestBlood-Field'>
                             <FormControl margin='normal' fullWidth>
                                 <InputLabel required id="demo-simple-select-label">City</InputLabel>
                                 <Select
@@ -85,25 +85,25 @@ export default function DonateBlood() {
                                 </Select>
                             </FormControl>
                         </div>
-                        <div className='dnrAge-donateBlood-Field'>
+                        <div className='dnrAge-requestBlood-Field'>
                             <TextField
                                 id="outlined-basic"
-                                label="Donar Age"
+                                label="Requester Age"
                                 variant="outlined"
                                 margin='normal'
                                 fullWidth
                                 required
                                 type="number"
                             />
-                            <div className='uplaodSlarySlip-Btn-donateBlood'>
+                            {/* <div className='uplaodSlarySlip-Btn-requestBlood'>
                                 <p id='salaryPara'>Upload your Salary Slip for Validity *Not for having Income more Than 20,000/ Pkr</p>
                                 <Button variant="contained" id='uploadSalruSlipBtn' margin='normal' fullWidth component="label">
                                     Upload
                                     <input hidden accept="image/*" multiple type="file" />
                                 </Button>
-                            </div>
+                            </div> */}
                         </div>
-                        <div className='dnrPhone-donateBlood-Field'>
+                        <div className='dnrPhone-requestBlood-Field'>
                             <TextField
                                 id="outlined-basic"
                                 label="Ph Number."
@@ -114,17 +114,17 @@ export default function DonateBlood() {
                                 type="number"
                             />
                         </div>
-                        <div className='dnraddress-donateBlood-Field'>
+                        <div className='dnraddress-requestBlood-Field'>
                             <TextField
                                 id="outlined-basic"
-                                label="Doner Address"
+                                label="Requester Address"
                                 variant="outlined"
                                 fullWidth
                                 margin='normal'
                                 required
                             />
                         </div>
-                        <button className='donateAmountBtn'>Donate</button>
+                        <button className='requestAmountBtn'>Request</button>
                     </form>
                 </div>
             </div>

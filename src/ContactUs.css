@@ -3,6 +3,7 @@
     width: 100%;
     background-image: url("../public/assets/sliderimgs/contactUsCover.jpg");
     background-size: cover;
+    
 }
 
 .contactUs-HeaderLogo {
@@ -21,22 +22,26 @@
     text-align: center;
     padding: 25px 0px;
     color: white;
-    font-family: 'Roboto slab';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contactUs-row-2 {
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contactInfo {
     width: 90%;
     height: 500px;
-    margin: 0px 5%;
+    margin: 50px 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
 }
 
 .contactInfoLeft {
-    width: 30%;
+    width: 26%;
     float: left;
+    margin: 0px 2%;
 }
 
 #contactInfoLeft-logo {
@@ -45,17 +50,22 @@
 
 .contactInfoLeft-details p {
     color: #999;
+    margin: 10px 10px;
 }
 
 .contactInfoRight {
     width: 70%;
-    background-color: #F2963A;
     float: left;
 }
 
+.contactInfoRight h1 {
+     margin: 25px 0% 20px 5%;
+     color: #F2963A;
+     font-family: 'Montserrat', sans-serif;
+}
 .commentForm {
     width: 100%;
-    padding: 52.5px 0px;
+    padding: 10px 0px;
     margin: 0px 0px;
 }
 
@@ -122,7 +132,7 @@
 
 /* comment form  css*/
 
-.contactInfoRight {
-    background-color: #F2963A;
 
+.contactInfoLeft-details h2{
+    margin: 0px;
 }

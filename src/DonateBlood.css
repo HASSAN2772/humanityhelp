@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
 .main-donateBloodForm {
     width: 100%;
-    background-color: #212121;
+    background-image: url("../public/assets/sliderimgs/16.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: 100%;
 }
 
 .donateBlood-conatiner {
     width: 90%;
     padding: 50px 0px;
     margin: 0px 5%;
-    background-color: darkgrey;
     height: auto;
 }
 
@@ -16,6 +21,7 @@
     width: 80%;
     margin: 0px 10%;
     border: 1px solid silver;
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 50px 50px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -23,8 +29,20 @@
 
 .donateBlood-conatiner form h1 {
     margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
-
+.donateBlood-conatiner form h1::after {
+    display: block;
+    height: 2px;
+    width: 35%;
+    margin: 10px 0px;
+    content: "";
+    background-color: #F2963A;
+}
+.donateBloodAmountForm p{
+    font-family: 'Spinnaker';
+}
 .donateBlood-conatiner .donateAmountBtn {
     width: 100%;
     height: 50px;
@@ -65,4 +83,24 @@
 .dnrPhone-donateBlood-Field {
     width: 48%;
     float: right;
+}
+.donateBloodSelect
+{
+    outline: none;
+   
+}
+.MuiFormControl-root label
+{
+    color: white;
+}
+.MuiFormControl-root .MuiOutlinedInput-root
+{
+    color: white;
+}
+
+
+/* this class taking from Sx={ } */
+.MuiSelect-outlined
+{
+    
 }

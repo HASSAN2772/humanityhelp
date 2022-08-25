@@ -11,11 +11,12 @@ export default function
       <div className='main-slider'>
         <OwlCarousel items={1}
           className="owl-theme"
-          loop
-          autoPlay
-          autoplayTimeout={2}
+          loop={true}   
+          autoplay={true}
+          autoplayTimeout={2000}
           autoplayHoverPause={true}
-
+          
+       
           margin={0} >
           <div >
             <img className="img" id='banner-Img' src={'assets/sliderimgs/Bnr3.jpg'} />
@@ -23,23 +24,24 @@ export default function
               <p className='bnr-Img1Para'>
                 GIVE A <span className='bnr-Img1Paraspan'>HELPING HAND</span> TO THOSE WHO NEED IT!
               </p>
-              <p className='bnr-Img1Para2'>Volunteers do not Necessarily have the Time, They Just have the Heart.</p>
-              <button className='bnr1-Btn'>Donate Now</button>
+              <p className='bnr-Img1Para2'>Volunteers do not Necessarily have the Time,They Just have the Heart.</p>
+              {/* <button className='bnr1-Btn'>Donate Now</button> */}
             </div>
           </div>
 
-          <div>
-            <img className="img" src={'assets/sliderimgs/Bnr2.png'} />
+          <div className='Slider-Bnr-2-Img'>
+            <img className="img" src={'assets/sliderimgs/bnr5.jpg'} />
             <div className='bnr-Img2' >
               <p className='bnr-Img2Para'>
-                Save The Children
+                 Save The Children
               </p>
-              <p className='bnr-Img2Para2'>CHILDREN AND POOR PEOPLE ARE AT HIGH RISK OF SEVERE MALNUTRITION & NO EDUCATION.</p>
-              <button className='bnr1-Btn'>Donate Now</button>
+              <p className='bnr-Img2Para2'>CHILDREN AND POOR PEOPLE ARE AT HIGH RISK OF SEVERE MALNUTRITION & NO EDUCATION.
+              Volunteers do not Necessarily have the Time,They Just have the Heart.</p>
+              {/* <button className='bnr1-Btn'>Donate Now</button> */}
             </div>
           </div>
 
-          <div><img className="img" src={'assets/sliderimgs/img6.jpg'} /></div>
+          <div><img className="img" src={'assets/sliderimgs/bnr-3.jpg'} /></div>
           <div><img className="img" src={'assets/sliderimgs/bnr2.jpg'} /></div>
         </OwlCarousel>
       </div>

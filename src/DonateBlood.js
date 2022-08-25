@@ -19,8 +19,8 @@ export default function DonateBlood() {
       <div className='main-donateBloodForm'>
         <div className='donateBlood-conatiner'>
           <form className='donateBloodAmountForm' >
-            <h1>Donate for Save Lifes</h1>
-            <p>wewge dwugduwb j dugd yuqgiuwb </p>
+            <h1>Donate Blood</h1>
+            <p>Donate Blood for Saving Millions of People and Child Lifes. </p>
             <div className='fullName-donateBlood-Field'>
               <TextField
                 id="outlined-basic"
@@ -29,6 +29,18 @@ export default function DonateBlood() {
                 fullWidth
                 required
                 margin='normal'
+                sx={{
+                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                  "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: "white"
+                      }},
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": { borderColor: "white" },
+                    "& .MuiInputBase-input":{color:'white'},
+                      },
+                  "& .MuiInputBase-root": {color: 'white'},}}
               />
             </div>
             <div className='Cnic-donateBlood-Field'>
@@ -40,6 +52,18 @@ export default function DonateBlood() {
                 fullWidth
                 required
                 type="number"
+                sx={{
+                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                  "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: "white"
+                      }},
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": { borderColor: "white" },
+                    "& .MuiInputBase-input":{color:'white'},
+                      },
+                  "& .MuiInputBase-root": {color: 'white'},}}
               />
             </div>
             <div className='bloodCate-donateBlood-Field'>
@@ -77,6 +101,19 @@ export default function DonateBlood() {
                   label="City"
                   fullWidth
                   onChange={handleChange}
+                  className="donateBloodSelect"
+                  sx={{
+                   
+                    "MuiInputBase-formControl": {
+                      "& > fieldset": { borderColor: "white" },
+                      "& .MuiInputBase-input":{color:"ornage"},
+                      
+                        },
+                        "& .MuiSvgIcon-root": {
+                          color: "white",
+                      },
+                     
+                    "& .MuiInputBase-root": {color: 'white'},}}
                 >
                   <MenuItem value={10} defaultValue>Lahore </MenuItem>
                   <MenuItem value={20}>Islamabad</MenuItem>
@@ -93,6 +130,18 @@ export default function DonateBlood() {
                 fullWidth
                 required
                 type="number"
+                sx={{
+                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                  "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: "white"
+                      }},
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": { borderColor: "white" },
+                    "& .MuiInputBase-input":{color:'white'},
+                      },
+                  "& .MuiInputBase-root": {color: 'white'},}}
               />
             </div>
             <div className='dnrPhone-donateBlood-Field'>
@@ -104,6 +153,18 @@ export default function DonateBlood() {
                 fullWidth
                 required
                 type="number"
+                sx={{
+                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                  "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: "white"
+                      }},
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": { borderColor: "white" },
+                    "& .MuiInputBase-input":{color:'white'},
+                      },
+                  "& .MuiInputBase-root": {color: 'white'},}}
               />
             </div>
             <div className='dnraddress-donateBlood-Field'>
@@ -113,7 +174,19 @@ export default function DonateBlood() {
                 variant="outlined"
                 fullWidth
                 margin='normal'
-                required
+                required sx={{
+                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                  "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: "white"
+                      }},
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": { borderColor: "white" },
+                    "& .MuiInputBase-input":{color:'white'},
+                      },
+                  "& .MuiInputBase-root": {color: 'white'},}}
+
               />
             </div>
             <button className='donateAmountBtn'>Donate</button>

@@ -1,8 +1,7 @@
 import './ContactUs.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { TextField, FormControl } from '@mui/material'
-// import CommentForm from './CommentForm'
+import { TextField} from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
@@ -33,18 +32,22 @@ export default function ContactUs() {
           <div className='contactInfoLeft'>
             <div className='contactInfoLeft-details'>
               <h2><FontAwesomeIcon id='contactInfoLeft-logo' icon={faLocationDot} size="gl" />  Office Address</h2>
-              <p>Street 21 Gulberg 3 Lahore,Pakistan.</p>
+              <p>Street #21 Building #1 Gulberg 3 Lahore,Pakistan.</p>
+              <p>127 Oxford Street Gulberg 3 Islamabad,Pakistan.</p>
             </div>
             <div className='contactInfoLeft-details'>
               <h2><FontAwesomeIcon id='contactInfoLeft-logo' icon={faEnvelope} size="gl" />  Email Address</h2>
               <p>Webdevsofttechnologies@gmail.com</p>
+              <p>Futuretechnologies@gmail.com</p>
             </div>
             <div className='contactInfoLeft-details'>
               <h2><FontAwesomeIcon id='contactInfoLeft-logo' icon={faPhone} size="gl" />  Phone Number</h2>
               <p>+923131499465</p>
+              <p>+42043509499487</p>
             </div>
           </div>
           <div className='contactInfoRight'>
+            <h1>Comment Here</h1>
             <div className='commentForm'>
               <form>
                 <div className='form-control' id='commentFormNameField'>
@@ -107,7 +110,8 @@ export default function ContactUs() {
       </div>
       <div className='contactUs-row-3'>
         <div className='contactMap'>
-          map
+          {/* <iframe src="https://www.google.com/maps/d/edit?mid=1TfXeVTwnym2Gk4ID7wKP1aXB-H9NfxQ&usp=sharing" width="100%" height="550px" /> */}
+          <iframe src="https://www.google.com/maps/d/embed?mid=1TfXeVTwnym2Gk4ID7wKP1aXB-H9NfxQ&ehbc=2E312F" width="100%" height="550px" />
         </div>
       </div>
       <Footer />
