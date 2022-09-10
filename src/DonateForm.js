@@ -14,9 +14,6 @@ const theme = createStyles({
     },
   });
 
-
-
-
 export default function DonateForm() {
     // const classes = useStyles();
   

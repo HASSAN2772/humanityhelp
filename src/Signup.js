@@ -1,11 +1,43 @@
 import React, { useState } from 'react'
 import './Signup.css'
 import Navbar from './Navbar'
+import { useHistory } from 'react-router-dom'
 import Footer from './Footer'
 import { TextField } from '@mui/material'
 import { GoogleFonts } from 'use-google-fonts'
+import axios from 'axios'
 
 export default function Signup() {
+
+    const history = useHistory();
+    // const [user,setUser]= useState({
+    //     firstname:"",
+    //     lastname:"",
+    //     email:"",
+    //     password:"",
+    //     cpassword:"",
+    // })
+    // const hander =(e)=>
+    // {
+    //     e.preventDefault();
+    //     const {name,value} = e.target
+    //     setUser({
+    //         ...user,
+    //         [name]:value
+    //     })
+
+    // }
+    // const SaveUser= ()=>
+    // {     
+
+    //     axios.post('http://localhost:5000/signup',user)
+    //     .then(res=>{
+    //             console.log(user)
+    //     })
+    //     .then(err=>{
+    //         console.log(err)
+    //     })
+    // }
 
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -13,8 +45,36 @@ export default function Signup() {
     const [password, setPassword] = useState("");
     const [cpassword, setCPassword] = useState("");
 
+ 
+
     const SaveUser = () => {
-        console.log(firstname, lastname, email, password, cpassword)
+
+
+
+        const user = { firstname, lastname, email, password, cpassword }
+        if (firstname && lastname && email && password && cpassword) {
+            
+            if (password === cpassword) {
+                const result = axios.post('http://localhost:5000/signup',user).then(res => {
+                    console.log(result)
+                })
+                .then(err => {
+                console.log(err)
+                })
+                    
+                alert("Sucessfully Registered")
+                history.push('/login')
+            }
+            else {
+                alert("password Doesn't Match ")
+            }
+        }
+        else {
+            alert("Invalid Inputs ")
+        }
+
+
+
     }
     return (
         <div>
@@ -23,12 +83,12 @@ export default function Signup() {
                 <div className='Signup-Container'>
                     <div className='SignupLeft-details'>
                         <div className='Signup-Logo'>
-                        <img src='/assets/sliderimgs/Logo 2.png' style={{width:"250px" ,height:"130px"}} />
+                            <img src='/assets/sliderimgs/Logo 2.png' style={{ width: "250px", height: "130px" }} />
                         </div>
                         <h2>Donate Happiness</h2>
                         <p>First you have to SignUp</p>
                         <p id='SignupLeft-p'>
-                        "The greatness of a community is most accurately measured by the compassionate actions of its members."                            
+                            "The greatness of a community is most accurately measured by the compassionate actions of its members."
                         </p>
                         <div className='contributionCompLogos'>
                             <div className='signupContrib-Comp-Logos-img1'>
@@ -50,7 +110,8 @@ export default function Signup() {
                                 <div className='firstname-Signup'>
                                     <TextField
                                         name='firstname'
-                                        value={firstname}
+                                        // value={user.firstname}
+                                        // onChange={hander}
                                         onChange={(e) => {
                                             setFirstname(e.target.value)
                                         }}
@@ -62,6 +123,8 @@ export default function Signup() {
                                 <div className='lastname-Signup'>
                                     <TextField
                                         name='lastname'
+                                        // value={user.lastname}
+                                        // onChange={hander}
                                         value={lastname}
                                         onChange={(e) => {
                                             setLastname(e.target.value)
@@ -74,6 +137,8 @@ export default function Signup() {
                                 <div className='email-Signup'>
                                     <TextField
                                         name='email'
+                                        // value={user.email}
+                                        // onChange={hander}
                                         value={email}
                                         onChange={(e) => {
                                             setEmail(e.target.value)
@@ -86,10 +151,13 @@ export default function Signup() {
                                 </div>
                                 <div className='password-Signup'>
                                     <TextField
+                                        required
                                         label="Password"
                                         type="password"
                                         variant="standard"
                                         margin='normal'
+                                        // value={user.password}
+                                        // onChange={hander}
                                         value={password}
                                         name="password"
                                         onChange={(e) => {
@@ -104,6 +172,8 @@ export default function Signup() {
                                         variant="standard"
                                         fullWidth
                                         margin='normal'
+                                        // value={user.cpassword}
+                                        // onChange={hander}
                                         value={cpassword}
                                         name="cpassword"
                                         onChange={(e) => {

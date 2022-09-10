@@ -446,31 +446,35 @@
 .companiesOrgDetails {
     width: 100%;
     height: 400px;
-
     border-radius: 5px;
 
 }
 
 .companiesOrgDetails p {
     color: #212121;
-    margin: 0px 50px;
-    text-transform: capitalize;
-    padding: 50px;
-    font-family: 'Montserrat', sans-serif;}
+    margin: 0px 40px;
+    font-size: 15px;
+    padding: 40px;
+    font-family: 'Montserrat', sans-serif
+    
+}
 
 .companiesOrgDiv {
     position: relative;
 }
 
 .companiesOrgOwnersImg {
-    margin: 75px auto 0px auto;
-   
+    margin: 70px auto 0px auto;
+    overflow: hidden;
     height: 209px;
     width: 24.5%;
     border-radius: 150px;
-    background-color: rgb(68, 132, 189);
+    background-color: #F0F0F0;
 }
-
+.companiesOrgOwnersImg img{
+    height: 210px;
+    
+}
 .companiesOrgDiv {
     /* position: absolute; */
 }
@@ -512,3 +516,74 @@
 #owl-theme-companiesOrg{
     height: 400px;
 }
+/* hgjkkkkk */
+#donate-Sec
+{
+    width: 100%;
+    background-image: url("../public/assets/sliderimgs/3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;    
+    color: white;
+}
+.donateSec-Conatiner
+{
+    width: 90%;
+    margin: 0px 5%;
+    padding: 30px 0px;
+
+}
+.donateSec-btns
+{
+    width: 400px;
+    border-radius: 5px;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.4);
+       font-family: 'Montserrat', sans-serif;
+       border: 1px solid silver;
+       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    
+}
+#donateSec-RequestBloodBtn, #donateSec-donateBloodBtn, #donateSec-CharityBtn
+{
+    width: 60%;
+    margin: 10px 0px;
+    height: 55px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-style: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: #212121;
+    border: 1px solid silver;
+    transition-duration: 1s;
+
+}
+#donateSec-RequestBloodBtn:hover{
+    color: #212121;
+    background-color: #f7941d;
+}
+
+#donateSec-donateBloodBtn:hover{
+    color: #212121;
+    background-color: #f7941d;
+}
+#donateSec-CharityBtn
+{
+    background-color: #f7941d;
+}
+#donateSec-CharityBtn:hover{
+    background-color: #212121;
+}
+.donateSec-btns p{
+    margin: 0px;
+}
+.donateSec-btns h1{
+    margin: 0px;
+}
+ #donateSec-Para{
+    margin: 10px 0px 40px 0px;
+ }

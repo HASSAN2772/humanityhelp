@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
 
-.main-requestBloodForm {
+#main-requestBloodForm {
     width: 100%;
     background-image: url("../public/assets/sliderimgs/16.jpg");
     background-repeat: no-repeat;

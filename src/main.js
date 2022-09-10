@@ -5,6 +5,8 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Slider from './Slider.js'
 import OwlCarousel from 'react-owl-carousel'
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 export default function main() {
     return (
         <div>
@@ -85,7 +87,19 @@ export default function main() {
                         </div>
                     </div>
                 </div>
-
+                <div id='donate-Sec'>
+        <div className='donateSec-Conatiner'>
+          <div className='donateSec-btns'>
+            <h1>Here we are </h1>
+            <p id='donateSec-Para'>Here you can donate or request for a blood and if
+               you want to give Charity you can also give us for poor or needy.</p>
+         <HashLink to="/requestblood#main-requestBloodForm">   <button id='donateSec-RequestBloodBtn'>Request Blood</button></HashLink>
+          <Link to="/donateblood"  ><button id='donateSec-donateBloodBtn'>Donate Blood</button></Link>   
+               <p>If any one want to gives Charity for Child Click here:</p>
+            <Link to="/charity">   <button id='donateSec-CharityBtn'>Give Charity</button></Link>
+          </div>
+        </div>
+      </div>
                 <div className='row-4'>
                     <div className='recentCauses'>
                         <h1>Recent Causes</h1>
@@ -158,9 +172,7 @@ export default function main() {
                 <div className='row-5'>
                     <div className='companiesOrg'>
                         <h1>Companies Serving Us</h1>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-                            corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-                        </p>
+                        <p>At the end of the day it's not about what you have or even what you've accomplished. It's about who you've lifted up, who you've made better. It's about what you've given back.</p>
                         <div className='companiesOrgContent'>
                             <OwlCarousel items={1}
                                 className="owl-theme" id='owl-theme-companiesOrg'
@@ -169,28 +181,25 @@ export default function main() {
                                 margin={0}
                             >
                                 <div className='companiesOrgDiv'>
-                                    <div className='companiesOrgDetails'><p>At vero eos et accusamus et
-                                        iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                        excepturi sint occaecati cupiditate non provident,</p>
+                                    <div className='companiesOrgDetails'><p>The Edhi Foundation is a non-profit social welfare organization based in Pakistan. It was founded by Abdul Sattar Edhi in 1951, who served as the head of the organization until his death on 8 July 2016. Bilquis Edhi, a nurse by profession, used to oversee the maternity and adoption services of the foundation.</p>
                                         <div className='companiesOrgOwnersImg'>
+                                            <img src="/assets/sliderimgs/Edhi.png" alt='edhipic'/>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='companiesOrgDiv'>
                                     <div className='companiesOrgDetails'>
-                                        <p>At vero eos et accusamus et
-                                            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                            excepturi sint occaecati cupiditate non provident,</p>
+                                        <p>Transparent Hands is a nonprofit organization for online crowdfunding in the healthcare sector of Pakistan. It was founded by Rameeza Mueen and Established in 2014 in Lahore, Pakistan, the organization provides free medical and surgical care to the underprivileged.</p>
                                         <div className='companiesOrgOwnersImg'>
+                                        <img src="/assets/sliderimgs/Transparent.png" alt='transparentpic'/>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='companiesOrgDiv'>
                                     <div className='companiesOrgDetails'>
-                                        <p>At vero eos et accusamus et
-                                            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                            excepturi sint occaecati cupiditate non provident,</p>
+                                        <p>Chhipa Welfare Association, commonly known as Chhipa, is a Pakistani non-profit welfare organization founded in 2007 by Ramzan Chhipa. It is headquartered in Karachi, Pakistan. The 1987 Karachi car bombing at Bohri Bazaar led Ramzan Chhipa to found Chhipa Welfare Association.</p>
                                         <div className='companiesOrgOwnersImg'>
+                                        <img src="/assets/sliderimgs/Chippa pic (2).png" alt='chippapic'/>
                                         </div>
                                     </div>
                                 </div>

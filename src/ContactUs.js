@@ -5,17 +5,84 @@ import { TextField} from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
+import axios from 'axios';
 
 export default function ContactUs() {
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [comment, setComment] = useState("");
+    //   const [comment,setComment] = useState({
+      
+    //     firstName:"",
+    //     lastName:"",
+    //     email:"",
+    //     comment:"",
 
-  const SaveComment = (e) => {
-    console.log(lastName, firstName, email, comment)
-  }
+    //   })
+
+    //   const commentHandler = (e) =>
+    //   {
+    //     e.preventDefault();
+
+    //     const { name,value} = e.target
+
+    //     setComment({
+
+    //       ...comment,
+    //       [name]:value
+
+    //     })
+
+
+    //   }
+    //   const SaveUser = () =>
+
+    //   {
+    //     console.log(comment);
+    //  const comentData = axios.post('http://localhost:5000/comment',comment).then(res=>
+    //     {
+    //       console.log(comentData)
+    //     }).then(err=>{
+    //       console.log(err)
+    //     })
+    //       // axios.post('http://localhost:5000/comment',comment)
+    //       // .then(comment=>{
+    //       //     console.log(comment)
+    //       //   })
+    //       // .then(err=>{
+    //       //     console.log(err)
+    //       // })
+    //   }
+
+    const[firstname,setFirstName] = useState("")
+    const[lastname,setLastName] = useState("")
+    const[email,setEmail] = useState("")
+    const[comment,setComment] = useState("")
+
+ const SaveUser = (e) =>  
+    {
+
+      e.preventDefault();
+      axios.post('http://localhost:3000/contact',{firstname,lastname,email,comment})
+      .then(res=>{
+      console.log(res)
+      })
+      .then(err=>
+      {
+      console.log(err)
+      })
+    // const data = {firstName,lastName,email,comment}
+    //   Axios({
+    //     method: "POST",
+    //     url: "http://localhost:5000/comment",
+    //     data,
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     }
+    //   }).then(res => {
+    //     console.log(res.data.message);
+    //   });
+
+    }
+
 
   return (
     <div>
@@ -52,7 +119,7 @@ export default function ContactUs() {
               <form>
                 <div className='form-control' id='commentFormNameField'>
                   <TextField
-                    value={firstName}
+                    value={firstname}
                     name='firstName'
                     onChange={(e) => {
                       setFirstName(e.target.value)
@@ -60,6 +127,8 @@ export default function ContactUs() {
                     id="outlined-basic"
                     label="First Name"
                     variant="outlined"
+                    // onChange={commentHandler}
+
                     fullWidth
                   />
                 </div>
@@ -68,8 +137,9 @@ export default function ContactUs() {
                     label="Last Name"
                     variant="outlined"
                     fullWidth
-                    value={lastName}
+                    value={lastname}
                     name='lastName'
+                    // onChange={commentHandler}
                     onChange={(e) => {
                       setLastName(e.target.value)
                     }}
@@ -85,6 +155,8 @@ export default function ContactUs() {
                     onChange={(e) => {
                       setEmail(e.target.value)
                     }}
+                    // onChange={commentHandler}
+
                   />
                 </div>
                 <div className='form-control' id='commentFormCommentField'>
@@ -97,12 +169,14 @@ export default function ContactUs() {
                     fullWidth
                     value={comment}
                     name='comment'
+                    // onChange={commentHandler}
+
                     onChange={(e) => {
                       setComment(e.target.value)
                     }}
                   />
                 </div>
-                <button type='button' onClick={SaveComment} className='commentFormSumbitBtn'>Submit</button>
+                <button onClick={SaveUser} className='commentFormSumbitBtn'>Submit</button>
               </form>
             </div>
           </div>

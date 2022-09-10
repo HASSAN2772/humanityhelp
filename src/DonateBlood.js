@@ -1,8 +1,20 @@
 import React, { useState } from 'react'
 import './DonateBlood.css'
 import { MenuItem, FormControl, Select, makeStyles, PaperComponent, TextField, Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog, InputLabel } from '@mui/material'
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from './Navbar'
+import Footer from './Footer'
+import { purple, red,orange } from '@mui/material/colors';
+import {createStyles} from '@mui/styles'
+import {TextField, makeStyles,Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog } from '@mui/material'
+const orgCol = orange[500]
+
+const theme = createStyles({
+    palette: {
+      primary: orange[500],
+      secondary: red[500]
+    },
+  });
+
 
 
 export default function DonateBlood() {
@@ -23,25 +35,27 @@ export default function DonateBlood() {
             <p>Donate Blood for Saving Millions of People and Child Lifes. </p>
             <div className='fullName-donateBlood-Field'>
               <TextField
+                   sx={{
+                    "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                    "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                    "& .MuiOutlinedInput-root:hover": {
+                        "& > fieldset": {
+                          borderColor: "white"
+                        }},
+                    "& .MuiOutlinedInput-root": {
+                      "& > fieldset": { borderColor: "white" },
+                      "& .MuiInputBase-input":{color:'white'},
+                        },
+                    "& .MuiInputBase-root": {color: 'white'},}}
+                  
+
                 id="outlined-basic"
                 label="Full Name"
                 variant="outlined"
                 fullWidth
                 required
                 margin='normal'
-                sx={{
-                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                  "& .MuiOutlinedInput-root:hover": {
-                      "& > fieldset": {
-                        borderColor: "white"
-                      }},
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": { borderColor: "white" },
-                    "& .MuiInputBase-input":{color:'white'},
-                      },
-                  "& .MuiInputBase-root": {color: 'white'},}}
-              />
+               />
             </div>
             <div className='Cnic-donateBlood-Field'>
               <TextField
@@ -103,16 +117,16 @@ export default function DonateBlood() {
                   onChange={handleChange}
                   className="donateBloodSelect"
                   sx={{
-                   
-                    "MuiInputBase-formControl": {
+                    "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                    "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                    "& .MuiOutlinedInput-root:hover": {
+                        "& > fieldset": {
+                          borderColor: "white"
+                        }},
+                    "& .MuiOutlinedInput-root": {
                       "& > fieldset": { borderColor: "white" },
-                      "& .MuiInputBase-input":{color:"ornage"},
-                      
+                      "& .MuiInputBase-input":{color:'white'},
                         },
-                        "& .MuiSvgIcon-root": {
-                          color: "white",
-                      },
-                     
                     "& .MuiInputBase-root": {color: 'white'},}}
                 >
                   <MenuItem value={10} defaultValue>Lahore </MenuItem>
@@ -174,7 +188,8 @@ export default function DonateBlood() {
                 variant="outlined"
                 fullWidth
                 margin='normal'
-                required sx={{
+                required 
+                sx={{
                   "& .MuiInputLabel-root": {color: 'white'},//styles the label
                   "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
                   "& .MuiOutlinedInput-root:hover": {

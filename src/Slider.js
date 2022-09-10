@@ -19,7 +19,7 @@ export default function
        
           margin={0} >
           <div >
-            <img className="img" id='banner-Img' src={'assets/sliderimgs/Bnr3.jpg'} />
+            <img className="img" id='banner-Img' src={'assets/sliderimgs/Bnr5.jpg'} />
             <div className='bnr-Img1' >
               <p className='bnr-Img1Para'>
                 GIVE A <span className='bnr-Img1Paraspan'>HELPING HAND</span> TO THOSE WHO NEED IT!
@@ -30,13 +30,12 @@ export default function
           </div>
 
           <div className='Slider-Bnr-2-Img'>
-            <img className="img" src={'assets/sliderimgs/bnr5.jpg'} />
+            <img className="img" src={'assets/sliderimgs/bnr3.jpg'} />
             <div className='bnr-Img2' >
               <p className='bnr-Img2Para'>
                  Save The Children
               </p>
-              <p className='bnr-Img2Para2'>CHILDREN AND POOR PEOPLE ARE AT HIGH RISK OF SEVERE MALNUTRITION & NO EDUCATION.
-              Volunteers do not Necessarily have the Time,They Just have the Heart.</p>
+              <p className='bnr-Img2Para2'>CHILDREN AND POOR PEOPLE ARE AT HIGH RISK OF SEVERE MALNUTRITION & NO EDUCATION.</p>
               {/* <button className='bnr1-Btn'>Donate Now</button> */}
             </div>
           </div>
