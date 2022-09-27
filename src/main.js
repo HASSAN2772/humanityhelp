@@ -10,8 +10,8 @@ import { HashLink } from 'react-router-hash-link'
 export default function main() {
     return (
         <div>
-            <Navbar/>
-            <Slider/>
+            <Navbar />
+            <Slider />
             <div className='main-div'>
                 <div className='row-1'>
                     <div className='row1-welComeToDonate'>
@@ -63,57 +63,57 @@ export default function main() {
                     <div className='countDoantion'>
                         <div className='countDonationBox-1'>
                             <div className='donoCountLogo'>
-                               Total $2304
+                                Total $2304
                             </div>
-                            
+
                         </div>
                         <div className='countDonationBox-2'>
                             <div className='donoCountLogo'>
                                 Doners 32
                             </div>
-                            
+
                         </div>
                         <div className='countDonationBox-3'>
                             <div className='donoCountLogo'>
                                 Charity Dnr's
                             </div>
-                            
+
                         </div>
                         <div className='countDonationBox-4'>
                             <div className='donoCountLogo'>
                                 Helped 3843
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
                 <div id='donate-Sec'>
-        <div className='donateSec-Conatiner'>
-          <div className='donateSec-btns'>
-            <h1>Here we are </h1>
-            <p id='donateSec-Para'>Here you can donate or request for a blood and if
-               you want to give Charity you can also give us for poor or needy.</p>
-         <HashLink to="/requestblood#main-requestBloodForm">   <button id='donateSec-RequestBloodBtn'>Request Blood</button></HashLink>
-          <Link to="/donateblood"  ><button id='donateSec-donateBloodBtn'>Donate Blood</button></Link>   
-               <p>If any one want to gives Charity for Child Click here:</p>
-            <Link to="/charity">   <button id='donateSec-CharityBtn'>Give Charity</button></Link>
-          </div>
-        </div>
-      </div>
+                    <div className='donateSec-Conatiner'>
+                        <div className='donateSec-btns'>
+                            <h1>Here we are </h1>
+                            <p id='donateSec-Para'>Here you can donate or request for a blood and if
+                                you want to give Charity you can also give us for poor or needy.</p>
+                            <HashLink to="/requestblood#main-requestBloodForm">   <button id='donateSec-RequestBloodBtn'>Request Blood</button></HashLink>
+                            <HashLink to="/donateblood#main-donateBloodForm"  ><button id='donateSec-donateBloodBtn'>Donate Blood</button></HashLink>
+                            <p>If any one want to gives Charity for Child Click here:</p>
+                            <Link to="/charity">   <button id='donateSec-CharityBtn'>Give Charity</button></Link>
+                        </div>
+                    </div>
+                </div>
                 <div className='row-4'>
                     <div className='recentCauses'>
                         <h1>Recent Causes</h1>
                         <p>"There could be no definition of a successful life that does not include service to others."</p>
                         <OwlCarousel items={3}
                             className="owl-theme" id='owl-theme-recentCause'
-                            loop
-                            autoPlay
-                            autoplayTimeout={2}
+                            loop={true}
+                            autoplay={true}
+                            autoplayTimeout={2000}
                             autoplayHoverPause={true}
                             margin={40} >
                             <div className='recentCausesBoxes'>
                                 <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/recent-cause-needy-img.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
                                     <h3>Donate for Needy</h3>
@@ -122,34 +122,26 @@ export default function main() {
                             </div>
                             <div className='recentCausesBoxes'>
                                 <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg2.jpg' alt='recentCausesImgs' />
-                                </div>
-                                <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Water</h3>
-                                    <p>Water is life, and clean water means healthy Life So its a Blessing.</p>
-                                </div>
-                            </div>
-                            <div className='recentCausesBoxes'>
-                                <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/23.jpg' alt='recentCausesImgs' />
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/recent-cause-edu-img.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
                                     <h3>Donate for Education</h3>
                                     <p>Education is the key to unlock the golden door of freedom.</p>
                                 </div>
-                            </div>  
-                            <div className='recentCausesBoxes'>
-                                <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
-                                </div>
-                                <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Food</h3>
-                                    <p>If you cannnat feed a hundred people,then feed just one.</p>
-                                </div>
                             </div>
                             <div className='recentCausesBoxes'>
                                 <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/recent-cause-poorfamily-img.jpg' alt='recentCausesImgs' />
+                                </div>
+                                <div className='recentCausesBoxDetails'>
+                                    <h3>Donate for Poor Family</h3>
+                                    <p>When fate hands us money, let's help poor people.</p>
+                                </div>
+                            </div>
+
+                            <div className='recentCausesBoxes'>
+                                <div className='recentCausesImg'>
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/Dclothe.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
                                     <h3>Donate for Clothes</h3>
@@ -158,11 +150,21 @@ export default function main() {
                             </div>
                             <div className='recentCausesBoxes'>
                                 <div className='recentCausesImg'>
-                                    <img id='recentCausesImg' src='/assets/sliderimgs/recentCausesimg1.jpg' alt='recentCausesImgs' />
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/Dfood.jpg' alt='recentCausesImgs' />
                                 </div>
                                 <div className='recentCausesBoxDetails'>
-                                    <h3>Donate for Poor Family</h3>
-                                    <p>When fate hands us money, let's help poor people.</p>
+                                    <h3>Donate for Food</h3>
+                                    <p>If you cannnat feed a hundred people,then feed just one.</p>
+                                </div>
+                            </div>
+
+                            <div className='recentCausesBoxes'>
+                                <div className='recentCausesImg'>
+                                    <img id='recentCausesImg' src='/assets/sliderimgs/Dwater.jpg' alt='recentCausesImgs' />
+                                </div>
+                                <div className='recentCausesBoxDetails'>
+                                    <h3>Donate for Water</h3>
+                                    <p>Water is life, and clean water means healthy Life So its a Blessing.</p>
                                 </div>
                             </div>
                         </OwlCarousel>
@@ -183,15 +185,15 @@ export default function main() {
                                 <div className='companiesOrgDiv'>
                                     <div className='companiesOrgDetails'><p>The Edhi Foundation is a non-profit social welfare organization based in Pakistan. It was founded by Abdul Sattar Edhi in 1951, who served as the head of the organization until his death on 8 July 2016. Bilquis Edhi, a nurse by profession, used to oversee the maternity and adoption services of the foundation.</p>
                                         <div className='companiesOrgOwnersImg'>
-                                            <img src="/assets/sliderimgs/Edhi.png" alt='edhipic'/>
+                                            <img src="/assets/sliderimgs/Edhi pic.png" alt='edhipic' />
                                         </div>
                                     </div>
                                 </div>
                                 <div className='companiesOrgDiv'>
                                     <div className='companiesOrgDetails'>
-                                        <p>Transparent Hands is a nonprofit organization for online crowdfunding in the healthcare sector of Pakistan. It was founded by Rameeza Mueen and Established in 2014 in Lahore, Pakistan, the organization provides free medical and surgical care to the underprivileged.</p>
+                                        <p>Transparent Hands is a nonprofit organization for online crowdfunding in the healthcare sector of Pakistan. It was founded by Rameeza Mueen and Established in 	August, 2014 in Lahore, Pakistan, the organization provides free medical and surgical care to the underprivileged.</p>
                                         <div className='companiesOrgOwnersImg'>
-                                        <img src="/assets/sliderimgs/Transparent.png" alt='transparentpic'/>
+                                            <img src="/assets/sliderimgs/Transparent pic.png" alt='transparentpic' />
                                         </div>
                                     </div>
                                 </div>
@@ -199,7 +201,7 @@ export default function main() {
                                     <div className='companiesOrgDetails'>
                                         <p>Chhipa Welfare Association, commonly known as Chhipa, is a Pakistani non-profit welfare organization founded in 2007 by Ramzan Chhipa. It is headquartered in Karachi, Pakistan. The 1987 Karachi car bombing at Bohri Bazaar led Ramzan Chhipa to found Chhipa Welfare Association.</p>
                                         <div className='companiesOrgOwnersImg'>
-                                        <img src="/assets/sliderimgs/Chippa pic (2).png" alt='chippapic'/>
+                                            <img src="/assets/sliderimgs/Chippa pic.png" alt='chippapic' />
                                         </div>
                                     </div>
                                 </div>
@@ -208,7 +210,7 @@ export default function main() {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

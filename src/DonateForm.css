@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
 .main-DonationForm {
     width: 100%;
-    background-image: url("../public/assets/sliderimgs/16.jpg");
+    background-image: url("../public/assets/sliderimgs/Form-background-img.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: center;
@@ -20,11 +22,12 @@
 }
 
 .donationAmountForm {
+    z-index: 1;
     width: 40%;
     margin: 0px 5%;
     border: 1px solid silver;
     padding: 50px 50px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     font-family: 'Montserrat', sans-serif;
 
@@ -61,12 +64,82 @@
 }
 .donationPaymentMethodLogos
 {
-    width: 100%;
-    height: 90px;
-    display: flex;
-}
-.donationPaymentMethodLogos img{
     
-    width: 75px;
-    height: 90px;
+   position: relative;
+    width: 100%;
+   
+   
+}
+.paymentMethods
+{
+    
+    height: 80px;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+   
+  
+}
+.paymentMethods .jazzcash
+{
+  width: 50%;
+  float: left;
+  margin-top: -10px;
+  cursor: pointer;
+}
+.paymentMethods .easypaisa
+{
+  width: 50%;
+  float: left;
+  cursor: pointer;
+
+}
+.jazzDialog-box
+{
+    z-index: 2;
+   position: absolute;
+   top: -150%;
+   left: 27%;
+    height: 170px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+   
+
+}
+.dialogBox-Content
+{
+    height: 130px;
+    color: white;
+    width: 80%;
+    margin: 20px auto 0px ;
+}
+.dialogBox-Content h3{
+    margin: 0px 0px 5px 0px;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+
+
+}.dialogBox-Content p{
+   
+    margin: 0px;
+    font-size: 14px;
+}.dialogBox-Content span{
+   
+    color: #f7941d;
+}
+.jazzCash-CloseBtn
+{
+    
+    padding: 9px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    float: right;
+    margin-right: 20px;
+    border-style: none;
+    cursor: pointer;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -25px;
 }

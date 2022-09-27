@@ -2,7 +2,7 @@
 
 #main-requestBloodForm {
     width: 100%;
-    background-image: url("../public/assets/sliderimgs/16.jpg");
+    background-image: url("../public/assets/sliderimgs/Form-background-img.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: center;
@@ -28,7 +28,7 @@
     border: 1px solid silver;
     padding: 50px 50px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -85,5 +85,46 @@ form #salaryPara {
 }
 
 .dnraddress-requestBlood-Field {
-    width: 60%;
+    width: 100%;
+}
+
+/* 
+ */
+
+ .requestBloodAmountForm label
+{
+    color: aliceblue;
+}
+.requestBloodAmountForm input{
+    color: aliceblue;
+}
+.requestBloodAmountForm .MuiOutlinedInput-notchedOutline 
+{
+    border: 1px solid white;
+}
+.requestBloodAmountForm .MuiOutlinedInput-notchedOutline:hover
+{
+    border: 1px solid white;
+}
+.requestBloodAmountForm .MuiInputLabel-formControl
+{
+    color: aliceblue;
+}
+.css-1ftyaf0
+{
+    color: aliceblue;
+}
+.requestBloodAmountForm .MuiFormControl-root:hover{
+    color: white;
+}
+.requestBloodAmountForm fieldset:hover{
+    border-color: antiquewhite;
+}
+.requestBloodAmountForm .MuiSvgIcon-root
+{
+    color: white;
+}
+.requestBloodAmountForm .MuiInputLabel-root:hover
+{
+    color: #F2963A;
 }

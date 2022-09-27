@@ -10,9 +10,12 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavLinks from './NavLinks';
 import Navbar from './Navbar';
 import Todo from './Todo';
-import DonateBlood from './RequestBlood';
+import Applicants from './Applicants';
 import RequestBlood from './RequestBlood';
 import DonateForm from './DonateForm'
+import DonateBlood from './DonateBlood';
+import Nav from './Nav';
+import Gal from './Gal'
 
 
 function App() {
@@ -24,10 +27,17 @@ function App() {
   return (
     <div className="App">
       <>
+        {/* <Gal/> */}
+
+      {/* <Applicants/> */}
+      
         <BrowserRouter>
           <Switch>
             <Route path='/gallery'><Gallery /></Route>
             <Route path='/navbar'><Navbar /></Route>
+            {/* <Route path='/nav'><Nav /></Route> */}
+            <Route path='/gal'><Gal /></Route>
+            <Route path='/applicants'><Nav /></Route>
             <Route path='/requestblood'><RequestBlood /></Route>
             <Route path='/donateblood'><DonateBlood /></Route>
             <Route path='/charity'><DonateForm /></Route>

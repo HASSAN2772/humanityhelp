@@ -2,7 +2,7 @@
 
 .main-donateBloodForm {
     width: 100%;
-    background-image: url("../public/assets/sliderimgs/16.jpg");
+    background-image: url("../public/assets/sliderimgs/Form-background-img.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: center;
@@ -13,6 +13,7 @@
     width: 90%;
     padding: 50px 0px;
     margin: 0px 5%;
+    color: white;
     height: auto;
 }
 
@@ -21,7 +22,7 @@
     width: 80%;
     margin: 0px 10%;
     border: 1px solid silver;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 50px 50px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -54,8 +55,11 @@
     border-radius: 5px;
     border-style: none;
     background-color: #212121;
+    transition-duration: 1.5s;
 }
-
+.donateBlood-conatiner .donateAmountBtn:hover{
+    color: white;
+}
 /* feilds css */
 .fullName-donateBlood-Field {
     width: 48%;
@@ -89,18 +93,55 @@
     outline: none;
    
 }
-.MuiFormControl-root label
+/* .MuiFormControl-root label
 {
     color: white;
 }
 .MuiFormControl-root .MuiOutlinedInput-root
 {
     color: white;
-}
+} */
 
 
 /* this class taking from Sx={ } */
 .MuiSelect-outlined
 {
     
+}
+.donateBloodAmountForm label
+{
+    color: aliceblue;
+}
+.donateBloodAmountForm input{
+    color: aliceblue;
+}
+.donateBloodAmountForm .MuiOutlinedInput-notchedOutline 
+{
+    border: 1px solid white;
+}
+.donateBloodAmountForm .MuiOutlinedInput-notchedOutline:hover
+{
+    border: 1px solid white;
+}
+.donateBloodAmountForm .MuiInputLabel-formControl
+{
+    color: aliceblue;
+}
+.css-1ftyaf0
+{
+    color: aliceblue;
+}
+.donateBloodAmountForm .MuiFormControl-root:hover{
+    color: white;
+}
+.donateBloodAmountForm fieldset:hover{
+    border-color: antiquewhite;
+}
+.donateBloodAmountForm .MuiSvgIcon-root
+{
+    color: white;
+}
+.donateBloodAmountForm .MuiInputLabel-root:hover
+{
+    color: #F2963A;
 }

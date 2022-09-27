@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import { purple, red,orange } from '@mui/material/colors';
 import {createStyles} from '@mui/styles'
-import {TextField, makeStyles,Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog } from '@mui/material'
+// import {, makeStyles,Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog } from '@mui/material'
 const orgCol = orange[500]
 
 const theme = createStyles({
@@ -28,9 +28,9 @@ export default function DonateBlood() {
   return (
     <div>
       <Navbar />
-      <div className='main-donateBloodForm'>
-        <div className='donateBlood-conatiner'>
-          <form className='donateBloodAmountForm' >
+      <div className='main-donateBloodForm' id='main-donateBloodForm'>
+        <div className='donateBlood-conatiner' >
+          <form className='donateBloodAmountForm'  >
             <h1>Donate Blood</h1>
             <p>Donate Blood for Saving Millions of People and Child Lifes. </p>
             <div className='fullName-donateBlood-Field'>
@@ -82,7 +82,7 @@ export default function DonateBlood() {
             </div>
             <div className='bloodCate-donateBlood-Field'>
               <FormControl margin='normal' fullWidth>
-                <InputLabel required id="demo-simple-select-label">Blood</InputLabel>
+                <InputLabel required id="demo-simple-select-label">Blood Type</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
@@ -138,7 +138,7 @@ export default function DonateBlood() {
             <div className='dnrAge-donateBlood-Field'>
               <TextField
                 id="outlined-basic"
-                label="Donar Age"
+                label="Donor Age"
                 variant="outlined"
                 margin='normal'
                 fullWidth
@@ -184,7 +184,7 @@ export default function DonateBlood() {
             <div className='dnraddress-donateBlood-Field'>
               <TextField
                 id="outlined-basic"
-                label="Doner Address"
+                label="Donor Address"
                 variant="outlined"
                 fullWidth
                 margin='normal'

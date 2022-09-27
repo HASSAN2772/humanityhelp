@@ -14,10 +14,10 @@ export default function Navbar() {
                     <div className='header-container'>
                         <nav className='header-nav'>
                             <ul className='header-ul'>
-                                <li><Link><FontAwesomeIcon icon={faFacebookSquare} size="xl" /></Link></li>
-                                <li><Link><FontAwesomeIcon icon={faWhatsapp} size="xl" /></Link></li>
-                                <li><Link><FontAwesomeIcon icon={faTwitter} size="xl" /></Link></li>
-                                <li><Link><FontAwesomeIcon icon={faInstagram} size="xl" /></Link></li>
+                                <li><Link><FontAwesomeIcon icon={faFacebookSquare}  /></Link></li>
+                                <li><Link><FontAwesomeIcon icon={faWhatsapp}  /></Link></li>
+                                <li><Link><FontAwesomeIcon icon={faTwitter}  /></Link></li>
+                                <li><Link><FontAwesomeIcon icon={faInstagram} /></Link></li>
                             </ul>
                             <div className='header-btn'>
                                 <Link to="/login"><button className='h-loginbtn'>Login</button></Link>
@@ -26,12 +26,12 @@ export default function Navbar() {
                         </nav>
                         <div className='headerlogo'>
                             <div className='logoimg-div'>
-                                <img src='/assets/sliderimgs/Logo 2.png' alt='img' style={{width:"250px" ,height:"130px"}} />
+                                <img src='/assets/sliderimgs/Logo.png' alt='img' style={{width:"250px" ,height:"130px"}} />
                             </div>
                             <ul className='ul-menu'>
                                 <li><Link to="/" id='menu-ul-Link' >Home</Link></li>
                                 <li><Link to="/gallery" id='menu-ul-Link' >Gallery</Link></li>
-                                <li><Link to="/causes" id='menu-ul-Link' >Causes</Link></li>
+                                <li><Link to="/applicants" id='menu-ul-Link' >Applicants</Link></li>
                                 <li><Link to="/contact" id='menu-ul-Link' >Contact Us</Link></li>
                                 
                             </ul>

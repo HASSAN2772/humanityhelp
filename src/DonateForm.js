@@ -1,31 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './DonateForm.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { purple, red,orange } from '@mui/material/colors';
-import {createStyles} from '@mui/styles'
-import {TextField, makeStyles,Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog } from '@mui/material'
+import { purple, red, orange } from '@mui/material/colors';
+import { createStyles } from '@mui/styles'
+import { TextField, makeStyles, Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog } from '@mui/material'
 const orgCol = orange[500]
 
 const theme = createStyles({
     palette: {
-      primary: orange[500],
-      secondary: red[500]
+        primary: orange[500],
+        secondary: red[500]
     },
-  });
+});
 
 export default function DonateForm() {
     // const classes = useStyles();
-  
-    const [open, setOpen] = React.useState(false);
+
+    const [open, setOpen] = useState(false);
+    const [openeasyPaisa, seteasyPaisaClose] = useState(false);
     const handleClickOpen = () => {
-        setOpen(true);
+        setOpen(!open);
+    };
+    const handleClose = () => {
+        setOpen(false)
+    }
+    const easyPaisahandleClickOpen = () => {
+        setOpen(!openeasyPaisa);
+    };
+    const easyPaisahandleClose = () => {
+        seteasyPaisaClose(false);
     };
 
-    const handleClose = () => {
-        setOpen(false);
-    };
-    
     return (
         <div>
             <Navbar />
@@ -35,99 +41,88 @@ export default function DonateForm() {
                         <h1>Donate for Save Lifes</h1>
                         <p>You can save millions of people lifes by Donating.</p>
                         <TextField
-                          sx={{
-                            "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                            "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                            "& .MuiOutlinedInput-root:hover": {
-                                "& > fieldset": {
-                                  borderColor: "white"
-                                }},
-                            "& .MuiOutlinedInput-root": {
-                              "& > fieldset": { borderColor: "white" },
-                              "& .MuiInputBase-input":{color:'white'},
+                            sx={{
+                                "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                                "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
+                                "& .MuiOutlinedInput-root:hover": {
+                                    "& > fieldset": {
+                                        borderColor: "white"
+                                    }
                                 },
-                            "& .MuiInputBase-root": {color: 'white'},}}
-                          
-                          
+                                "& .MuiOutlinedInput-root": {
+                                    "& > fieldset": { borderColor: "white" },
+                                    "& .MuiInputBase-input": { color: 'white' },
+                                },
+                                "& .MuiInputBase-root": { color: 'white' },
+                            }}
+
+
                             id="outlined-basic"
                             label="Name"
                             variant="outlined"
                             fullWidth
                             margin='normal'
-                            // inputProps={{ className: classes.input }}
-                            />
+                        />
                         <TextField
                             id="outlined-basic"
-                            label="Name Appeare on Card"
+                            label="Name Appear on Card"
                             variant="outlined"
                             margin='normal'
                             fullWidth
                             required
                             sx={{
-                                "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                                "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                                "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                                "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
                                 "& .MuiOutlinedInput-root:hover": {
                                     "& > fieldset": {
-                                      borderColor: "white"
-                                    }},
+                                        borderColor: "white"
+                                    }
+                                },
                                 "& .MuiOutlinedInput-root": {
-                                  "& > fieldset": { borderColor: "white" },
-                                  "& .MuiInputBase-input":{color:'white'},
-                                    },
-                                "& .MuiInputBase-root": {color: 'white'},}}
+                                    "& > fieldset": { borderColor: "white" },
+                                    "& .MuiInputBase-input": { color: 'white' },
+                                },
+                                "& .MuiInputBase-root": { color: 'white' },
+                            }}
                         />
                         <div className='donationPaymentMethodLogos'>
-                            <div className='jazzcash'>
-                                <Button  onClick={handleClickOpen}>
-                                    <img src='assets/sliderimgs/jazzcasg-removebg-preview (1).png' />
-                                </Button>
-                                <Dialog
-                                    open={open}
-                                    onClose={handleClose}
-                                    aria-labelledby="draggable-dialog-title"
-                                >
-                                    <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title-Jazzcash">
-                                        For JazzCash
-                                    </DialogTitle>
-                                    <DialogContent>
-                                        <DialogContentText>
-                                            If you don't have Bank Account, You can share your donation to us via JazzCash
-                                            Our JazzCash No's +9263897665, +9284879946 Donate Happiness
-                                        </DialogContentText>
-                                    </DialogContent>
-                                    <DialogActions>
-                                        <Button autoFocus onClick={handleClose}>
-                                            Cancel
-                                        </Button>
-                                    </DialogActions>
-                                </Dialog>
+                            <div className='paymentMethods'>
+                                <div className='jazzcash'>
+                                    <img onClick={handleClickOpen} src='/assets/sliderimgs/easypaisa-logo.png' alt='jazcash' />
+                                </div>
+                                {
+                                    open ?
+                                        <div className='jazzDialog-box'>
+                                            <div className='dialogBox-Content'>
+                                                <h3>Our EasyPaisa</h3>
+                                                <p>If anyone want to donate via EasyPaisa, can send
+                                                us amount on our easypaisa account . <br /><br />
+                                                Account Title :  Donate Happiness <br />
+                                                Account No : <span>03131923674</span>
+                                                </p>
+                                            </div>
+                                            <button className='jazzCash-CloseBtn' onClick={handleClose}> Close</button>
+                                        </div> : null
+                                }
+                                {/* <div className='easypaisa'>
+                                    <img onClick={easyPaisahandleClickOpen} src='/assets/sliderimgs/easypaisa-logo.png' alt='easypaisa' />
+                                </div>
+                                {
+                                    openeasyPaisa ?
+                                        <div className='easyPaisaDialog-box'>
+                                            <div className='dialogBox-Content'>
+                                                <h3>Our EasyPaisa </h3>
+                                                <p>If anyone wnat donate via EasyPaisa, you can send
+                                                us on our easypaisa account . <br /><br />
+                                                Account Title :  Donate Happiness <br />
+                                                Account No : <a href=''> 031319236749</a>
+                                                </p>
+                                            </div>
+                                            <button className='jazzCash-CloseBtn' onClick={easyPaisahandleClose}> Close</button>
+                                        </div> : null
+                                } */}
                             </div>
-                            <div className='easypaisa'>
-                                <Button  onClick={handleClickOpen}>
-                                <img src='assets/sliderimgs/Easypaisa-removebg-preview.png' />
-                                </Button>
-                                <Dialog
-                                    open={open}
-                                    onClose={handleClose}
-                                    aria-labelledby="draggable-dialog-title"
-                                >
-                                    <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title-Easypaisa">
-                                        For Easypaisa
-                                    </DialogTitle>
-                                    <DialogContent>
-                                        <DialogContentText>
-                                            To subscribe to this website, please enter your email address here. We
-                                            will send updates occasionally.
-                                        </DialogContentText>
-                                    </DialogContent>
-                                    <DialogActions>
-                                        <Button autoFocus onClick={handleClose}>
-                                            Cancel
-                                        </Button>
-                                    </DialogActions>
-                                </Dialog>
-                            </div>
-                         
+
                         </div>
                         <TextField
                             id="outlined-basic"
@@ -136,17 +131,19 @@ export default function DonateForm() {
                             margin='normal' required
                             type="number"
                             sx={{
-                                "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                                "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                                "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                                "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
                                 "& .MuiOutlinedInput-root:hover": {
                                     "& > fieldset": {
-                                      borderColor: "white"
-                                    }},
+                                        borderColor: "white"
+                                    }
+                                },
                                 "& .MuiOutlinedInput-root": {
-                                  "& > fieldset": { borderColor: "white" },
-                                  "& .MuiInputBase-input":{color:'white'},
-                                    },
-                                "& .MuiInputBase-root": {color: 'white'},}}
+                                    "& > fieldset": { borderColor: "white" },
+                                    "& .MuiInputBase-input": { color: 'white' },
+                                },
+                                "& .MuiInputBase-root": { color: 'white' },
+                            }}
                         />
                         <TextField
                             id="outlined-basic"
@@ -155,17 +152,19 @@ export default function DonateForm() {
                             margin='normal'
                             type="number" required
                             sx={{
-                                "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                                "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                                "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                                "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
                                 "& .MuiOutlinedInput-root:hover": {
                                     "& > fieldset": {
-                                      borderColor: "white"
-                                    }},
+                                        borderColor: "white"
+                                    }
+                                },
                                 "& .MuiOutlinedInput-root": {
-                                  "& > fieldset": { borderColor: "white" },
-                                  "& .MuiInputBase-input":{color:'white'},
-                                    },
-                                "& .MuiInputBase-root": {color: 'white'},}}
+                                    "& > fieldset": { borderColor: "white" },
+                                    "& .MuiInputBase-input": { color: 'white' },
+                                },
+                                "& .MuiInputBase-root": { color: 'white' },
+                            }}
                         />
                         <TextField
                             id="outlined-basic"
@@ -176,17 +175,19 @@ export default function DonateForm() {
                             type="number"
                             required
                             sx={{
-                                "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                                "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
+                                "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                                "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
                                 "& .MuiOutlinedInput-root:hover": {
                                     "& > fieldset": {
-                                      borderColor: "white"
-                                    }},
+                                        borderColor: "white"
+                                    }
+                                },
                                 "& .MuiOutlinedInput-root": {
-                                  "& > fieldset": { borderColor: "white" },
-                                  "& .MuiInputBase-input":{color:'white'},
-                                    },
-                                "& .MuiInputBase-root": {color: 'white'},}}
+                                    "& > fieldset": { borderColor: "white" },
+                                    "& .MuiInputBase-input": { color: 'white' },
+                                },
+                                "& .MuiInputBase-root": { color: 'white' },
+                            }}
                         />
                         <button className='donateAmountBtn'>Donate</button>
                     </form>

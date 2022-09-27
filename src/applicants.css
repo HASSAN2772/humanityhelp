@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+body {
+    padding: 0px;
+    margin: 0px;
+    min-width: 320px;
+}
+
+* {
+    box-sizing: border-box;
+}
+.ma
+{
+    width: 100%;
+  
+}
+.directFunds{
+    width: 90%;
+    margin: -21px 5%;
+
+}
+.funds-Main
+{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 30px 0px 100px 0px; 
+    height: auto;   
+    position: relative;
+
+
+}
+.directFund-Img
+{
+    width: 60%;
+    background-color: rgb(32, 47, 48);
+    height: 440px;
+    overflow: hidden;
+    left: 0%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 5px;
+}
+.directFund-Img img{
+
+   width: 100%;
+}
+.directFund-Funds
+{
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 22%;
+    right: 0%;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    
+}
+.h1-afterSearch h1{
+    margin: 40px 0px 0px;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
+}
+.h1-afterSearch h1::after
+{
+    height: 2px;
+    width: 30%;
+    margin-left: 3%;
+    content: "";
+    display: block;
+    background-color: #f7941d;
+    margin: 10px 35%;
+}
+.funds-Details
+{
+    margin: 0px 5%;
+}
+.funds-Details h1{
+    color: #f7941d;
+
+}
+.funds-Details p{
+    
+    color: #212121;
+}
+.funds-List
+{
+    width: 100%;
+    height: 50px;
+    border-top: 1.5px solid black;
+    margin-top: 3px;
+    
+    
+}
+.funds-List .funds-name
+{
+    float: left;
+    padding: 13px 5px;
+    color: black;
+    font-weight: 600;
+}
+
+.funds-List .funds-btn
+{
+    float: right;
+    color: #f7941d;
+    padding: 8px 10px;
+    margin-top: 8px;
+    border: 1px solid #f7941d;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+
+
+
+}
+.searchData
+{
+    width: 100%;
+    height: 250px;
+    margin: 10px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    
+}
+/* ------------search =---------------- */
+
+.Status
+{
+    width: 100%;
+    height: auto;
+    background-color: #f7941d;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    
+}
+.searchStatus
+{
+    width: 100%;
+    padding: 50px 0px;
+   
+}
+.searchBar
+{
+    width: 70%;
+    margin-left: 13%;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border-style: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid white;
+    float: left;
+}
+.searchIcon
+{
+    display: block;
+    margin-top: 10px;
+    margin-right: 50px;
+    padding: 0px 10px;
+    cursor: pointer;
+    
+    
+}
+.comImgs
+{   
+    width: 100%;
+    height: 730px;
+    margin: 10px 0px;
+    color: #212121;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.comImg-p
+{
+    height: 400px;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    
+    background-color: #362F37;
+    
+  
+}
+.comImg-img
+
+{
+    width: 50%;
+    position: relative;
+    height: 670px;
+    margin: 10px 0xp;
+    border-radius: 5px;
+    
+
+}
+.comImg-img img
+{
+    border-radius: 5px;
+    height: 670px;
+
+}
+.comImgDiv
+{
+    width: 449px;
+    margin: 0px auto;
+    height: 670px;
+    border-radius: 5px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+
+
+
+}
+.comUrduImgBtn-overlay
+
+{
+    position: absolute;
+    top: 0;
+    left: 13%;
+    opacity: 0;
+    width: 455px;
+    transition: .5s ease-out;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    height: 670px;
+    cursor: pointer;
+    
+}
+
+/* .comUrduImgBtn-overlay:hover{
+    opacity:1 ;
+} */
+.comImg-img:hover .comUrduImgBtn-overlay
+{
+    opacity: 1;
+    color: #f7941d;
+    
+}
+.overlay-det
+{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}
+.comUrduImgBtn-overlay button
+{
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    outline: none;
+    background-color: #f7941d;
+    color: #fff;
+    border-style: none;
+    border: 1px solid wheat;
+    cursor: pointer;
+}
+
+.comImg-p p{
+    margin: 10px 50px;
+    color: white;
+    font-size: 22px;
+    color: #212121;
+    /* font-weight: 600; */
+    /* text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(216, 169, 67, 0.3); */
+   
+}
+#comImg-p-p1
+{    text-align: center;
+    /* font-weight: 600; */
+    margin: 80px 0px 10px;
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(216, 169, 67, 0.3);
+    
+   
+
+
+}
+#comImg-p-p2
+{  text-align: center;
+    margin: 15px 20px;
+    font-size: 28px;
+    color: #f7941d;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(43, 41, 38, 0.3);
+}
+#comImg-p-p3
+{  text-align: center;
+    font-size: 18px;
+    color: #fff;
+    margin: 10px 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(216, 169, 67, 0.3);
+}

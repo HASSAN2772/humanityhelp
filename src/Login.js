@@ -61,7 +61,7 @@ export default function Login() {
                 <div className='login-Container'>
                     <div className='loginLeft-details'>
                         <div className='login-Logo'>
-                        <img src='/assets/sliderimgs/Logo 2.png' style={{width:"250px" ,height:"130px"}} />
+                        <img src='/assets/sliderimgs/Logo.png' style={{width:"250px" ,height:"130px"}} />
 
                         </div>
                         <h2>Donate Happiness</h2>
@@ -76,6 +76,10 @@ export default function Login() {
                             <form>
                                 <div className='username-login'>
                                     <TextField
+                                    label="Username"
+                                    variant="standard"
+                                    fullWidth
+                                    margin='normal'
                                         name='email'
                                         value={user.email}
                                         onChange={handler}
@@ -83,16 +87,14 @@ export default function Login() {
                                         //  onChange={(e) => {
                                         //      setUsername(e.target.value)
                                         //  }}
-                                        label="Username"
-                                        variant="standard"
-                                        fullWidth
-                                        margin='normal'
+                                        
                                     />
                                 </div>
                                 <div className='password-login'>
                                     <TextField
                                         label="Password"
                                         type="password"
+
                                         variant="standard"
                                         fullWidth
                                         margin='normal'

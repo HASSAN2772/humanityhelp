@@ -83,7 +83,7 @@ export default function Signup() {
                 <div className='Signup-Container'>
                     <div className='SignupLeft-details'>
                         <div className='Signup-Logo'>
-                            <img src='/assets/sliderimgs/Logo 2.png' style={{ width: "250px", height: "130px" }} />
+                            <img src='/assets/sliderimgs/Logo.png' style={{ width: "250px", height: "130px" }} />
                         </div>
                         <h2>Donate Happiness</h2>
                         <p>First you have to SignUp</p>
@@ -92,9 +92,9 @@ export default function Signup() {
                         </p>
                         <div className='contributionCompLogos'>
                             <div className='signupContrib-Comp-Logos-img1'>
-                                <img src='./assets/sliderimgs/transparentHands (2).png' alt='img 1' />
+                                <img src='./assets/sliderimgs/transparent-hand-logo.png' alt='img 1' />
                             </div><div className='signupContrib-Comp-Logos-img2'>
-                                <img src='./assets/sliderimgs/shaukatkhanam.png' alt='img 2' />
+                                <img src='./assets/sliderimgs/shaukat-Khanam-logo.png' alt='img 2' />
                             </div>
                             {/* <div className='signupContrib-Comp-Logos-img3'>
                                 <img src='./assets/sliderimgs/edhilogo.png' alt='img 2' />
@@ -151,7 +151,7 @@ export default function Signup() {
                                 </div>
                                 <div className='password-Signup'>
                                     <TextField
-                                        required
+                                        // required
                                         label="Password"
                                         type="password"
                                         variant="standard"

@@ -133,6 +133,16 @@
 /* comment form  css*/
 
 
-.contactInfoLeft-details h2{
+/* .contactInfoLeft-details h2{
     margin: 0px;
 }
+.ContactForm .MuiFormLabel-root
+{
+    color: #212121;
+}
+.MuiFormControl-root .MuiOutlinedInput-root {
+    color: #212121;
+}
+.MuiFormControl-root label {
+    color: #212121;
+} */

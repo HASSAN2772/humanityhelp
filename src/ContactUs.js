@@ -9,81 +9,23 @@ import axios from 'axios';
 
 export default function ContactUs() {
 
-    //   const [comment,setComment] = useState({
-      
-    //     firstName:"",
-    //     lastName:"",
-    //     email:"",
-    //     comment:"",
+  const[firstname,setFirstname] = useState("");
+  const[lastname,setLastname] = useState("");
+  const[email,setEmail] = useState("");
+  const[comment,setComment] = useState("");
 
-    //   })
-
-    //   const commentHandler = (e) =>
-    //   {
-    //     e.preventDefault();
-
-    //     const { name,value} = e.target
-
-    //     setComment({
-
-    //       ...comment,
-    //       [name]:value
-
-    //     })
-
-
-    //   }
-    //   const SaveUser = () =>
-
-    //   {
-    //     console.log(comment);
-    //  const comentData = axios.post('http://localhost:5000/comment',comment).then(res=>
-    //     {
-    //       console.log(comentData)
-    //     }).then(err=>{
-    //       console.log(err)
-    //     })
-    //       // axios.post('http://localhost:5000/comment',comment)
-    //       // .then(comment=>{
-    //       //     console.log(comment)
-    //       //   })
-    //       // .then(err=>{
-    //       //     console.log(err)
-    //       // })
-    //   }
-
-    const[firstname,setFirstName] = useState("")
-    const[lastname,setLastName] = useState("")
-    const[email,setEmail] = useState("")
-    const[comment,setComment] = useState("")
-
- const SaveUser = (e) =>  
-    {
-
-      e.preventDefault();
-      axios.post('http://localhost:3000/contact',{firstname,lastname,email,comment})
-      .then(res=>{
+  const SaveUser = () =>
+  {
+    const commentData = {firstname,lastname,email,comment};
+    console.log(commentData)
+    axios.post("http://localhost:5000/comment",commentData)
+    .then(res => {
       console.log(res)
-      })
-      .then(err=>
+    }).then(err =>
       {
-      console.log(err)
+        console.log(err)
       })
-    // const data = {firstName,lastName,email,comment}
-    //   Axios({
-    //     method: "POST",
-    //     url: "http://localhost:5000/comment",
-    //     data,
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     }
-    //   }).then(res => {
-    //     console.log(res.data.message);
-    //   });
-
-    }
-
-
+  }
   return (
     <div>
       <Navbar />
@@ -116,33 +58,31 @@ export default function ContactUs() {
           <div className='contactInfoRight'>
             <h1>Comment Here</h1>
             <div className='commentForm'>
-              <form>
                 <div className='form-control' id='commentFormNameField'>
                   <TextField
+                    name='firstname'
                     value={firstname}
-                    name='firstName'
                     onChange={(e) => {
-                      setFirstName(e.target.value)
-                    }}
+                      setFirstname(e.target.value)
+                  }}
                     id="outlined-basic"
                     label="First Name"
                     variant="outlined"
-                    // onChange={commentHandler}
-
                     fullWidth
                   />
                 </div>
                 <div className='form-control' id='commentFormLastNameField'>
-                  <TextField id="outlined-basic"
+                  <TextField 
+                    id="outlined-basic"
                     label="Last Name"
                     variant="outlined"
                     fullWidth
+                    name='lastname'
+
                     value={lastname}
-                    name='lastName'
-                    // onChange={commentHandler}
                     onChange={(e) => {
-                      setLastName(e.target.value)
-                    }}
+                      setLastname(e.target.value)
+                  }}
                   />
                 </div>
                 <div className='form-control' id='commentFormEmailField'>
@@ -150,13 +90,11 @@ export default function ContactUs() {
                     label="Email Address"
                     variant="outlined"
                     fullWidth
-                    value={email}
                     name='email'
+                    value={email}
                     onChange={(e) => {
                       setEmail(e.target.value)
-                    }}
-                    // onChange={commentHandler}
-
+                  }}
                   />
                 </div>
                 <div className='form-control' id='commentFormCommentField'>
@@ -167,24 +105,21 @@ export default function ContactUs() {
                     rows={4}
                     defaultValue="Default Value"
                     fullWidth
-                    value={comment}
                     name='comment'
-                    // onChange={commentHandler}
-
+                    value={comment}
                     onChange={(e) => {
                       setComment(e.target.value)
-                    }}
+                  }}
+                    
                   />
                 </div>
-                <button onClick={SaveUser} className='commentFormSumbitBtn'>Submit</button>
-              </form>
+                <button type='submit' onClick={SaveUser} className='commentFormSumbitBtn'>Submit</button>
             </div>
           </div>
         </div>
       </div>
       <div className='contactUs-row-3'>
         <div className='contactMap'>
-          {/* <iframe src="https://www.google.com/maps/d/edit?mid=1TfXeVTwnym2Gk4ID7wKP1aXB-H9NfxQ&usp=sharing" width="100%" height="550px" /> */}
           <iframe src="https://www.google.com/maps/d/embed?mid=1TfXeVTwnym2Gk4ID7wKP1aXB-H9NfxQ&ehbc=2E312F" width="100%" height="550px" />
         </div>
       </div>

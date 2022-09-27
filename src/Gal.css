@@ -1,34 +1,98 @@
-.main-Gal
+/* 
+.Gallery-Container
 {
-    height: 500px;
     width: 100%;
+    height: 200px;
+   
+    background-color: rgba(0, 0, 0, 0.3);
 
 }
-.gal-Img
+.Gallery-Images
 {
-    width: 300px;
-    height: 400px;
-    background-color: darkgreen;
-  position: absolute;
-  box-sizing: border-box;
-  
-
-
+    width: 100%;
+    float: left;
+    min-height: 800px;
+    background-color: #ffff;
+    
 }
-.gal-img-overlay
+
+.searchingBtnsGallery
 {
-    width: 300px;
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    margin: 10px 0px 50px 0;
+}
+.searchingBtnsGallery button{
+
+    padding: 13px 30px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 1px solid white;
+    margin-right: 10px;
+    cursor: pointer;
     background-color: #212121;
-    position: relative;
-    left: -50px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    
+    
 
-    
-    
 }
-.gal-con
+
+.main-Gallery h1 {
+    text-align: center;
+    color: white;
+    margin: 0px;
+    padding: 20px 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.main-images
 {
-    width: 80%;
-    margin: 50px 10%;
-    background-color: orange;
+    position: relative;
+    width: 23%;
+    height: 400px;
+    float: left;
+    margin: 10px 1% ;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+
 }
+.images
+{
+    height: 430px;
+    width: 100%;
+}
+.images img{
+    width: 100%;
+    height: 100%;
+}
+.imagesOverlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 430px;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: .5s ease-out;
+    cursor: pointer;
+
+
+}
+.imagesOverlay:hover{
+    opacity: 1;
+}
+.imagesOverlay img
+{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}  */
