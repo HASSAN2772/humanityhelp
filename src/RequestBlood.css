@@ -79,52 +79,35 @@
     float: right;
 }
 
-form #salaryPara {
-    margin: 10px 10px;
-    font-size: 15px;
-}
-
-.dnraddress-requestBlood-Field {
+/* .dnraddress-requestBlood-Field {
     width: 100%;
 }
 
-/* 
- */
-
- .requestBloodAmountForm label
+.selectRequested-City
 {
-    color: aliceblue;
-}
-.requestBloodAmountForm input{
-    color: aliceblue;
-}
-.requestBloodAmountForm .MuiOutlinedInput-notchedOutline 
-{
+    width: 418px;
+    height: 55px;
+    border-radius: 3px;
+    font-size: 18px;
+    color: white;
+    margin: 14px 0px;
+    outline: none;
+    border-style: none;
     border: 1px solid white;
+    background-color: transparent;
+    
 }
-.requestBloodAmountForm .MuiOutlinedInput-notchedOutline:hover
-{
-    border: 1px solid white;
-}
-.requestBloodAmountForm .MuiInputLabel-formControl
-{
-    color: aliceblue;
-}
-.css-1ftyaf0
-{
-    color: aliceblue;
-}
-.requestBloodAmountForm .MuiFormControl-root:hover{
+.selectRequested-City option{
+    height: 40px;
+    width: 200px;
+    padding: 30px;
+    background-color: #212121;
+} */
+#demo-simple-select-label{
     color: white;
 }
-.requestBloodAmountForm fieldset:hover{
-    border-color: antiquewhite;
-}
-.requestBloodAmountForm .MuiSvgIcon-root
+.fullName-requestBlood-Field .MuiAutocomplete-tag		
 {
-    color: white;
-}
-.requestBloodAmountForm .MuiInputLabel-root:hover
-{
+    background-color: #F2963A;
     color: #F2963A;
 }

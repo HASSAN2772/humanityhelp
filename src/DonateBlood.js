@@ -1,28 +1,22 @@
 import React, { useState } from 'react'
 import './DonateBlood.css'
-import { MenuItem, FormControl, Select, makeStyles, PaperComponent, TextField, Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog, InputLabel } from '@mui/material'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { purple, red,orange } from '@mui/material/colors';
-import {createStyles} from '@mui/styles'
-// import {, makeStyles,Button, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog } from '@mui/material'
-const orgCol = orange[500]
-
-const theme = createStyles({
-    palette: {
-      primary: orange[500],
-      secondary: red[500]
-    },
-  });
+import { TextField, MenuItem, InputLabel, Select, FormControl} from '@mui/material';
 
 
 
 export default function DonateBlood() {
 
   const [blood, setBlood] = useState("");
-  const handleChange = (e) => {
+  const handleChangeblood = (e) => {
 
     setBlood(e.target.value)
+  }
+    const [city, setCity] = useState("");
+  const handleChangecity = (e) => {
+
+    setCity(e.target.value)
 
   }
   return (
@@ -36,18 +30,33 @@ export default function DonateBlood() {
             <div className='fullName-donateBlood-Field'>
               <TextField
                    sx={{
-                    "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                    "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                    "& .MuiOutlinedInput-root:hover": {
-                        "& > fieldset": {
-                          borderColor: "white"
-                        }},
-                    "& .MuiOutlinedInput-root": {
-                      "& > fieldset": { borderColor: "white" },
-                      "& .MuiInputBase-input":{color:'white'},
-                        },
-                    "& .MuiInputBase-root": {color: 'white'},}}
-                  
+                    '& .MuiFormLabel-root': {
+                      color: 'white',
+                   },
+                   '& .MuiInputBase-input': {
+                     color: 'white',
+                   },
+                   '& label.Mui-focused': {
+                     color: 'White',
+                   },
+                   '& .MuiInput-underline:after': {
+                     borderBottomColor: 'white',
+                   },
+                   '& .MuiOutlinedInput-root': {
+                     '& fieldset': {
+                       borderColor: 'white',
+                     },
+                     '&:hover fieldset': {
+                      
+                       borderColor: 'white',
+                     },
+                     '&.Mui-focused fieldset': {
+                       borderColor: 'white',
+                     },
+                   },
+               }}
+
+
 
                 id="outlined-basic"
                 label="Full Name"
@@ -67,17 +76,33 @@ export default function DonateBlood() {
                 required
                 type="number"
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                  "& .MuiOutlinedInput-root:hover": {
-                      "& > fieldset": {
-                        borderColor: "white"
-                      }},
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": { borderColor: "white" },
-                    "& .MuiInputBase-input":{color:'white'},
-                      },
-                  "& .MuiInputBase-root": {color: 'white'},}}
+                  '& .MuiFormLabel-root': {
+                    color: 'white',
+                 },
+                 '& .MuiInputBase-input': {
+                   color: 'white',
+                 },
+                 '& label.Mui-focused': {
+                   color: 'White',
+                 },
+                 '& .MuiInput-underline:after': {
+                   borderBottomColor: 'white',
+                 },
+                 '& .MuiOutlinedInput-root': {
+                   '& fieldset': {
+                     borderColor: 'white',
+                   },
+                   '&:hover fieldset': {
+                    
+                     borderColor: 'white',
+                   },
+                   '&.Mui-focused fieldset': {
+                     borderColor: 'white',
+                   },
+                 },
+             }}
+
+
               />
             </div>
             <div className='bloodCate-donateBlood-Field'>
@@ -90,16 +115,44 @@ export default function DonateBlood() {
                   required
                   value={blood}
                   fullWidth
-                  onChange={handleChange}
+                  onChange={handleChangeblood}
+                  sx={{
+                    '& .MuiFormLabel-root': {
+                      color: 'white',
+                   },
+                   '& .MuiInputBase-input': {
+                     color: 'white',
+                   },
+                   '& label.Mui-focused': {
+                     color: 'White',
+                   },
+                   '& .MuiInput-underline:after': {
+                     borderBottomColor: 'white',
+                   },
+                   '& .MuiOutlinedInput-root': {
+                     '& fieldset': {
+                       borderColor: 'white',
+                     },
+                     '&:hover fieldset': {
+                      
+                       borderColor: 'white',
+                     },
+                     '&.Mui-focused fieldset': {
+                       borderColor: 'white',
+                     },
+                   },
+               }}
+
+
                 >
                   <MenuItem value={10}>A+</MenuItem>
                   <MenuItem value={20}>A-</MenuItem>
                   <MenuItem value={30}>B+</MenuItem>
-                  <MenuItem value={30}>B-</MenuItem>
-                  <MenuItem value={30}>AB+</MenuItem>
-                  <MenuItem value={30}>AB-</MenuItem>
-                  <MenuItem value={30}>O+</MenuItem>
-                  <MenuItem value={30}>O-</MenuItem>
+                  <MenuItem value={40}>B-</MenuItem>
+                  <MenuItem value={50}>AB+</MenuItem>
+                  <MenuItem value={60}>AB-</MenuItem>
+                  <MenuItem value={70}>O+</MenuItem>
+                  <MenuItem value={80}>O-</MenuItem>
                 </Select>
               </FormControl>
             </div>
@@ -111,23 +164,39 @@ export default function DonateBlood() {
                   id="demo-simple-select"
                   margin='normal'
                   required
-                  value={blood}
+                  value={city}
                   label="City"
                   fullWidth
-                  onChange={handleChange}
+                  onChange={handleChangecity}
                   className="donateBloodSelect"
                   sx={{
-                    "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                    "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                    "& .MuiOutlinedInput-root:hover": {
-                        "& > fieldset": {
-                          borderColor: "white"
-                        }},
-                    "& .MuiOutlinedInput-root": {
-                      "& > fieldset": { borderColor: "white" },
-                      "& .MuiInputBase-input":{color:'white'},
-                        },
-                    "& .MuiInputBase-root": {color: 'white'},}}
+                    '& .MuiFormLabel-root': {
+                      color: 'white',
+                   },
+                   '& .MuiInputBase-input': {
+                     color: 'white',
+                   },
+                   '& label.Mui-focused': {
+                     color: 'White',
+                   },
+                   '& .MuiInput-underline:after': {
+                     borderBottomColor: 'white',
+                   },
+                   '& .MuiOutlinedInput-root': {
+                     '& fieldset': {
+                       borderColor: 'white',
+                     },
+                     '&:hover fieldset': {
+                      
+                       borderColor: 'white',
+                     },
+                     '&.Mui-focused fieldset': {
+                       borderColor: 'white',
+                     },
+                   },
+               }}
+
+
                 >
                   <MenuItem value={10} defaultValue>Lahore </MenuItem>
                   <MenuItem value={20}>Islamabad</MenuItem>
@@ -145,17 +214,33 @@ export default function DonateBlood() {
                 required
                 type="number"
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                  "& .MuiOutlinedInput-root:hover": {
-                      "& > fieldset": {
-                        borderColor: "white"
-                      }},
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": { borderColor: "white" },
-                    "& .MuiInputBase-input":{color:'white'},
-                      },
-                  "& .MuiInputBase-root": {color: 'white'},}}
+                  '& .MuiFormLabel-root': {
+                    color: 'white',
+                 },
+                 '& .MuiInputBase-input': {
+                   color: 'white',
+                 },
+                 '& label.Mui-focused': {
+                   color: 'White',
+                 },
+                 '& .MuiInput-underline:after': {
+                   borderBottomColor: 'white',
+                 },
+                 '& .MuiOutlinedInput-root': {
+                   '& fieldset': {
+                     borderColor: 'white',
+                   },
+                   '&:hover fieldset': {
+                    
+                     borderColor: 'white',
+                   },
+                   '&.Mui-focused fieldset': {
+                     borderColor: 'white',
+                   },
+                 },
+             }}
+
+
               />
             </div>
             <div className='dnrPhone-donateBlood-Field'>
@@ -168,17 +253,33 @@ export default function DonateBlood() {
                 required
                 type="number"
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                  "& .MuiOutlinedInput-root:hover": {
-                      "& > fieldset": {
-                        borderColor: "white"
-                      }},
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": { borderColor: "white" },
-                    "& .MuiInputBase-input":{color:'white'},
-                      },
-                  "& .MuiInputBase-root": {color: 'white'},}}
+                  '& .MuiFormLabel-root': {
+                    color: 'white',
+                 },
+                 '& .MuiInputBase-input': {
+                   color: 'white',
+                 },
+                 '& label.Mui-focused': {
+                   color: 'White',
+                 },
+                 '& .MuiInput-underline:after': {
+                   borderBottomColor: 'white',
+                 },
+                 '& .MuiOutlinedInput-root': {
+                   '& fieldset': {
+                     borderColor: 'white',
+                   },
+                   '&:hover fieldset': {
+                    
+                     borderColor: 'white',
+                   },
+                   '&.Mui-focused fieldset': {
+                     borderColor: 'white',
+                   },
+                 },
+             }}
+
+
               />
             </div>
             <div className='dnraddress-donateBlood-Field'>
@@ -190,17 +291,33 @@ export default function DonateBlood() {
                 margin='normal'
                 required 
                 sx={{
-                  "& .MuiInputLabel-root": {color: 'white'},//styles the label
-                  "& .MuiInputLabel-root:hover": {color: 'white'},//styles the lab
-                  "& .MuiOutlinedInput-root:hover": {
-                      "& > fieldset": {
-                        borderColor: "white"
-                      }},
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": { borderColor: "white" },
-                    "& .MuiInputBase-input":{color:'white'},
-                      },
-                  "& .MuiInputBase-root": {color: 'white'},}}
+                  '& .MuiFormLabel-root': {
+                    color: 'white',
+                 },
+                 '& .MuiInputBase-input': {
+                   color: 'white',
+                 },
+                 '& label.Mui-focused': {
+                   color: 'White',
+                 },
+                 '& .MuiInput-underline:after': {
+                   borderBottomColor: 'white',
+                 },
+                 '& .MuiOutlinedInput-root': {
+                   '& fieldset': {
+                     borderColor: 'white',
+                   },
+                   '&:hover fieldset': {
+                    
+                     borderColor: 'white',
+                   },
+                   '&.Mui-focused fieldset': {
+                     borderColor: 'white',
+                   },
+                 },
+             }}
+
+
 
               />
             </div>
@@ -211,4 +328,4 @@ export default function DonateBlood() {
       <Footer />
     </div>
   )
-}
+            }

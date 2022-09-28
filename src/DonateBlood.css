@@ -88,11 +88,11 @@
     width: 48%;
     float: right;
 }
-.donateBloodSelect
+/* .donateBloodSelect
 {
     outline: none;
    
-}
+} */
 /* .MuiFormControl-root label
 {
     color: white;
@@ -104,7 +104,7 @@
 
 
 /* this class taking from Sx={ } */
-.MuiSelect-outlined
+/* .MuiSelect-outlined
 {
     
 }
@@ -144,4 +144,4 @@
 .donateBloodAmountForm .MuiInputLabel-root:hover
 {
     color: #F2963A;
-}
+} */

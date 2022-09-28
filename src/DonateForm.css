@@ -8,12 +8,6 @@
     background-position-x: center;
     background-size: 100%;
 }
-.textfield
-{
-    background-color: #F2963A;
-    border: white;
-    color: aliceblue;
-}
 
 .donation-conatiner {
     width: 90%;
@@ -82,24 +76,27 @@
 }
 .paymentMethods .jazzcash
 {
+  margin-top: 30px;
   width: 50%;
   float: left;
-  margin-top: -10px;
   cursor: pointer;
 }
+
 .paymentMethods .easypaisa
 {
-  width: 50%;
-  float: left;
+  margin-top: -75px;
+  width: 68%;
+  float: right;
   cursor: pointer;
 
 }
+
 .jazzDialog-box
 {
     z-index: 2;
    position: absolute;
-   top: -150%;
-   left: 27%;
+   top: -100%;
+   left: 23%;
     height: 170px;
     width: 500px;
     border-radius: 5px;
@@ -107,28 +104,75 @@
    
 
 }
-.dialogBox-Content
+.jazzdialogBox-Content
 {
     height: 130px;
     color: white;
     width: 80%;
     margin: 20px auto 0px ;
 }
-.dialogBox-Content h3{
+.jazzdialogBox-Content h3{
     margin: 0px 0px 5px 0px;
     color: #f7941d;
     font-family: 'Montserrat', sans-serif;
 
 
-}.dialogBox-Content p{
+}.jazzdialogBox-Content p{
    
     margin: 0px;
     font-size: 14px;
-}.dialogBox-Content span{
+}.jazzdialogBox-Content span{
    
     color: #f7941d;
 }
 .jazzCash-CloseBtn
+{
+    
+    padding: 9px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    float: right;
+    margin-right: 20px;
+    border-style: none;
+    cursor: pointer;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -25px;
+}
+.easypaisaDialog-box{
+    z-index: 2;
+    position: absolute;
+    top: -100%;
+    left: 56%;
+     height: 170px;
+     width: 500px;
+     border-radius: 5px;
+     background-color: rgba(0, 0, 0, 0.7);
+    
+}
+.easydialogBox-Content{
+
+    height: 130px;
+    color: white;
+    width: 80%;
+    margin: 20px auto 0px ;
+}
+.easydialogBox-Content h3{
+    margin: 0px 0px 5px 0px;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+
+
+}.easydialogBox-Content p{
+   
+    margin: 0px;
+    font-size: 14px;
+}.easydialogBox-Content span{
+   
+    color: #f7941d;
+}
+.easypaisa-CloseBtn
 {
     
     padding: 9px 35px;

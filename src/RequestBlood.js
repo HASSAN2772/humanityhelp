@@ -1,27 +1,25 @@
 import React, { useState } from 'react'
 import './RequestBlood.css'
-import { Button, MenuItem, FormControl, Select, makeStyles, PaperComponent, TextField, DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog, InputLabel } from '@mui/material'
+import { MenuItem, FormControl, Select, TextField, InputLabel, Label, Autocomplete } from '@mui/material'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { purple, red, orange } from '@mui/material/colors';
-import { createStyles } from '@mui/styles'
-const orgCol = orange[500]
-
-const theme = createStyles({
-    palette: {
-        primary: orange[500],
-        secondary: red[500]
-    },
-});
 
 export default function DonateBlood() {
 
     const [blood, setBlood] = useState("");
-    const handleChange = (e) => {
+    const handleChangeblood = (e) => {
 
         setBlood(e.target.value)
 
     }
+    const [city, setCity] = useState("");
+    const handleChangecity = (e) => {
+
+        setCity(e.target.value)
+
+    }
+
+   
     return (
         <div>
             <Navbar />
@@ -33,91 +31,183 @@ export default function DonateBlood() {
                         <div className='fullName-requestBlood-Field'>
                             <TextField
                                 sx={{
-                                    "& .MuiInputLabel-root": { color: 'ornage' },//styles the label
-                                    "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
-                                    "& .MuiOutlinedInput-root:hover": {
-                                        "& > fieldset": {
-                                            borderColor: "white"
-                                        }
+                                    '& .MuiAutocomplete-inputFocused':{
+                                      backgroundColor:"black",
+                                      
                                     },
-                                    "& .MuiOutlinedInput-root": {
-                                        "& > fieldset": { borderColor: "white" },
-                                        "& .MuiInputBase-input": { color: 'white' },
-                                    },
-                                    "& .MuiInputBase-root": { color: 'white' },
+                                    '& .MuiFormLabel-root': {
+                                        color: 'white',
+                                     },
+                                     '& .MuiInputBase-input': {
+                                       color: 'white',
+                                     },
+                                     '& label.Mui-focused': {
+                                       color: 'White',
+                                     },
+                                     '& .MuiInput-underline:after': {
+                                       borderBottomColor: 'white',
+                                     },
+                                     '& .MuiOutlinedInput-root': {
+                                       '& fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                       '&:hover fieldset': {
+                                        
+                                         borderColor: 'white',
+                                       },
+                                       '&.Mui-focused fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                     },
                                 }}
 
+                                
+                               
                                 id="outlined-basic"
                                 label="Full Name"
                                 variant="outlined"
                                 fullWidth
                                 required
+                                
+                                
                                 margin='normal'
                             />
                         </div>
                         <div className='Cnic-requestBlood-Field'>
-                            <TextField
-                                sx={{
-                                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
-                                    "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
-                                    "& .MuiOutlinedInput-root:hover": {
-                                        "& > fieldset": {
-                                            borderColor: "white"
-                                        }
-                                    },
-                                    "& .MuiOutlinedInput-root": {
-                                        "& > fieldset": { borderColor: "white" },
-                                        "& .MuiInputBase-input": { color: 'white' },
-                                    },
-                                    "& .MuiInputBase-root": { color: 'white' },
-                                }}
+              <TextField
+                id="outlined-basic"
+                label="CNIC NO."
+                variant="outlined"
+                margin='normal'
+                fullWidth
+                required
+                type="number"
+                sx={{
+                  '& .MuiFormLabel-root': {
+                    color: 'white',
+                 },
+                 '& .MuiInputBase-input': {
+                   color: 'white',
+                 },
+                 '& label.Mui-focused': {
+                   color: 'White',
+                 },
+                 '& .MuiInput-underline:after': {
+                   borderBottomColor: 'white',
+                 },
+                 '& .MuiOutlinedInput-root': {
+                   '& fieldset': {
+                     borderColor: 'white',
+                   },
+                   '&:hover fieldset': {
+                    
+                     borderColor: 'white',
+                   },
+                   '&.Mui-focused fieldset': {
+                     borderColor: 'white',
+                   },
+                 },
+             }}
 
-                                id="outlined-basic"
-                                label="CNIC NO."
-                                variant="outlined"
-                                margin='normal'
-                                fullWidth
-                                required
-                                type="number"
-                            />
-                        </div>
-                        <div className='bloodCate-requestBlood-Field'>
-                            <FormControl margin='normal'
-                                fullWidth>
-                                <InputLabel required id="demo-simple-select-label">Blood Type</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    label="blood"
-                                    required
-                                    value={blood}
-                                    fullWidth
-                                    onChange={handleChange}
 
-                                >
-                                    <MenuItem value={10}>A+</MenuItem>
-                                    <MenuItem value={20}>A-</MenuItem>
-                                    <MenuItem value={30}>B+</MenuItem>
-                                    <MenuItem value={30}>B-</MenuItem>
-                                    <MenuItem value={30}>AB+</MenuItem>
-                                    <MenuItem value={30}>AB-</MenuItem>
-                                    <MenuItem value={30}>O+</MenuItem>
-                                    <MenuItem value={30}>O-</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </div>
+              />
+            </div>
+            <div className='bloodCate-requestBlood-Field'>
+              <FormControl margin='normal' fullWidth>
+                <InputLabel required id="demo-simple-select-label">Blood</InputLabel>
+                <Select
+                  // labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="blood"
+                  required
+                  value={blood}
+                  onChange={handleChangeblood}
+                  sx={{
+                    '& .MuiSelect-iconOpen': {
+                      color: 'white',
+                   },
+                   '& .MuiInputBase-input': {
+                     color: 'white',
+                   },
+                   '& .MuiSelect-icon': {
+                     color: 'White',
+                   },
+                  // '& .MuiOutlinedInput-root': {
+                  //   color: 'white',
+                  // },
+                  // '& .MuiInputBase-colorPrimary': {
+                  //   color: 'white',
+                  // },
+                  '& css-vysm2i-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"': {
+                    color: 'white',
+                  },
+                //  '& .MuiInputLabel-outlined': {
+                //   color: 'white',
+                //  },
+                //  '& .MuiFormLabel-colorPrimary': {
+                //   color: 'white',
+                //  },
+                //  '& .MuiFormLabel-filled': {
+                //   color: 'white',
+                //  },
+                //  '& css-1sumxir-MuiFormLabel-root-MuiInputLabel-root': {
+                //   color: 'white',
+                //  },
+                //  '& .Mui-focused': {
+                //   color: 'white',
+                //  },
+                
+                  //  '& .MuiInput-underline:after': {
+                  //    borderBottomColor: 'white',
+                  //  },
+                  //  '& .MuiOutlinedInput-root': {
+                  //    '& fieldset': {
+                  //      borderColor: 'white',
+                  //    },
+                  //    '&.Mui-focused fieldset': {
+                  //      borderColor: 'white',
+                  //    },
+                  //  },
+               }}
+
+
+                >
+                  <MenuItem value={10}>A+</MenuItem>
+                  <MenuItem value={20}>A-</MenuItem>
+                  <MenuItem value={30}>B+</MenuItem>
+                  <MenuItem value={40}>B-</MenuItem>
+                  <MenuItem value={50}>AB+</MenuItem>
+                  <MenuItem value={60}>AB-</MenuItem>
+                  <MenuItem value={70}>O+</MenuItem>
+                  <MenuItem value={80}>O-</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
                         <div className='dnrCity-requestBlood-Field'>
                             <FormControl margin='normal' fullWidth>
                                 <InputLabel required id="demo-simple-select-label">City</InputLabel>
                                 <Select
-                                    labelId="demo-simple-select-label"
+                                    // labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     margin='normal'
                                     required
-                                    value={blood}
+                                    value={city}
                                     label="City"
                                     fullWidth
-                                    onChange={handleChange}
+                                    onChange={handleChangecity}
+                                    sx={{
+                                      '& .MuiSelect-iconOpen': {
+                                        color: 'white',
+                                     },
+                                     '& .MuiInputBase-input': {
+                                       color: 'white',
+                                     },
+                                     '& .MuiSelect-icon': {
+                                       color: 'White',
+                                     },
+                                    }}
+
+
                                 >
                                     <MenuItem value={10} defaultValue>Lahore </MenuItem>
                                     <MenuItem value={20}>Islamabad</MenuItem>
@@ -128,19 +218,32 @@ export default function DonateBlood() {
                         <div className='dnrAge-requestBlood-Field'>
                             <TextField
                                 sx={{
-                                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
-                                    "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
-                                    "& .MuiOutlinedInput-root:hover": {
-                                        "& > fieldset": {
-                                            borderColor: "white"
-                                        }
-                                    },
-                                    "& .MuiOutlinedInput-root": {
-                                        "& > fieldset": { borderColor: "white" },
-                                        "& .MuiInputBase-input": { color: 'white' },
-                                    },
-                                    "& .MuiInputBase-root": { color: 'white' },
+                                    '& .MuiFormLabel-root': {
+                                        color: 'white',
+                                     },
+                                     '& .MuiInputBase-input': {
+                                       color: 'white',
+                                     },
+                                     '& label.Mui-focused': {
+                                       color: 'White',
+                                     },
+                                     '& .MuiInput-underline:after': {
+                                       borderBottomColor: 'white',
+                                     },
+                                     '& .MuiOutlinedInput-root': {
+                                       '& fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                       '&:hover fieldset': {
+                                        
+                                         borderColor: 'white',
+                                       },
+                                       '&.Mui-focused fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                     },
                                 }}
+
 
                                 id="outlined-basic"
                                 label="Requester Age"
@@ -150,30 +253,38 @@ export default function DonateBlood() {
                                 required
                                 type="number"
                             />
-                            {/* <div className='uplaodSlarySlip-Btn-requestBlood'>
-                                <p id='salaryPara'>Upload your Salary Slip for Validity *Not for having Income more Than 20,000/ Pkr</p>
-                                <Button variant="contained" id='uploadSalruSlipBtn' margin='normal' fullWidth component="label">
-                                    Upload
-                                    <input hidden accept="image/*" multiple type="file" />
-                                </Button>
-                            </div> */}
+                        
                         </div>
                         <div className='dnrPhone-requestBlood-Field'>
                             <TextField
                                 sx={{
-                                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
-                                    "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
-                                    "& .MuiOutlinedInput-root:hover": {
-                                        "& > fieldset": {
-                                            borderColor: "white"
-                                        }
-                                    },
-                                    "& .MuiOutlinedInput-root": {
-                                        "& > fieldset": { borderColor: "white" },
-                                        "& .MuiInputBase-input": { color: 'white' },
-                                    },
-                                    "& .MuiInputBase-root": { color: 'white' },
+                                    '& .MuiFormLabel-root': {
+                                        color: 'white',
+                                     },
+                                     '& .MuiInputBase-input': {
+                                       color: 'white',
+                                     },
+                                     '& label.Mui-focused': {
+                                       color: 'White',
+                                     },
+                                     '& .MuiInput-underline:after': {
+                                       borderBottomColor: 'white',
+                                     },
+                                     '& .MuiOutlinedInput-root': {
+                                       '& fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                       '&:hover fieldset': {
+                                        
+                                         borderColor: 'white',
+                                       },
+                                       '&.Mui-focused fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                     },
                                 }}
+
+
 
                                 id="outlined-basic"
                                 label="Ph Number."
@@ -193,20 +304,31 @@ export default function DonateBlood() {
                                 margin='normal'
                                 required
                                 sx={{
-                                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
-                                    "& .MuiInputLabel-root:hover": { color: 'white' },//styles the lab
-                                    "& .MuiOutlinedInput-root:hover": {
-                                        "& > fieldset": {
-                                            borderColor: "white"
-                                        }
-                                    },
-                                    "& .MuiOutlinedInput-root": {
-                                        "& > fieldset": { borderColor: "white" },
-                                        "& .MuiInputBase-input": { color: 'white' },
-                                    },
-                                    "& .MuiInputBase-root": { color: 'white' },
+                                    '& .MuiFormLabel-root': {
+                                        color: 'white',
+                                     },
+                                     '& .MuiInputBase-input': {
+                                       color: 'white',
+                                     },
+                                     '& label.Mui-focused': {
+                                       color: 'White',
+                                     },
+                                     '& .MuiInput-underline:after': {
+                                       borderBottomColor: 'white',
+                                     },
+                                     '& .MuiOutlinedInput-root': {
+                                       '& fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                       '&:hover fieldset': {
+                                        
+                                         borderColor: 'white',
+                                       },
+                                       '&.Mui-focused fieldset': {
+                                         borderColor: 'white',
+                                       },
+                                     },
                                 }}
-
                             />
                         </div>
                         <button className='requestAmountBtn'>Request</button>
