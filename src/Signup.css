@@ -110,7 +110,7 @@
 } */
 /* Signup right div css */
 .SignupForm {
-    margin: 50px 30% 0px 5%;
+    margin: 50px 20% 0px 5%;
 
 }
 
@@ -164,18 +164,28 @@ form .forgotPassword-Para {
 /* ,,,,,,,,,,,,,,,,,,,, */
 .firstname-Signup {
     float: left;
+    width: 50%;
 }
 
 .lastname-Signup {
     float: right;
+    width: 50%;
+
 }
 
 .password-Signup {
     float: left;
-}
+    width: 50%;
 
+}
+.email-Signup
+{
+    width: 100%;
+}
 .cpassword-Signup {
     float: right;
+    width: 50%;
+
 }
 /* 
  */
@@ -184,3 +194,72 @@ form .forgotPassword-Para {
 {
     color: #212121;
 } */
+
+.signup-textfields
+{
+    width: 100%;
+    height: 76px;
+    margin-top: 10px;
+
+}
+ .signup-textfiled
+{
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 10px 0px;
+    
+
+}
+.signup-textfiled input{
+    height: 55px;
+    width: 90%;
+    outline: none;
+    border-style: none;
+   
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px 7px;
+    
+    border-bottom: 1px solid #212121;
+    background-color: transparent;
+
+}
+
+.signup-textfiled span{
+    position: absolute;
+    left: 0%;
+    top: 30%;
+    transition: 0.3s;
+    color: #F2963A;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+
+    text-transform: uppercase;
+    
+}
+.signup-textfiled input:focus ~ span{
+
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+    
+   
+}
+.signup-textfiled input:focus{
+    border-bottom: 2px solid #212121;
+}
+.signup-textfiled input:valid ~ span{
+
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    
+    
+   
+}
+#sinup-textfield-Div input
+{
+    width: 95%;
+}

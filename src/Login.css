@@ -51,7 +51,7 @@
 
 .loginLeft-details #loginLeft-p {
     margin: 20px 20%;
-    color: #F2963A;
+    color: #212121;
     text-transform: capitalize;
     font-family: 'Playball', cursive;
 }
@@ -80,7 +80,7 @@
 }
 /* login right div css */
 .LoginForm {
-    margin: 100px 30% 0px 5%;
+    margin: 100px 20% 0px 5%;
 }
 
 .LoginForm h2 {
@@ -124,7 +124,7 @@
 }
 
 form .forgotPassword-Para {
-    margin: 41.5px 0px 0px;
+    margin: 20.5px 0px 0px;
 }
 
 /*  */
@@ -133,3 +133,68 @@ form .forgotPassword-Para {
 {
     color: #212121;
 } */
+
+.login-textfields
+{
+    width: 100%;
+    height: 76px;
+    margin-top: 10px;
+
+}
+ .login-textfiled
+{
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 10px 0px;
+    
+
+}
+.login-textfiled input{
+    height: 55px;
+    width: 90%;
+    outline: none;
+    border-style: none;
+   
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px 7px;
+    
+    border-bottom: 1px solid #212121;
+    background-color: transparent;
+
+}
+
+.login-textfiled span{
+    position: absolute;
+    left: 0%;
+    top: 30%;
+    transition: 0.3s;
+    color: #F2963A;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+
+    text-transform: uppercase;
+    
+}
+.login-textfiled input:focus ~ span{
+
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+    
+   
+}
+.login-textfiled input:focus{
+    border-bottom: 2px solid #212121;
+}
+.login-textfiled input:valid ~ span{
+
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    
+    
+   
+}

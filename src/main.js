@@ -96,7 +96,7 @@ export default function main() {
                             <HashLink to="/requestblood#main-requestBloodForm">   <button id='donateSec-RequestBloodBtn'>Request Blood</button></HashLink>
                             <HashLink to="/donateblood#main-donateBloodForm"  ><button id='donateSec-donateBloodBtn'>Donate Blood</button></HashLink>
                             <p>If any one want to gives Charity for Child Click here:</p>
-                            <Link to="/charity">   <button id='donateSec-CharityBtn'>Give Charity</button></Link>
+                            <HashLink to="/charity#donationAmountForm">   <button id='donateSec-CharityBtn'>Give Charity</button></HashLink>
                         </div>
                     </div>
                 </div>

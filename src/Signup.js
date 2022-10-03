@@ -10,23 +10,23 @@ import axios from 'axios'
 export default function Signup() {
 
     const history = useHistory();
-    // const [user,setUser]= useState({
-    //     firstname:"",
-    //     lastname:"",
-    //     email:"",
-    //     password:"",
-    //     cpassword:"",
-    // })
-    // const hander =(e)=>
-    // {
-    //     e.preventDefault();
-    //     const {name,value} = e.target
-    //     setUser({
-    //         ...user,
-    //         [name]:value
-    //     })
+    const [user,setUser]= useState({
+        firstname:"",
+        lastname:"",
+        email:"",
+        password:"",
+        cpassword:"",
+    })
+    const handler =(e)=>
+    {
+        e.preventDefault();
+        const {name,value} = e.target
+        setUser({
+            ...user,
+            [name]:value
+        })
 
-    // }
+    }
     // const SaveUser= ()=>
     // {     
 
@@ -39,19 +39,16 @@ export default function Signup() {
     //     })
     // }
 
-    const [firstname, setFirstname] = useState("");
-    const [lastname, setLastname] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [cpassword, setCPassword] = useState("");
+
 
  
 
-    const SaveUser = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
 
 
-
-        const user = { firstname, lastname, email, password, cpassword }
+        const { firstname, lastname, email, password, cpassword } = user 
         if (firstname && lastname && email && password && cpassword) {
             
             if (password === cpassword) {
@@ -63,7 +60,7 @@ export default function Signup() {
                 })
                     
                 alert("Sucessfully Registered")
-                history.push('/login')
+                // history.push('/login')
             }
             else {
                 alert("password Doesn't Match ")
@@ -76,6 +73,7 @@ export default function Signup() {
 
 
     }
+    console.log(user)
     return (
         <div>
             <Navbar />
@@ -106,84 +104,50 @@ export default function Signup() {
                         <div className='SignupForm'>
                             <h2>Register Now</h2>
                             <p>Welcome, Please Put your details in given fields:</p>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className='firstname-Signup'>
-                                    <TextField
-                                        name='firstname'
-                                        // value={user.firstname}
-                                        // onChange={hander}
-                                        onChange={(e) => {
-                                            setFirstname(e.target.value)
-                                        }}
-                                        label="First Name"
-                                        variant="standard"
-                                        margin='normal'
-                                    />
+                                <div className='login-textfields'>
+                                    <div className='login-textfiled'>
+                                        <input  required name='firstname' value={user.firstname} onChange={handler}/><span>Name</span>
+                                    </div>
+
+                                </div>
                                 </div>
                                 <div className='lastname-Signup'>
-                                    <TextField
-                                        name='lastname'
-                                        // value={user.lastname}
-                                        // onChange={hander}
-                                        value={lastname}
-                                        onChange={(e) => {
-                                            setLastname(e.target.value)
-                                        }}
-                                        label="Last Name"
-                                        variant="standard"
-                                        margin='normal'
-                                    />
+                                <div className='login-textfields'>
+                                    <div className='login-textfiled'>
+                                        <input  required  name='lastname' value={user.lastname} onChange={handler}/><span>Last Name</span>
+                                    </div>
+
+                                </div>
                                 </div>
                                 <div className='email-Signup'>
-                                    <TextField
-                                        name='email'
-                                        // value={user.email}
-                                        // onChange={hander}
-                                        value={email}
-                                        onChange={(e) => {
-                                            setEmail(e.target.value)
-                                        }}
-                                        label="Email"
-                                        variant="standard"
-                                        margin='normal'
-                                        fullWidth
-                                    />
+                                <div className='signup-textfields'>
+                                    <div className='signup-textfiled'id='sinup-textfield-Div'>
+                                        <input  required name='email' value={user.email} onChange={handler}/><span>Email</span>
+                                    </div>
+
+                                </div>
                                 </div>
                                 <div className='password-Signup'>
-                                    <TextField
-                                        // required
-                                        label="Password"
-                                        type="password"
-                                        variant="standard"
-                                        margin='normal'
-                                        // value={user.password}
-                                        // onChange={hander}
-                                        value={password}
-                                        name="password"
-                                        onChange={(e) => {
-                                            setPassword(e.target.value)
-                                        }}
-                                    />
+                                <div className='signup-textfields'>
+                                    <div className='signup-textfiled'>
+                                        <input type="password" required name='password' value={user.password} onChange={handler}/><span>Password</span>
+                                    </div>
+
+                                </div>
                                 </div>
                                 <div className='cpassword-Signup'>
-                                    <TextField
-                                        label="Confirm Password"
-                                        type="password"
-                                        variant="standard"
-                                        fullWidth
-                                        margin='normal'
-                                        // value={user.cpassword}
-                                        // onChange={hander}
-                                        value={cpassword}
-                                        name="cpassword"
-                                        onChange={(e) => {
-                                            setCPassword(e.target.value)
-                                        }}
-                                    />
+                                <div className='signup-textfields'>
+                                    <div className='signup-textfiled'>
+                                        <input type="password" required name='cpassword' value={user.cpassword} onChange={handler}/><span>Confrim Password</span>
+                                    </div>
+
                                 </div>
-                                <button type='button' onClick={SaveUser} className='RegisterBtn'>Register</button>
+                                </div>
+                                <button type='submit' className='RegisterBtn'>Register</button>
                             </form>
-                            {/* <button className='LoginBtn'>Login</button> */}
+                            {/* <button className='signupBtn'>Login</button> */}
                         </div>
                     </div>
                 </div>

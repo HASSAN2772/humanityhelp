@@ -21,7 +21,7 @@
 }
 
 .requestBloodAmountForm {
-    box-sizing: border-box;
+    
     color: white;
     width: 80%;
     margin: 0px 10%;
@@ -29,7 +29,7 @@
     padding: 50px 50px;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.5);
-
+    overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -38,18 +38,24 @@
 }
 
 .requestBlood-conatiner .requestAmountBtn {
-    width: 100%;
-    height: 50px;
+    width: 95%;
+    height: 55px;
     margin: 20px 0%;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+
+    font-weight: 600;
     color: #F2963A;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
     border-style: none;
     background-color: #212121;
+    transition: 1.0s;
 }
-
+.requestBlood-conatiner .requestAmountBtn:hover{
+    color: white;
+}
 /* feilds css */
 .fullName-requestBlood-Field {
     width: 48%;
@@ -110,4 +116,157 @@
 {
     background-color: #F2963A;
     color: #F2963A;
+}
+
+/* 
+ */
+.requested-textfields
+{
+    width: 100%;
+    height: 76px;
+
+}
+ .requested-textfiled
+{
+    position: relative;
+    width: 50%;
+    float: left;
+    margin: 10px 0px;
+    
+
+}
+.requested-textfiled input{
+    height: 55px;
+    width: 90%;
+    outline: none;
+    border-style: none;
+    border-radius: 5px;    
+    padding: 0px 20px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+
+}
+
+.requested-textfiled span{
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    transition: 0.3s;
+
+    font-family: 'Montserrat', sans-serif;
+
+    text-transform: uppercase;
+    
+}
+.requested-textfiled input:focus ~ span{
+
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #F2963A;
+    background-color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+    
+   
+}.requested-textfiled input:valid ~ span{
+
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #F2963A;
+    background-color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+    
+   
+}
+/* slect fileds */
+.requested-textfields-type-city
+{
+    width: 100%;
+    height: 76px;
+    margin: 10px 0px;
+}
+ .optionfileds
+{
+    position: relative;
+    width: 50%;
+    float: left;
+    margin: 10px 0px;
+ 
+}
+.optionfileds select{
+    height: 55px;
+    width: 90%;
+    outline: none;
+    border-style: none;
+    border-radius: 5px;    
+    padding: 0px 20px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+}
+.optionfileds option
+{
+    background-color: #212121;
+    text-transform: uppercase;
+   
+}
+.optionfileds span{
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    transition: 0.3s;
+
+    font-family: 'Montserrat', sans-serif;
+
+    text-transform: uppercase;
+    
+}
+.optionfileds select:focus ~span
+{
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #F2963A;
+    background-color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+}.optionfileds select:valid ~span
+{
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #F2963A;
+    background-color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+}
+
+.requested-textfields-reqesterAge
+{
+    width: 100%;
+    height: 76;
+    margin: 10px 0px;
+}
+
+/* address feild */
+
+#requested-textfiled-addressDiv
+{
+    width: 100%;
+}
+#requested-textfiled-addressDiv input
+{
+    width: 95%;
+}
+#requested-textfiled-addressDiv span
+{
+    position: absolute;
+    left: 2%;
+    top: 30%;
 }

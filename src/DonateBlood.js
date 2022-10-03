@@ -8,320 +8,110 @@ import { TextField, MenuItem, InputLabel, Select, FormControl} from '@mui/materi
 
 export default function DonateBlood() {
 
-  const [blood, setBlood] = useState("");
-  const handleChangeblood = (e) => {
+  // const [blood, setBlood] = useState("");
+  // const handleChangeblood = (e) => {
 
-    setBlood(e.target.value)
-  }
-    const [city, setCity] = useState("");
-  const handleChangecity = (e) => {
+  //   setBlood(e.target.value)
+  // }
+  //   const [city, setCity] = useState("");
+  // const handleChangecity = (e) => {
 
-    setCity(e.target.value)
+  //   setCity(e.target.value)
 
-  }
+  // }
+
+  const [name,setname] = useState("")
+  const [user,setUser] = useState({
+
+    name:"",
+    cnic:"",
+    city:"",
+    blood:"",
+    age:"",
+    phone:"",
+    address:"",
+
+})
+
+const handler = (e) =>
+{
+  e.preventDefault();
+
+  const { name,value} = e.target
+
+  setUser({
+    ...user,
+    [name]:value
+
+  })
+}
+const handleSubmit = (e)=>
+{e.preventDefault();
+  console.log(user)
+}
+
   return (
     <div>
       <Navbar />
       <div className='main-donateBloodForm' id='main-donateBloodForm'>
         <div className='donateBlood-conatiner' >
-          <form className='donateBloodAmountForm'  >
+          <form onSubmit={handleSubmit}  className='donateBloodAmountForm'  >
             <h1>Donate Blood</h1>
             <p>Donate Blood for Saving Millions of People and Child Lifes. </p>
-            <div className='fullName-donateBlood-Field'>
-              <TextField
-                   sx={{
-                    '& .MuiFormLabel-root': {
-                      color: 'white',
-                   },
-                   '& .MuiInputBase-input': {
-                     color: 'white',
-                   },
-                   '& label.Mui-focused': {
-                     color: 'White',
-                   },
-                   '& .MuiInput-underline:after': {
-                     borderBottomColor: 'white',
-                   },
-                   '& .MuiOutlinedInput-root': {
-                     '& fieldset': {
-                       borderColor: 'white',
-                     },
-                     '&:hover fieldset': {
-                      
-                       borderColor: 'white',
-                     },
-                     '&.Mui-focused fieldset': {
-                       borderColor: 'white',
-                     },
-                   },
-               }}
-
-
-
-                id="outlined-basic"
-                label="Full Name"
-                variant="outlined"
-                fullWidth
-                required
-                margin='normal'
-               />
+            
+            <div className='textfields'>
+              <div className='textfiled'>
+                <input type="text" name='name' onChange={handler} value={user.name}  required /><span>Name</span>
+              </div>
+              <div className='textfiled'>
+                <input type="number" required  name='cnic'onChange={handler}  value={user.cnic} /><span>CNIC</span>  
+              </div>
             </div>
-            <div className='Cnic-donateBlood-Field'>
-              <TextField
-                id="outlined-basic"
-                label="CNIC NO."
-                variant="outlined"
-                margin='normal'
-                fullWidth
-                required
-                type="number"
-                sx={{
-                  '& .MuiFormLabel-root': {
-                    color: 'white',
-                 },
-                 '& .MuiInputBase-input': {
-                   color: 'white',
-                 },
-                 '& label.Mui-focused': {
-                   color: 'White',
-                 },
-                 '& .MuiInput-underline:after': {
-                   borderBottomColor: 'white',
-                 },
-                 '& .MuiOutlinedInput-root': {
-                   '& fieldset': {
-                     borderColor: 'white',
-                   },
-                   '&:hover fieldset': {
-                    
-                     borderColor: 'white',
-                   },
-                   '&.Mui-focused fieldset': {
-                     borderColor: 'white',
-                   },
-                 },
-             }}
+            {/* type and city */}
+            <div className='textfields-type-city'>
+              <div className='optionfileds'>
+              <select required name='city'onChange={handler}  value={user.city} >
+              <option>Select City</option> 
 
-
-              />
+                <option>Lahore</option>
+                <option>Islamabad</option>
+                <option>Faisalabad</option>
+                 </select><span>Select city</span>
+              </div>
+              <div className='optionfileds'>
+              <select required name='blood'onChange={handler}  value={user.blood} >
+              <option>Select Blood</option> 
+               <option>A+</option>
+                <option>A-</option> 
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option> 
+                <option>O+</option>
+                <option>O-</option> 
+                 </select><span>Select Blood</span>
+              </div>
             </div>
-            <div className='bloodCate-donateBlood-Field'>
-              <FormControl margin='normal' fullWidth>
-                <InputLabel required id="demo-simple-select-label">Blood Type</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="blood"
-                  required
-                  value={blood}
-                  fullWidth
-                  onChange={handleChangeblood}
-                  sx={{
-                    '& .MuiFormLabel-root': {
-                      color: 'white',
-                   },
-                   '& .MuiInputBase-input': {
-                     color: 'white',
-                   },
-                   '& label.Mui-focused': {
-                     color: 'White',
-                   },
-                   '& .MuiInput-underline:after': {
-                     borderBottomColor: 'white',
-                   },
-                   '& .MuiOutlinedInput-root': {
-                     '& fieldset': {
-                       borderColor: 'white',
-                     },
-                     '&:hover fieldset': {
-                      
-                       borderColor: 'white',
-                     },
-                     '&.Mui-focused fieldset': {
-                       borderColor: 'white',
-                     },
-                   },
-               }}
-
-
-                >
-                  <MenuItem value={10}>A+</MenuItem>
-                  <MenuItem value={20}>A-</MenuItem>
-                  <MenuItem value={30}>B+</MenuItem>
-                  <MenuItem value={40}>B-</MenuItem>
-                  <MenuItem value={50}>AB+</MenuItem>
-                  <MenuItem value={60}>AB-</MenuItem>
-                  <MenuItem value={70}>O+</MenuItem>
-                  <MenuItem value={80}>O-</MenuItem>
-                </Select>
-              </FormControl>
+            <div className='textfields'>
+              <div className='textfiled'>
+                <input type="number" required name='age'onChange={handler}  value={user.age} /><span>Requester Age</span>
+              </div>
+              
             </div>
-            <div className='dnrCity-donateBlood-Field'>
-              <FormControl margin='normal' fullWidth>
-                <InputLabel required id="demo-simple-select-label">City</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  margin='normal'
-                  required
-                  value={city}
-                  label="City"
-                  fullWidth
-                  onChange={handleChangecity}
-                  className="donateBloodSelect"
-                  sx={{
-                    '& .MuiFormLabel-root': {
-                      color: 'white',
-                   },
-                   '& .MuiInputBase-input': {
-                     color: 'white',
-                   },
-                   '& label.Mui-focused': {
-                     color: 'White',
-                   },
-                   '& .MuiInput-underline:after': {
-                     borderBottomColor: 'white',
-                   },
-                   '& .MuiOutlinedInput-root': {
-                     '& fieldset': {
-                       borderColor: 'white',
-                     },
-                     '&:hover fieldset': {
-                      
-                       borderColor: 'white',
-                     },
-                     '&.Mui-focused fieldset': {
-                       borderColor: 'white',
-                     },
-                   },
-               }}
-
-
-                >
-                  <MenuItem value={10} defaultValue>Lahore </MenuItem>
-                  <MenuItem value={20}>Islamabad</MenuItem>
-                  <MenuItem value={30}>Faisalabad</MenuItem>
-                </Select>
-              </FormControl>
+            <div className='textfields'>
+              <div className='textfiled'>
+                <input type="text" required name='phone' onChange={handler}  value={user.phone} /><span>Phone No</span>
+              </div>
+              
             </div>
-            <div className='dnrAge-donateBlood-Field'>
-              <TextField
-                id="outlined-basic"
-                label="Donor Age"
-                variant="outlined"
-                margin='normal'
-                fullWidth
-                required
-                type="number"
-                sx={{
-                  '& .MuiFormLabel-root': {
-                    color: 'white',
-                 },
-                 '& .MuiInputBase-input': {
-                   color: 'white',
-                 },
-                 '& label.Mui-focused': {
-                   color: 'White',
-                 },
-                 '& .MuiInput-underline:after': {
-                   borderBottomColor: 'white',
-                 },
-                 '& .MuiOutlinedInput-root': {
-                   '& fieldset': {
-                     borderColor: 'white',
-                   },
-                   '&:hover fieldset': {
-                    
-                     borderColor: 'white',
-                   },
-                   '&.Mui-focused fieldset': {
-                     borderColor: 'white',
-                   },
-                 },
-             }}
-
-
-              />
+            <div className='textfields'>
+              <div id='textfiled-addressDiv' className='textfiled'>
+                <input type="text" required name='address' onChange={handler}  value={user.address} /><span> Residental Address</span>
+              </div>
+              
             </div>
-            <div className='dnrPhone-donateBlood-Field'>
-              <TextField
-                id="outlined-basic"
-                label="Ph Number."
-                variant="outlined"
-                margin='normal'
-                fullWidth
-                required
-                type="number"
-                sx={{
-                  '& .MuiFormLabel-root': {
-                    color: 'white',
-                 },
-                 '& .MuiInputBase-input': {
-                   color: 'white',
-                 },
-                 '& label.Mui-focused': {
-                   color: 'White',
-                 },
-                 '& .MuiInput-underline:after': {
-                   borderBottomColor: 'white',
-                 },
-                 '& .MuiOutlinedInput-root': {
-                   '& fieldset': {
-                     borderColor: 'white',
-                   },
-                   '&:hover fieldset': {
-                    
-                     borderColor: 'white',
-                   },
-                   '&.Mui-focused fieldset': {
-                     borderColor: 'white',
-                   },
-                 },
-             }}
-
-
-              />
-            </div>
-            <div className='dnraddress-donateBlood-Field'>
-              <TextField
-                id="outlined-basic"
-                label="Donor Address"
-                variant="outlined"
-                fullWidth
-                margin='normal'
-                required 
-                sx={{
-                  '& .MuiFormLabel-root': {
-                    color: 'white',
-                 },
-                 '& .MuiInputBase-input': {
-                   color: 'white',
-                 },
-                 '& label.Mui-focused': {
-                   color: 'White',
-                 },
-                 '& .MuiInput-underline:after': {
-                   borderBottomColor: 'white',
-                 },
-                 '& .MuiOutlinedInput-root': {
-                   '& fieldset': {
-                     borderColor: 'white',
-                   },
-                   '&:hover fieldset': {
-                    
-                     borderColor: 'white',
-                   },
-                   '&.Mui-focused fieldset': {
-                     borderColor: 'white',
-                   },
-                 },
-             }}
-
-
-
-              />
-            </div>
-            <button className='donateAmountBtn'>Donate</button>
+        
+            <button type='submit' className='donateAmountBtn'>Donate</button>
           </form>
         </div>
       </div>

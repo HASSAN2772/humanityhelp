@@ -58,61 +58,27 @@ export default function ContactUs() {
           <div className='contactInfoRight'>
             <h1>Comment Here</h1>
             <div className='commentForm'>
-                <div className='form-control' id='commentFormNameField'>
-                  <TextField
-                    name='firstname'
-                    value={firstname}
-                    onChange={(e) => {
-                      setFirstname(e.target.value)
-                  }}
-                    id="outlined-basic"
-                    label="First Name"
-                    variant="outlined"
-                    fullWidth
-                  />
-                </div>
-                <div className='form-control' id='commentFormLastNameField'>
-                  <TextField 
-                    id="outlined-basic"
-                    label="Last Name"
-                    variant="outlined"
-                    fullWidth
-                    name='lastname'
-
-                    value={lastname}
-                    onChange={(e) => {
-                      setLastname(e.target.value)
-                  }}
-                  />
-                </div>
-                <div className='form-control' id='commentFormEmailField'>
-                  <TextField id="outlined-basic"
-                    label="Email Address"
-                    variant="outlined"
-                    fullWidth
-                    name='email'
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value)
-                  }}
-                  />
-                </div>
-                <div className='form-control' id='commentFormCommentField'>
-                  <TextField
-                    id="outlined-multiline-static"
-                    label="Comment"
-                    multiline
-                    rows={4}
-                    defaultValue="Default Value"
-                    fullWidth
-                    name='comment'
-                    value={comment}
-                    onChange={(e) => {
-                      setComment(e.target.value)
-                  }}
-                    
-                  />
-                </div>
+                
+            <div className='comment-textfields'>
+              <div className='comment-textfiled'>
+                <input type="text" required /><span>Name</span>
+              </div>
+              <div className='comment-textfiled'>
+                <input type="text" required max="12" /><span>Last</span>  
+              </div>
+            </div>
+            <div className='comment-textfields'>
+              <div className='comment-textfiled' id='comment-textfiled-Email'>
+                <input type="text" required autoComplete='true' /><span>Email</span>
+              </div>
+              
+            </div>
+            <div className='comment-textfields'>
+              <div className='comment-textfiled' id='comment-textfiled-comBox'>
+                <input type="text" required /><span>Comment</span>
+              </div>
+              
+            </div>
                 <button type='submit' onClick={SaveUser} className='commentFormSumbitBtn'>Submit</button>
             </div>
           </div>
