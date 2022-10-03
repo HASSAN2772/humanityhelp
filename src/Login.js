@@ -56,17 +56,39 @@ export default function Login() {
                             <h2>Welcome to Donate Happiness</h2>
                             <p>Put your details in given fields:</p>
                             <form  onSubmit={handleSubmit}>
-                                <div className='login-textfields'>
-                                    <div className='login-textfiled'>
-                                        <input  required name='email' value={user.email} onChange={handler} /><span>Email</span>
-                                    </div>
-
+                            <div className='username-login'>
+                                    <TextField
+                                    label="Username"
+                                    variant="standard"
+                                    fullWidth
+                                    margin='normal'
+                                        name='email'
+                                        value={user.email}
+                                        onChange={handler}
+                                        //     value={username}
+                                        //  onChange={(e) => {
+                                        //      setUsername(e.target.value)
+                                        //  }}
+                                        
+                                    />
                                 </div>
-                                <div className='login-textfields'>
-                                    <div className='login-textfiled'>
-                                        <input type="password" name='password' value={user.password} onChange={handler}  required /><span>Password</span>
-                                    </div>
+                                <div className='password-login'>
+                                    <TextField
+                                        label="Password"
+                                        type="password"
 
+                                        variant="standard"
+                                        fullWidth
+                                        margin='normal'
+                                        // value={password}
+                                        // 
+                                        // onChange={(e) => {
+                                        //     setPassword(e.target.value)
+                                        // }}
+                                        name="password"
+                                        value={user.password}
+                                        onChange={handler}
+                                    />
                                 </div>
                                 <p className='forgotPassword-Para'>Here's <a href=''>Forgot Password ?</a></p>
                                 <button type='submit' className='loginBtn'>Login</button>

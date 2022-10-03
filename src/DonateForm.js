@@ -63,7 +63,7 @@ export default function DonateForm() {
               label="Name" 
               variant="outlined"
               margin='normal'
-              error
+              
               sx={{
                 '& .MuiFormLabel-root':
                 {

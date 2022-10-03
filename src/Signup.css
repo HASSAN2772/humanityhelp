@@ -110,7 +110,7 @@
 } */
 /* Signup right div css */
 .SignupForm {
-    margin: 50px 20% 0px 5%;
+    margin: 85px 20% 0px 5%;
 
 }
 
@@ -164,18 +164,18 @@ form .forgotPassword-Para {
 /* ,,,,,,,,,,,,,,,,,,,, */
 .firstname-Signup {
     float: left;
-    width: 50%;
+    width: 48%;
 }
 
 .lastname-Signup {
     float: right;
-    width: 50%;
+    width: 48%;
 
 }
 
 .password-Signup {
     float: left;
-    width: 50%;
+    width: 48%;
 
 }
 .email-Signup
@@ -184,7 +184,7 @@ form .forgotPassword-Para {
 }
 .cpassword-Signup {
     float: right;
-    width: 50%;
+    width: 48%;
 
 }
 /* 

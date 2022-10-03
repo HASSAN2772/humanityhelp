@@ -105,47 +105,84 @@ export default function Signup() {
                             <h2>Register Now</h2>
                             <p>Welcome, Please Put your details in given fields:</p>
                             <form onSubmit={handleSubmit}>
-                                <div className='firstname-Signup'>
-                                <div className='login-textfields'>
-                                    <div className='login-textfiled'>
-                                        <input  required name='firstname' value={user.firstname} onChange={handler}/><span>Name</span>
-                                    </div>
-
-                                </div>
+                            <div className='firstname-Signup'>
+                                    <TextField
+                                        name='firstname'
+                                        fullWidth
+                                        // value={user.firstname}
+                                        // onChange={hander}
+                                        // onChange={(e) => {
+                                        //     setFirstname(e.target.value)
+                                        // }}
+                                        label="First Name"
+                                        variant="standard"
+                                        margin='normal'
+                                    />
                                 </div>
                                 <div className='lastname-Signup'>
-                                <div className='login-textfields'>
-                                    <div className='login-textfiled'>
-                                        <input  required  name='lastname' value={user.lastname} onChange={handler}/><span>Last Name</span>
-                                    </div>
-
-                                </div>
+                                    <TextField
+                                    fullWidth
+                                        name='lastname'
+                                        // value={user.lastname}
+                                        // onChange={hander}
+                                        // value={lastname}
+                                        // onChange={(e) => {
+                                        //     setLastname(e.target.value)
+                                        // }}
+                                        label="Last Name"
+                                        variant="standard"
+                                        margin='normal'
+                                    />
                                 </div>
                                 <div className='email-Signup'>
-                                <div className='signup-textfields'>
-                                    <div className='signup-textfiled'id='sinup-textfield-Div'>
-                                        <input  required name='email' value={user.email} onChange={handler}/><span>Email</span>
-                                    </div>
-
-                                </div>
+                                    <TextField
+                                        name='email'
+                                        // value={user.email}
+                                        // onChange={hander}
+                                        // value={email}
+                                        // onChange={(e) => {
+                                        //     setEmail(e.target.value)
+                                        // }}
+                                        label="Email"
+                                        variant="standard"
+                                        margin='normal'
+                                        fullWidth
+                                    />
                                 </div>
                                 <div className='password-Signup'>
-                                <div className='signup-textfields'>
-                                    <div className='signup-textfiled'>
-                                        <input type="password" required name='password' value={user.password} onChange={handler}/><span>Password</span>
-                                    </div>
-
-                                </div>
+                                    <TextField
+                                        // required
+                                        fullWidth
+                                        label="Password"
+                                        type="password"
+                                        variant="standard"
+                                        margin='normal'
+                                        // value={user.password}
+                                        // onChange={hander}
+                                        // value={password}
+                                        // name="password"
+                                        // onChange={(e) => {
+                                        //     setPassword(e.target.value)
+                                        // }}
+                                    />
                                 </div>
                                 <div className='cpassword-Signup'>
-                                <div className='signup-textfields'>
-                                    <div className='signup-textfiled'>
-                                        <input type="password" required name='cpassword' value={user.cpassword} onChange={handler}/><span>Confrim Password</span>
-                                    </div>
-
+                                    <TextField
+                                        label="Confirm Password"
+                                        type="password"
+                                        variant="standard"
+                                        fullWidth
+                                        margin='normal'
+                                        // value={user.cpassword}
+                                        // onChange={hander}
+                                        // value={cpassword}
+                                        // name="cpassword"
+                                        // onChange={(e) => {
+                                        //     setCPassword(e.target.value)
+                                        // }}
+                                    />
                                 </div>
-                                </div>
-                                <button type='submit' className='RegisterBtn'>Register</button>
+                                <button type='button'  className='RegisterBtn'>Register</button>
                             </form>
                             {/* <button className='signupBtn'>Login</button> */}
                         </div>
