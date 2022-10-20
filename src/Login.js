@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import './Login.css'
+import { useNavigate } from "react-router-dom";
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { Link, useHistory } from 'react-router-dom';
@@ -8,10 +9,38 @@ import axios, { Axios } from 'axios';
 export default function Login() {
 
     const history = useHistory()
+    const [formErrors,setFormErrors] = useState({})
+    const [isSubmit,setIsSubmit] = useState(false)
+    const [data,setFata] = useState("")
+
     const [user, setUser] = useState({
         email: "",
         password: "",
     })
+    useEffect(()=>{
+        if(Object.keys(formErrors).length === 0 && isSubmit)
+        {
+        //   console.log(user)
+        }
+      },[formErrors])
+      const validate = (values) =>
+      {
+          const errors = {};
+          const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+          if(!values.email)
+          {
+            errors.email = "email is Required*";
+          }
+         
+          if(!values.password)
+          {
+            errors.password = "Password is Required*";
+          }
+          
+         
+        
+          return errors
+      }
     const handler = (e) => {
         e.preventDefault();
         const { name, value } = e.target
@@ -23,17 +52,36 @@ export default function Login() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFormErrors(validate(user))
+        
+        axios.post('http://localhost:5000/api/v1/login', user)
+            .then(res => {
+                localStorage.setItem('token',res.data.token)  
+                localStorage.setItem('user',res.data)
+                if(res.status === 205)
+                {
+                   alert("Invalid Credials")
+                   setIsSubmit(false)  
 
-        // axios.post('http://localhost:5000/login', user)
-        //     .then(res => {
+                }
+                else if(res.status === 202)
+                {
+                    alert("User not Found PLease Register")
+                    history.push("/signup")
 
+                }
+                else {
+                    alert("Login Successfully")
+                    setIsSubmit(true)  
+                    history.push("/")
 
-        //         alert(res.data.message)
-        //     })
-        //     .then(err => {
-        //         console.log(err)
-        //     })
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
         console.log(user)
+
     }
 
     return (
@@ -44,7 +92,6 @@ export default function Login() {
                     <div className='loginLeft-details'>
                         <div className='login-Logo'>
                             <img src='/assets/sliderimgs/Logo.png' style={{ width: "250px", height: "130px" }} />
-
                         </div>
                         <h2>Donate Happiness</h2>
                         <p>First you have to Login</p>
@@ -65,12 +112,11 @@ export default function Login() {
                                         name='email'
                                         value={user.email}
                                         onChange={handler}
-                                        //     value={username}
-                                        //  onChange={(e) => {
-                                        //      setUsername(e.target.value)
-                                        //  }}
+                                  
                                         
                                     />
+                 <p id='error-message'> {formErrors.email}</p>
+
                                 </div>
                                 <div className='password-login'>
                                     <TextField
@@ -80,15 +126,12 @@ export default function Login() {
                                         variant="standard"
                                         fullWidth
                                         margin='normal'
-                                        // value={password}
-                                        // 
-                                        // onChange={(e) => {
-                                        //     setPassword(e.target.value)
-                                        // }}
+                                    
                                         name="password"
                                         value={user.password}
                                         onChange={handler}
                                     />
+            <p id='error-message'> {formErrors.password}</p>
                                 </div>
                                 <p className='forgotPassword-Para'>Here's <a href=''>Forgot Password ?</a></p>
                                 <button type='submit' className='loginBtn'>Login</button>

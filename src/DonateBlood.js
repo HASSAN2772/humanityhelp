@@ -1,27 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import './DonateBlood.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import axios from 'axios'
 import { TextField, MenuItem, InputLabel, Select, FormControl} from '@mui/material';
 
 
 
 export default function DonateBlood() {
 
-  // const [blood, setBlood] = useState("");
-  // const handleChangeblood = (e) => {
 
-  //   setBlood(e.target.value)
-  // }
-  //   const [city, setCity] = useState("");
-  // const handleChangecity = (e) => {
-
-  //   setCity(e.target.value)
-
-  // }
-
-  const [name,setname] = useState("")
-  const [user,setUser] = useState({
+  const [formErrors,setFormErrors] = useState({})
+  const [isSubmit,setIsSubmit] = useState(false)
+  const [donateBlood,setDonateBlood] = useState({
 
     name:"",
     cnic:"",
@@ -39,15 +30,88 @@ const handler = (e) =>
 
   const { name,value} = e.target
 
-  setUser({
-    ...user,
+  setDonateBlood({
+    ...donateBlood,
     [name]:value
 
   })
 }
+useEffect(()=>{
+  if(Object.keys(formErrors).length === 0 && isSubmit)
+  {
+    console.log(donateBlood)
+  }
+},[formErrors])
+const validate = (values) =>
+{
+    const errors = {};
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!values.name)
+    {
+      errors.name = "Name is Require";
+    }
+    if(!values.cnic)
+    {
+      errors.cnic = "CNIC is Require";
+    }
+    else if (values.cnic.length < 13) {
+      errors.cnic = "Cnic must be 13 Digist * "
+
+    } else if (values.cnic.length > 13) {
+      errors.cnic = "Cnic must be 13 Digist * "
+
+    }
+    if(!values.city)
+    {
+      errors.city = "City is Require";
+    } if(!values.blood)
+    {
+      errors.blood = "Blood is Require";
+    } if(!values.age)
+    {
+      errors.age = "Age is Require";
+    }
+    else if(values.age < 18)
+    {
+      errors.age = "Only 19 Plus and Request Blood"
+    }
+    else if(values.age > 150)
+    {
+      errors.age = "Age cannot exceed 150 Years Old"
+    }
+    if (!values.phone) {
+      errors.phone = "Phone No is Required"
+    }
+    else if (values.phone.length > 11) {
+      errors.phone = "Phone No must be 11 Digits "
+    }
+    else if (values.phone.length < 11) {
+      errors.phone = "Phone No must be 11 Digits "
+    }
+    if(!values.address)
+    {
+      errors.address = "Address is Require";
+    }
+    return errors
+}
+
 const handleSubmit = (e)=>
-{e.preventDefault();
-  console.log(user)
+{ 
+  const { name, cnic, blood, city, age, phone,address } = donateBlood
+  e.preventDefault()
+  setFormErrors(validate(donateBlood))
+  if (name && cnic && city && blood && age && phone && address) {
+    if (cnic.length == 13 && phone.length == 11 && (age > 18 && age < 100)) {
+      setIsSubmit(true)
+      const result = axios.post('http://localhost:5000/api/v1/donate/blood', donateBlood).then((res) => {
+        console.log(res.data)
+      })
+        .catch((error) => {
+          console.log(error)
+        })
+    }   
+  }else {
+  }
 }
 
   return (
@@ -60,7 +124,7 @@ const handleSubmit = (e)=>
             <p>Donate Blood for Saving Millions of People and Child Lifes. </p>
             <div className='textfields'>
             <TextField
-              // name='name' value={name} onChange={((e) => { setName(e.target.value) })}
+            name='name' value={donateBlood.name} onChange={handler}
               fullWidth
               id="outlined-basic"
               autoComplete='off'
@@ -95,11 +159,13 @@ const handleSubmit = (e)=>
                 },
               }}}
               />
+               <p id='error-message'> {formErrors.name}</p>
+
               </div>
               <div className='textfields' id='textfields'>
             <TextField
-              // name='name' value={name} onChange={((e) => { setName(e.target.value) })}
-              fullWidth
+            name='cnic' value={donateBlood.cnic} onChange={handler}
+            fullWidth
               id="outlined-basic" 
               type="number"
               autoComplete='off'
@@ -134,9 +200,12 @@ const handleSubmit = (e)=>
                 },
               }}}
               />
+                            <p id='error-message'> {formErrors.cnic}</p>
+
               </div>  <div className='textfields' id='textfields'>
             <TextField
-    
+                name='blood' value={donateBlood.blood} onChange={handler}
+
              sx={{
                "& .MuiOutlinedInput-input": {
                  color: "white"
@@ -180,20 +249,22 @@ const handleSubmit = (e)=>
          fullWidth
          margin='normal'
        >
-          <MenuItem value={10}>A+</MenuItem>
-         <MenuItem value={20}>A-</MenuItem>
-         <MenuItem value={30}>B+</MenuItem>
-         <MenuItem value={40}>B-</MenuItem>
-         <MenuItem value={50}>AB+</MenuItem>
-         <MenuItem value={60}>AB-</MenuItem>
-         <MenuItem value={70}>O+</MenuItem>
-         <MenuItem value={80}>O-</MenuItem>
+          <MenuItem value="A+">A+</MenuItem>
+         <MenuItem value="A-">A-</MenuItem>
+         <MenuItem value="B+">B+</MenuItem>
+         <MenuItem value="B-">B-</MenuItem>
+         <MenuItem value="AB+">AB+</MenuItem>
+         <MenuItem value="AB-">AB-</MenuItem>
+         <MenuItem value="O+">O+</MenuItem>
+         <MenuItem value="O-">O-</MenuItem>
        </TextField>
+       <p id='error-message'> {formErrors.blood}</p>
+
               </div>
               <div className='textfields' id='textfields'>
             <TextField
-              // name='name' value={name} onChange={((e) => { setName(e.target.value) })}
-              fullWidth
+            name='age' value={donateBlood.age} onChange={handler}
+            fullWidth
               id="outlined-basic" 
               type="number"
               autoComplete='off'
@@ -228,11 +299,13 @@ const handleSubmit = (e)=>
                 },
               }}}
               />
+                            <p id='error-message'> {formErrors.age}</p>
+
               </div>
               <div className='textfields-ful'>
               <TextField
-              // name='name' value={name} onChange={((e) => { setName(e.target.value) })}
-              fullWidth
+            name='phone' value={donateBlood.phone} onChange={handler}
+            fullWidth
               id="outlined-basic" 
               type="number"
               autoComplete='off'
@@ -267,9 +340,13 @@ const handleSubmit = (e)=>
                 },
               }}}
               />
+                            <p id='error-message'> {formErrors.phone}</p>
+
               </div>
               <div className='textfields-ful'>
               <TextField
+                          name='city' value={donateBlood.city} onChange={handler}
+
             sx={{
               "& .MuiOutlinedInput-input": {
                 color: "white"
@@ -312,16 +389,18 @@ const handleSubmit = (e)=>
         fullWidth
         margin='normal'
       >
-       <MenuItem value={10}>Lahore</MenuItem>
-        <MenuItem value={20}>Islamabad</MenuItem>
-        <MenuItem value={30}>Faisalabad</MenuItem>
+       <MenuItem defaultValue="Lahore" value="Lahore">Lahore</MenuItem>
+        <MenuItem value="Islamabad">Islamabad</MenuItem>
+        <MenuItem value="Faisalabad">Faisalabad</MenuItem>
       </TextField>
+      <p id='error-message'> {formErrors.city}</p>
+
               </div>
               
               <div className='textfields-address'>
                 <TextField
-              // name='name' value={name} onChange={((e) => { setName(e.target.value) })}
-              fullWidth
+            name='address' value={donateBlood.address} onChange={handler}
+            fullWidth
               id="outlined-basic" 
               autoComplete='off'
               label="Donor Address" 
@@ -355,50 +434,9 @@ const handleSubmit = (e)=>
                 },
               }}}
               />
-              </div>
-            {/* type and city */}
-            {/* <div className='textfields-type-city'>
-              <div className='optionfileds'>
-              <select required name='city'onChange={handler}  value={user.city} >
-              <option>Select City</option> 
+                            <p id='error-message'> {formErrors.address}</p>
 
-                <option>Lahore</option>
-                <option>Islamabad</option>
-                <option>Faisalabad</option>
-                 </select><span>Select city</span>
               </div>
-              <div className='optionfileds'>
-              <select required name='blood'onChange={handler}  value={user.blood} >
-              <option>Select Blood</option> 
-               <option>A+</option>
-                <option>A-</option> 
-                <option>B+</option>
-                <option>B-</option>
-                <option>AB+</option>
-                <option>AB-</option> 
-                <option>O+</option>
-                <option>O-</option> 
-                 </select><span>Select Blood</span>
-              </div>
-            </div>
-            <div className='textfields'>
-              <div className='textfiled'>
-                <input type="number" required name='age'onChange={handler}  value={user.age} /><span>Requester Age</span>
-              </div>
-              
-            </div>
-            <div className='textfields'>
-              <div className='textfiled'>
-                <input type="text" required name='phone' onChange={handler}  value={user.phone} /><span>Phone No</span>
-              </div>
-              
-            </div>
-            <div className='textfields'>
-              <div id='textfiled-addressDiv' className='textfiled'>
-                <input type="text" required name='address' onChange={handler}  value={user.address} /><span> Residental Address</span>
-              </div>
-              
-            </div> */}
         
             <button type='submit' className='donateAmountBtn'>Donate</button>
           </form>

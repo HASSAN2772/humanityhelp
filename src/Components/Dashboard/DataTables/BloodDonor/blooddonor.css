@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+body{
+    padding: 0px;
+    margin: 0px;
+    min-width: 320px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+*{
+    box-sizing: border-box;
+}
+
+.bloodDonor-table
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
+    max-height: 400px;
+}
+.bloodDonor-table .table
+{
+    width: 100%;
+    margin: 30px 0px;
+    border-collapse: collapse;
+}
+.bloodDonor-table .table thead 
+{
+    height: 55px;
+    border-collapse: collapse;
+    border: none;
+    color: white;
+    text-align: left;
+    background-color: #212121;
+}
+
+.bloodDonor-table .table tr td{
+    height: 40px;
+    width: 16.6%;
+}
+#charity-thead
+{
+    height: 55px;
+    width: 100%;
+}
+#charity-thead-tr th 
+{
+    width: 5%;
+    }
+
+  .bloodDonor-table .oprBtn
+    {
+    
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    .bloodDonor-table .oprBtn button
+     {
+       
+    color: #212121;
+    border-radius: 3px;
+    background-color: #eee;
+    padding: 9px 10px;
+    border-style: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+
+     }

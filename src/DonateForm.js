@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import axios from "axios"
 import { TextField } from '@mui/material';
+import { useEffect } from 'react'
 
 export default function DonateForm() {
 
@@ -11,7 +12,9 @@ export default function DonateForm() {
 
   const [easyPaisaopen, setEasypaisaOpen] = useState(false);
   const [jazzcashopen, setJazzcashOpen] = useState(false);
-
+  const [formErrors, setFormErrors] = useState({})
+  const [isSubmit, setIsSubmit] = useState(false)
+  
 
   const setEValueOpen = () => {
     setEasypaisaOpen(!easyPaisaopen)
@@ -20,30 +23,92 @@ export default function DonateForm() {
   const setJValueOpen = () => {
     setJazzcashOpen(!jazzcashopen)
   }
+  const [bloodRequesterUser, setBloodrequesterUser] = useState({
+    name: "",
+    cardName: "",
+    cvv: "",
+    longCard: "",
+    donateAmount: "",
+    phone: "",
+  })
 
-  const [name, setName] = useState("");
-  const [cardName, setCardname] = useState("");
-  const [cvv, setCvv] = useState("");
-  const [longCard, setLongcard] = useState("");
-  const [donateAmount, setDonateamount] = useState("");
-  const [phone, setPhone] = useState("");
+  const handler = (e) => {
+    e.preventDefault()
+    const { name, value } = e.target
+    setBloodrequesterUser({
+      ...bloodRequesterUser,
+      [name]: value
+    })
+  }
+
+  const validate = (values) => {
+    const errors = {};
+    if (!values.name) {
+      errors.name = "Name is Required"
+    }
+    if (!values.cardName) {
+      errors.cardName = "Card Name is Required"
+    }
+    if (!values.cvv) {
+      errors.cvv = "Cvv is Required"
+    }
+    else if (values.cvv.length < 3) {
+      errors.cvv = "Cvv must be 3 Digist *"
+
+    } else if (values.cvv.length > 3) {
+      errors.cvv = "Cvv must be 3 Digist * "
+
+    }
+    if (!values.longCard) {
+      errors.longCard = "Long Card is Required"
+    }
+    else if (values.longCard.length < 12) {
+      errors.longCard = "Long Card must be 12 Digist * "
+
+    } else if (values.longCard.length > 12) {
+      errors.longCard = "Long Card must be 12 Digist * "
+
+    }
+
+    if (!values.donateAmount) {
+      errors.donateAmount = "Donate Amount is Required"
+    }
+    if (!values.phone) {
+      errors.phone = "Phone No is Required"
+    }
+    else if (values.phone.length > 11) {
+      errors.phone = "Phone No must be 11 Digits "
+    }
+    else if (values.phone.length < 11) {
+      errors.phone = "Phone No must be 11 Digits "
+    }
+    return errors
+  }
+  useEffect(() => {
+    if (Object.keys(formErrors).length == 0 && isSubmit) {
+      console.log(bloodRequesterUser)
+    }
+
+  }, [formErrors])
 
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-     
-      const data = { name, cardName, cvv, longCard, donateAmount, phone }
-
-        const result = axios.post('http://localhost:5000/api/v1/charity', data).then((res) => {
+    const { name, cardName, cvv, longCard, donateAmount, phone } = bloodRequesterUser
+    e.preventDefault()
+    setFormErrors(validate(bloodRequesterUser))
+    if (name && cardName && cvv && longCard && donateAmount && phone) {
+      if (cvv.length == 3 && longCard.length == 12 && phone.length == 11) {
+        setIsSubmit(true)
+        const result = axios.post('http://localhost:5000/api/v1/charity', bloodRequesterUser).then((res) => {
           console.log(res.data)
         })
           .catch((error) => {
             console.log(error)
           })
-        
-        }
-    
-      
+      }   
+    }else {
+    }
+  }
   return (
     <div>
       <Navbar />
@@ -54,87 +119,85 @@ export default function DonateForm() {
             <p>You can save millions of people lifes by Donating.</p>
 
             <div className='donationPaymentMethodLogos'>
-            <TextField
-              name='name' value={name} onChange={((e) => { setName(e.target.value) })}
-              fullWidth
-              id="outlined-basic" 
-              required
-              autoComplete='off'
-              label="Name" 
-              variant="outlined"
-              margin='normal'
-              
-              sx={{
-                '& .MuiFormLabel-root':
-                {
-                  color:"white"
-                },
-                '& .MuiInputBase-input':
-                {
-                  color:"white"
-                },
-              '& label.Mui-focused': {
-                color: 'white',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'white',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              }}}
-              /> <TextField
-              name='cardName'  value={cardName} onChange={((e) => { setCardname(e.target.value) })}
-              fullWidth
-              id="outlined-basic" 
-              required
-              autoComplete='off'
-              label="Name on Card" 
-              variant="outlined"
-              margin='normal'
-              sx={{
-                '& .MuiFormLabel-root':
-                {
-                  color:"white"
-                },
-                '& .MuiInputBase-input':
-                {
-                  color:"white"
-                },
-              '& label.Mui-focused': {
-                color: 'white',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'white',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              }}}
+              <TextField
+                name='name' value={bloodRequesterUser.name} onChange={handler}
+                fullWidth
+                id="outlined-basic"
+
+                autoComplete='off'
+                label="Name"
+                variant="outlined"
+                margin='normal'
+
+                sx={{
+                  '& .MuiFormLabel-root':
+                  {
+                    color: "white"
+                  },
+                  '& .MuiInputBase-input':
+                  {
+                    color: "white"
+                  },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  }
+                }}
               />
-              {/* <div className='charity-textfields'>
-                <div className='charity-textfield'>
-                  <input type="text" required name='name'  value={name} onChange={((e) => { setName(e.target.value) })} /><span>Name</span>
-                </div></div>
-              <div className='charity-textfields'>
-                <div className='charity-textfield'>
-                  <input type="text" required name='cardName' value={cardName} onChange={((e) => { setCardname(e.target.value) })} /><span>Name on card</span>
-                </div>
-              </div> */}
+              <p id='error-message'> {formErrors.name}</p>
+              <TextField
+                name='cardName' value={bloodRequesterUser.cardName} onChange={handler}
+                fullWidth
+                id="outlined-basic"
+
+                autoComplete='off'
+                label="Name on Card"
+                variant="outlined"
+                margin='normal'
+                sx={{
+                  '& .MuiFormLabel-root':
+                  {
+                    color: "white"
+                  },
+                  '& .MuiInputBase-input':
+                  {
+                    color: "white"
+                  },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  }
+                }}
+              />
+              <p id='error-message'> {formErrors.cardName}</p>
+
+
 
               <div className='paymentMethods'>
                 <div className='jazzcash'>
@@ -170,152 +233,162 @@ export default function DonateForm() {
                 </div>
               </div>
               <TextField
-              name='cvv'  value={cvv} onChange={((e) => { setCvv(e.target.value) })}
-              id="outlined-basic" 
-              required
-              autoComplete='off'
-              type="number"
-              label="Cvv" 
-              variant="outlined"
-              margin='normal'
-              sx={{
-                '& .MuiFormLabel-root':
-                {
-                  color:"white"
-                },
-                '& .MuiInputBase-input':
-                {
-                  color:"white"
-                },
-              '& label.Mui-focused': {
-                color: 'white',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'white',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              }}}
+                name='cvv' value={bloodRequesterUser.cvv} onChange={handler}
+                id="outlined-basic"
+
+                autoComplete='off'
+                type="number"
+                label="Cvv"
+                variant="outlined"
+                margin='normal'
+                sx={{
+                  '& .MuiFormLabel-root':
+                  {
+                    color: "white"
+                  },
+                  '& .MuiInputBase-input':
+                  {
+                    color: "white"
+                  },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  }
+                }}
               />
-               <TextField
-               name='longCard'  value={longCard} onChange={((e) => { setLongcard(e.target.value) })}
-              fullWidth
-              id="outlined-basic" 
-              required
-              autoComplete='off'
-              label="Long Card No" 
-              type="number"
-              variant="outlined"
-              margin='normal'
-              sx={{
-                '& .MuiFormLabel-root':
-                {
-                  color:"white"
-                },
-                '& .MuiInputBase-input':
-                {
-                  color:"white"
-                },
-              '& label.Mui-focused': {
-                color: 'white',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'white',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              }}}
-              />
-              
+              <p id='error-message'> {formErrors.cvv}</p>
               <TextField
-              name='donateAmount'  value={donateAmount} onChange={((e) => { setDonateamount(e.target.value) })}
-              id="outlined-basic" 
-              required
-              autoComplete='off'
-              label="AMount to Donate" 
-              type="number"
-              variant="outlined"
-              margin='normal'
-              sx={{
-                '& .MuiFormLabel-root':
-                {
-                  color:"white"
-                },
-                '& .MuiInputBase-input':
-                {
-                  color:"white"
-                },
-              '& label.Mui-focused': {
-                color: 'white',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'white',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              }}}
-              /> <TextField
-              name='phone'  value={phone} onChange={((e) => { setPhone(e.target.value) })}
-              fullWidth
-              id="outlined-basic" 
-              required
-              
-              autoComplete='off'
-              type="number"
-              label="Phone No" 
-              variant="outlined"
-              margin='normal'
-              sx={{
-                '& .MuiFormLabel-root':
-                {
-                  color:"white"
-                },
-                '& .MuiInputBase-input':
-                {
-                  color:"white"
-                },
-              '& label.Mui-focused': {
-                color: 'white',
-              },
-              '& .MuiInput-underline:after': {
-                borderBottomColor: 'white',
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'white',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              }}}
+                name='longCard' value={bloodRequesterUser.longCard} onChange={handler}
+                fullWidth
+                id="outlined-basic"
+
+                autoComplete='off'
+                label="Long Card No"
+                type="number"
+                variant="outlined"
+                margin='normal'
+                sx={{
+                  '& .MuiFormLabel-root':
+                  {
+                    color: "white"
+                  },
+                  '& .MuiInputBase-input':
+                  {
+                    color: "white"
+                  },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  }
+                }}
               />
+              <p id='error-message'> {formErrors.longCard}</p>
+
+              <TextField
+                name='donateAmount' value={bloodRequesterUser.donateAmount} onChange={handler}
+                id="outlined-basic"
+
+                autoComplete='off'
+                label="AMount to Donate"
+                type="number"
+                variant="outlined"
+                margin='normal'
+                sx={{
+                  '& .MuiFormLabel-root':
+                  {
+                    color: "white"
+                  },
+                  '& .MuiInputBase-input':
+                  {
+                    color: "white"
+                  },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  }
+                }}
+              />
+              <p id='error-message'> {formErrors.donateAmount}</p>
+              <TextField
+                name='phone' value={bloodRequesterUser.phone} onChange={handler}
+                fullWidth
+                id="outlined-basic"
+
+
+                autoComplete='off'
+                type="number"
+                label="Phone No"
+                variant="outlined"
+                margin='normal'
+                sx={{
+                  '& .MuiFormLabel-root':
+                  {
+                    color: "white"
+                  },
+                  '& .MuiInputBase-input':
+                  {
+                    color: "white"
+                  },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'white',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  }
+                }}
+              />
+              <p id='error-message'> {formErrors.phone}</p>
+
               <button type='submit' className='donateAmountBtn'>Donate</button>
             </div>
 

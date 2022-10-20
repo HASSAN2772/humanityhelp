@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+body{
+    padding: 0px;
+    margin: 0px;
+    min-width: 320px;
+
+}
+*{
+    box-sizing: border-box;
+}
+.updateRequestStatus
+{
+    width: 90%;
+    margin: 50px auto;
+}
+.updateRequestStatus h1{
+    text-align: center;
+  color: #f7941d;
+    
+}
+.request-Details
+{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 50px 0px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+.leftIconDiv
+{
+    width: 26%;
+    margin: 0px auto;
+}
+.rightStatusDetails
+{
+    width: 70%;
+}
+.textfields
+{
+    width: 100%;
+}
+.textfields .textfield{
+    width: 48%;
+    margin: 0px 5px;
+    float: left;
+}
+.updateBtn
+{
+    padding: 15px 35px;
+    margin: 0px 5px ;
+    border-style: none;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: #212121;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.iconDiv
+{
+    width: 80%;
+    height: 60%;
+}
+.iconDiv img
+{
+    width: 100%;
+    margin: 35px 46px;
+}

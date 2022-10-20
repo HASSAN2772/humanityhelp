@@ -1,12 +1,19 @@
 import React from 'react';
 import './Navbar.css'
-import { useHistory } from 'react-router-dom';
+import { useHistory,Redirect } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebookSquare, faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom';
 export default function Navbar() {
     const history = useHistory()
+    const isAuthUser = localStorage.getItem('token')
+    const logoutUser = () =>
+    {   
+        localStorage.clear()
+        alert("User Logout Succesuflly")
+        history.push("/")
+    }
     return (
         <div>
             <header>
@@ -20,8 +27,7 @@ export default function Navbar() {
                                 <li><Link><FontAwesomeIcon icon={faInstagram} /></Link></li>
                             </ul>
                             <div className='header-btn'>
-                                <Link to="/login"><button className='h-loginbtn'>Login</button></Link>
-                                <button className='h-registerbtn'>Register</button>
+                               {isAuthUser ? <button onClick={logoutUser} className='h-registerbtn'>Logout</button> :  <Link to="/login"><button className='h-loginbtn'>Login</button></Link>} 
                             </div>
                         </nav>
                         <div className='headerlogo'>

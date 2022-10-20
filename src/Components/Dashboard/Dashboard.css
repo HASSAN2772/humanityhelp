@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    min-width: 320px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.dashboard {
+    width: 100%;
+}
+
+.dashboard-conatiner {
+    width: 95%;
+    margin: 0px 2.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lefSide-Menu {
+    width: 25%;
+
+}
+
+.lelfSide {
+    padding: 0px 10px;
+    min-height: 600px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.lefSide-Menu button {
+    height: 45px;
+    width: 50%;
+    border-style: none;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-color: #212121;
+    color: white;
+    border-radius: 3px;
+
+}
+
+.lefSide-Menu h1 {
+    margin: 0px;
+    text-align: center;
+    color: #f7941d;
+}
+
+.dashboard-ul {
+    padding: 0px;
+
+}
+
+.dashboard-ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px 0% 20px 10px;
+    display: block;
+    color: #212121;
+
+
+}
+
+.dashboard-ul li {
+    list-style-type: none;
+    border-bottom: 1px solid #212121;
+    transition: 0.8s;
+
+
+}
+
+/* .dashboard-ul li:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: aliceblue;
+
+} */
+.dashboard-ul li a:hover{
+    color: #fff;    background-color: rgb(0, 0, 0, 0.8);
+
+}
+
+.RightSide-Details {
+    width: 74%;
+    margin-left: 1%;
+
+}
+
+.data-Details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-Details .box-1 {
+    width: 25%;
+    height: 150px;
+    background-color: white;
+    margin: 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+    border-radius: 5px;
+}
+
+.RightSide-Details .summary {
+
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px 0px;
+    margin: 0px 10px 10px;
+    border-radius: 5px;
+    color: #f7941d;    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.user-Details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-Details .box-1 {
+    width: 50%;
+    height: 300px;
+    background-color: #212121;
+    margin: 10px 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+.user-Details .box-1-bloodRequest {
+    width: 50%;
+    height: 300px;
+    background-color: #212121;
+    margin: 10px 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+.user-Details .box-1-bloodRequest .bloodRequest
+{
+text-align: center;
+margin: 20% 10px;
+color: #f7941d;
+
+}
+.box-1-bloodRequest p
+{ 
+    margin: 0px;
+    font-size: 40px;
+    color: #f7941d;
+
+}
+
+.tables {
+    margin: 10px;
+}
+.datatables-bloods
+{
+    width: 95%;
+    margin: 0px auto;
+}
+#requestBlood-h2
+{
+    color: #f7941d;
+}
+
+
+.data-Details .box-1 p
+{
+   font-size: 35px;
+   font-weight: 600;
+   text-align: center;
+
+
+}
+.data-Details .box-1 h6
+{
+    text-align: center;
+    color: #f7941d;
+}

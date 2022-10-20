@@ -3,9 +3,12 @@ import './RequestBlood.css'
 import { MenuItem, FormControl, Select, TextField, InputLabel, Label, Autocomplete } from '@mui/material'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { useHistory } from 'react-router-dom'
+import axios from 'axios'
 
 export default function DonateBlood() {
 
+  const history = useHistory()
   const [formErrors,setFormErrors] = useState({})
   const [isSubmit,setIsSubmit] = useState(false)
   const [requestuser,setRequestuser] = useState({
@@ -20,6 +23,7 @@ export default function DonateBlood() {
 
 })
 
+
 const handler = (e) =>
 {
   e.preventDefault();
@@ -30,13 +34,7 @@ const handler = (e) =>
 
   })
 }
-const handleSubmit = (e)=>
-{
-  e.preventDefault();
-  setFormErrors(validate(requestuser)) ;
-  setIsSubmit(true);
-  // console.log(requestuser)
-}
+
 useEffect(()=>{
     if(Object.keys(formErrors).length === 0 && isSubmit)
     {
@@ -55,6 +53,13 @@ const validate = (values) =>
       {
         errors.cnic = "CNIC is Require";
       }
+      else if (values.cnic.length < 13) {
+        errors.cnic = "Cnic must be 13 Digist *"
+  
+      } else if (values.cnic.length > 13) {
+        errors.cnic = "Cvv must be 13 Digist * "
+  
+      }
       if(!values.city)
       {
         errors.city = "City is Require";
@@ -69,15 +74,55 @@ const validate = (values) =>
       {
         errors.age = "Only 19 Plus and Request Blood"
       }
+      else if(values.age > 100)
+      {
+        errors.age = "Ge must be between 100 to Request Blood"
+      }
+      else if(values.age > 150)
+      {
+        errors.age = "Age cannot exceed 150 Years Old"
+      }
       if(!values.phone)
       {
         errors.phone = "Phone is Require";
       } 
+      else if (values.phone.length > 11) {
+        errors.phone = "Phone No must be 11 Digits "
+      }
+      else if (values.phone.length < 11) {
+        errors.phone = "Phone No must be 11 Digits "
+      }
       if(!values.address)
       {
         errors.address = "Address is Require";
       }
       return errors
+}
+const handleSubmit = (e)=>
+{
+  const {name,
+  cnic,
+  city,
+  blood,
+  age,
+  phone,
+  address,} = requestuser
+  e.preventDefault();
+  setFormErrors(validate(requestuser));
+  if (name && cnic && city && blood && age && phone && address) {
+    if (cnic.length == 13 && phone.length == 11 && (age > 18 && age < 100)) {
+      setIsSubmit(true)
+      const result = axios.post('http://localhost:5000/api/v1/blood/request', requestuser).then((res) => {
+        console.log(res.data)
+        alert("Your Request Submitted Successfully")
+        history.push('/')
+      })
+        .catch((error) => {
+          console.log(error)
+        })
+    }   
+  }else {
+  }
 }
 
   return (
@@ -88,56 +133,322 @@ const validate = (values) =>
           <form onSubmit={handleSubmit}  className='requestBloodAmountForm' >
             <h1>Request Blood</h1>
             <p>Its Our Duty to Help Needy People Who are Facing Problmes Related Bloods or Charity.</p>
-            <div className='requested-textfields'>
-              <div className='requested-textfiled'>
-                <input type="text" name="name" value={requestuser.name}  onChange={handler} /><span>Name</span>
-              </div>
-              <p>{formErrors.name}</p>
-              <div className='requested-textfiled'>
-                <input type="number" name="cnic" value={requestuser.cnic}  onChange={handler}  /><span>CNIC</span>  
-              </div>
-            </div>
-            {/* type and city */}
-            <div className='requested-textfields-type-city'>
-              <div className='optionfileds'>
-              <select  onChange={handler} name="city" value={requestuser.city} >
-              <option>Select City</option>
 
-                <option>Lahore</option>
-                <option>Islamabad</option>
-                <option>Multan</option>
-                 </select><span>Select city</span>
+            <div className='textfields'>
+            <TextField
+            name='name' value={requestuser.name} onChange={handler}
+              fullWidth
+              id="outlined-basic"
+              autoComplete='off'
+              label="Name" 
+              variant="outlined"
+              margin='normal'
+              
+              sx={{
+                '& .MuiFormLabel-root':
+                {
+                  color:"white"
+                },
+                '& .MuiInputBase-input':
+                {
+                  color:"white"
+                },
+              '& label.Mui-focused': {
+                color: 'white',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'white',
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'white',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'white',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'white',
+                },
+              }}}
+              />
+               <p id='error-message'> {formErrors.name}</p>
+
               </div>
-              <div className='optionfileds'>
-              <select name="blood" onChange={handler}  value={requestuser.blood}>
-              <option>Select Blood</option>
-              <option>A+</option>
-                <option>A-</option> 
-                <option>AB+</option>
-                <option>AB-</option> 
-                <option>O+</option>
-                <option>O-</option> 
-                 </select><span>Select Blood</span>
+              <div className='textfields' id='textfields'>
+            <TextField
+            name='cnic' value={requestuser.cnic} onChange={handler}
+            fullWidth
+              id="outlined-basic" 
+              type="number"
+              autoComplete='off'
+              label="CNIC" 
+              variant="outlined"
+              margin='normal'
+              
+              sx={{
+                '& .MuiFormLabel-root':
+                {
+                  color:"white"
+                },
+                '& .MuiInputBase-input':
+                {
+                  color:"white"
+                },
+              '& label.Mui-focused': {
+                color: 'white',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'white',
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'white',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'white',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'white',
+                },
+              }}}
+              />
+                            <p id='error-message'> {formErrors.cnic}</p>
+
+              </div>  <div className='textfields' id='textfields'>
+            <TextField
+                name='blood' value={requestuser.blood} onChange={handler}
+
+             sx={{
+               "& .MuiOutlinedInput-input": {
+                 color: "white"
+               },
+               "& .MuiInputLabel-root": {
+                 color: "white"
+               },
+               "& .MuiSelect-iconOpen": {
+                 color: "white"
+               }, 
+               "& .MuiSelect-icon": {
+                 color: "white"
+               },
+               "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+                 borderColor: "white"
+               },
+               "&:hover .MuiOutlinedInput-input": {
+                 color: "white"
+               },
+               "&:hover .MuiInputLabel-root": {
+                 color: "white"
+               },
+               "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+                 borderColor: "white"
+               },
+               "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input": {
+                 color: "white"
+               },
+               "& .MuiInputLabel-root.Mui-focused": {
+                 color: "white"
+               },
+               "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                 borderColor: "white"
+               }
+             }}
+      
+         autoComplete= 'off'
+         variant="outlined"
+         label="Blood Type"
+         select
+         fullWidth
+         margin='normal'
+       >
+          <MenuItem value="A+">A+</MenuItem>
+         <MenuItem value="A-">A-</MenuItem>
+         <MenuItem value="B+">B+</MenuItem>
+         <MenuItem value="B-">B-</MenuItem>
+         <MenuItem value="AB+">AB+</MenuItem>
+         <MenuItem value="AB-">AB-</MenuItem>
+         <MenuItem value="O+">O+</MenuItem>
+         <MenuItem value="O-">O-</MenuItem>
+       </TextField>
+       <p id='error-message'> {formErrors.blood}</p>
+
               </div>
-            </div>
-            <div className='requested-textfields'>
-              <div className='requested-textfiled'>
-                <input type="number" name="age" value={requestuser.age}  onChange={handler} /><span>Requester Age</span>
+              <div className='textfields' id='textfields'>
+            <TextField
+            name='age' value={requestuser.age} onChange={handler}
+            fullWidth
+              id="outlined-basic" 
+              type="number"
+              autoComplete='off'
+              label="Age" 
+              variant="outlined"
+              margin='normal'
+              
+              sx={{
+                '& .MuiFormLabel-root':
+                {
+                  color:"white"
+                },
+                '& .MuiInputBase-input':
+                {
+                  color:"white"
+                },
+              '& label.Mui-focused': {
+                color: 'white',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'white',
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'white',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'white',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'white',
+                },
+              }}}
+              />
+                            <p id='error-message'> {formErrors.age}</p>
+
               </div>
-              <p>{formErrors.age}</p>
-            </div>
-            <div className='requested-textfields'>
-              <div className='requested-textfiled'>
-                <input type="text" name="phone" value={requestuser.phone}  onChange={handler} /><span>Phone No</span>
+              <div className='textfields-ful'>
+              <TextField
+            name='phone' value={requestuser.phone} onChange={handler}
+            fullWidth
+              id="outlined-basic" 
+              type="number"
+              autoComplete='off'
+              label="Phone no." 
+              variant="outlined"
+              margin='normal'
+              
+              sx={{
+                '& .MuiFormLabel-root':
+                {
+                  color:"white"
+                },
+                '& .MuiInputBase-input':
+                {
+                  color:"white"
+                },
+              '& label.Mui-focused': {
+                color: 'white',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'white',
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'white',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'white',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'white',
+                },
+              }}}
+              />
+                            <p id='error-message'> {formErrors.phone}</p>
+
+              </div>
+              <div className='textfields-ful'>
+              <TextField
+                          name='city' value={requestuser.city} onChange={handler}
+
+            sx={{
+              "& .MuiOutlinedInput-input": {
+                color: "white"
+              },
+              "& .MuiInputLabel-root": {
+                color: "white"
+              },
+              "& .MuiSelect-iconOpen": {
+                color: "white"
+              }, 
+              "& .MuiSelect-icon": {
+                color: "white"
+              },
+              "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+                borderColor: "white"
+              },
+              "&:hover .MuiOutlinedInput-input": {
+                color: "white"
+              },
+              "&:hover .MuiInputLabel-root": {
+                color: "white"
+              },
+              "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+                borderColor: "white"
+              },
+              "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input": {
+                color: "white"
+              },
+              "& .MuiInputLabel-root.Mui-focused": {
+                color: "white"
+              },
+              "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "white"
+              }
+            }}
+        autoComplete= 'off'
+        variant="outlined"
+        label="City"
+        select
+        fullWidth
+        margin='normal'
+      >
+       <MenuItem defaultValue="Lahore" value="Lahore">Lahore</MenuItem>
+        <MenuItem value="Islamabad">Islamabad</MenuItem>
+        <MenuItem value="Faisalabad">Faisalabad</MenuItem>
+      </TextField>
+      <p id='error-message'> {formErrors.city}</p>
+
               </div>
               
-            </div>
-            <div className='requested-textfields'>
-              <div id='requested-textfiled-addressDiv' className='requested-textfiled'>
-                <input type="text" name="address" value={requestuser.address}  onChange={handler} /><span> Residental Address</span>
-              </div>
+              <div className='textfields-address'>
+                <TextField
+            name='address' value={requestuser.address} onChange={handler}
+            fullWidth
+              id="outlined-basic" 
+              autoComplete='off'
+              label="Donor Address" 
+              variant="outlined"
+              margin='normal'
               
-            </div>
+              sx={{
+                '& .MuiFormLabel-root':
+                {
+                  color:"white"
+                },
+                '& .MuiInputBase-input':
+                {
+                  color:"white"
+                },
+              '& label.Mui-focused': {
+                color: 'white',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'white',
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'white',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'white',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'white',
+                },
+              }}}
+              />
+                            <p id='error-message'> {formErrors.address}</p>
+
+              </div>
             <button type='submit' className='requestAmountBtn'>Request</button>
             
           </form>

@@ -263,3 +263,9 @@ form .forgotPassword-Para {
 {
     width: 95%;
 }
+#error-message
+{
+    font-size: 14px;
+    color: #f7941d;
+    margin: 0px;
+}

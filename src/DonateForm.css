@@ -258,3 +258,9 @@
 {
     width: 50%;
 }
+#error-message
+{
+    font-size: 14px;
+    color: #f7941d;
+    margin: 0px;
+}

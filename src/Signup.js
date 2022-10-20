@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import './Signup.css'
 import Navbar from './Navbar'
 import { useHistory } from 'react-router-dom'
@@ -10,6 +10,8 @@ import axios from 'axios'
 export default function Signup() {
 
     const history = useHistory();
+    const [formErrors,setFormErrors] = useState({})
+    const [isSubmit,setIsSubmit] = useState(false)
     const [user,setUser]= useState({
         firstname:"",
         lastname:"",
@@ -17,7 +19,7 @@ export default function Signup() {
         password:"",
         cpassword:"",
     })
-    const handler =(e)=>
+    const hander = (e) =>
     {
         e.preventDefault();
         const {name,value} = e.target
@@ -27,53 +29,90 @@ export default function Signup() {
         })
 
     }
-    // const SaveUser= ()=>
-    // {     
+    useEffect(()=>{
+        if(Object.keys(formErrors).length === 0 && isSubmit)
+        {
+        //   console.log(user)
+        }
+      },[formErrors])
+      const validate = (values) =>
+      {
+          const errors = {};
+          const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+          if(!values.firstname)
+          {
+            errors.firstname = "Firstname is Required*";
+          }
+          if(!values.lastname)
+          {
+            errors.lastname = "Lastname is Required*";
+          }
+          if(!values.email)
+          {
+            errors.email = "Email is Required*";
+          } 
+          else if(!regex.test(values.email))
 
-    //     axios.post('http://localhost:5000/signup',user)
-    //     .then(res=>{
-    //             console.log(user)
-    //     })
-    //     .then(err=>{
-    //         console.log(err)
-    //     })
-    // }
+          {
+         errors.email = "Please enter valid Email address*"
+          }
+          if(!values.password)
+          {
+            errors.password = "Password is Required*";
+          }
+          else if(values.password.length < 8)
+          {
+            errors.password = "Password should have 8 characters*";
 
+          } 
+      
+        if(!values.cpassword)
+          {
+            errors.cpassword = "Confirm Password is Required*";
+          }
+       
+          else if(values.password !== values.cpassword)
+          {
+            errors.cpassword = "Confirm Pasword should be Same as Password*";
 
-
- 
-
+          }
+         
+        
+          return errors
+      }
+      
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFormErrors(validate(user))
         
-
-
+    
         const { firstname, lastname, email, password, cpassword } = user 
         if (firstname && lastname && email && password && cpassword) {
-            
             if (password === cpassword) {
-                const result = axios.post('http://localhost:5000/signup',user).then(res => {
-                    console.log(result)
+                const result = axios.post('http://localhost:5000/api/v1/register',user).then(res => 
+                {
+                    if(res.status === 204)
+                    {
+                        alert("this email already exist ")
+                        setIsSubmit(false)  
+                    }
+                   else
+                   {
+                    setIsSubmit(true) 
+                    alert("Successfully Registered")
+                    history.push("/login")
+                   }   
+                console.log(res)
                 })
-                .then(err => {
+                .catch(err => {
                 console.log(err)
-                })
-                    
-                alert("Sucessfully Registered")
-                // history.push('/login')
+                })  
             }
-            else {
-                alert("password Doesn't Match ")
+            else {     
             }
         }
-        else {
-            alert("Invalid Inputs ")
-        }
-
-
-
-    }
-    console.log(user)
+        else {    
+        }}
     return (
         <div>
             <Navbar />
@@ -94,9 +133,7 @@ export default function Signup() {
                             </div><div className='signupContrib-Comp-Logos-img2'>
                                 <img src='./assets/sliderimgs/shaukat-Khanam-logo.png' alt='img 2' />
                             </div>
-                            {/* <div className='signupContrib-Comp-Logos-img3'>
-                                <img src='./assets/sliderimgs/edhilogo.png' alt='img 2' />
-                            </div> */}
+                            
 
                         </div>
                     </div>
@@ -109,62 +146,58 @@ export default function Signup() {
                                     <TextField
                                         name='firstname'
                                         fullWidth
-                                        // value={user.firstname}
-                                        // onChange={hander}
-                                        // onChange={(e) => {
-                                        //     setFirstname(e.target.value)
-                                        // }}
+                                        value={user.firstname}
+                                        onChange={hander}
+                                        
                                         label="First Name"
                                         variant="standard"
                                         margin='normal'
                                     />
+               <p id='error-message'> {formErrors.firstname}</p>
                                 </div>
                                 <div className='lastname-Signup'>
                                     <TextField
                                     fullWidth
                                         name='lastname'
-                                        // value={user.lastname}
-                                        // onChange={hander}
-                                        // value={lastname}
-                                        // onChange={(e) => {
-                                        //     setLastname(e.target.value)
-                                        // }}
+                                        value={user.lastname}
+                                        onChange={hander}
+                                       
                                         label="Last Name"
                                         variant="standard"
                                         margin='normal'
                                     />
+                                                   <p id='error-message'> {formErrors.lastname}</p>
+
                                 </div>
                                 <div className='email-Signup'>
                                     <TextField
                                         name='email'
-                                        // value={user.email}
-                                        // onChange={hander}
-                                        // value={email}
-                                        // onChange={(e) => {
-                                        //     setEmail(e.target.value)
-                                        // }}
+                                        value={user.email}
+                                        onChange={hander}
+                                        
                                         label="Email"
                                         variant="standard"
                                         margin='normal'
                                         fullWidth
                                     />
+                                                   <p id='error-message'> {formErrors.email}</p>
+
                                 </div>
                                 <div className='password-Signup'>
                                     <TextField
-                                        // required
                                         fullWidth
                                         label="Password"
                                         type="password"
                                         variant="standard"
                                         margin='normal'
-                                        // value={user.password}
-                                        // onChange={hander}
-                                        // value={password}
-                                        // name="password"
-                                        // onChange={(e) => {
-                                        //     setPassword(e.target.value)
-                                        // }}
+                                        name='password'
+
+                                        value={user.password}
+                                        onChange={hander}
+                                        
                                     />
+                                                   <p id='error-message'> {formErrors.password}</p>
+
                                 </div>
                                 <div className='cpassword-Signup'>
                                     <TextField
@@ -172,19 +205,17 @@ export default function Signup() {
                                         type="password"
                                         variant="standard"
                                         fullWidth
+                                        name='cpassword'
                                         margin='normal'
-                                        // value={user.cpassword}
-                                        // onChange={hander}
-                                        // value={cpassword}
-                                        // name="cpassword"
-                                        // onChange={(e) => {
-                                        //     setCPassword(e.target.value)
-                                        // }}
+                                        value={user.cpassword}
+                                        onChange={hander}
+                                        
                                     />
+                                                   <p id='error-message'> {formErrors.cpassword}</p>
+
                                 </div>
-                                <button type='button'  className='RegisterBtn'>Register</button>
+                                <button type='submit'  className='RegisterBtn'>Register</button>
                             </form>
-                            {/* <button className='signupBtn'>Login</button> */}
                         </div>
                     </div>
                 </div>

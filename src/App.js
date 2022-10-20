@@ -16,35 +16,44 @@ import DonateForm from './DonateForm'
 import DonateBlood from './DonateBlood';
 import Nav from './Nav';
 import Gal from './Gal'
+import Form from './form';
+import ProtectedRoutes from './protectedRoutes';
+import { useEffect } from 'react';
+import axios from 'axios';
+import Dashboard from './Components/Dashboard/Dashboard';
+import UserTable from './Components/Dashboard/DataTables/User/UserTable'
+import CharityTable from './Components/Dashboard/DataTables/Charity/charityTable';
+import SingleUserDetails from './Components/Dashboard/DataTables/User/SIngleUserDetails';
+import RequesterView from './Components/Dashboard/DataTables/Requester View/RequesterView'
+import UpdateRequestStatus from './Components/Dashboard/DataTables/updateRequestStatus/updateRequestStatus';
 
 
 function App() {
 
-  const [user, setLoginUser] = useState({
-
-  })
-
+  
   return (
     <div className="App">
       <>
-        {/* <Gal/> */}
-
-      {/* <Applicants/> */}
-      
         <BrowserRouter>
           <Switch>
-            <Route path='/gallery'><Gallery /></Route>
-            <Route path='/navbar'><Navbar /></Route>
-            {/* <Route path='/nav'><Nav /></Route> */}
-            <Route path='/gal'><Gal /></Route>
-            <Route path='/applicants'><Nav /></Route>
-            <Route path='/requestblood'><RequestBlood /></Route>
-            <Route path='/donateblood'><DonateBlood /></Route>
-            <Route path='/charity'><DonateForm /></Route>
-            <Route path="/login"><Login /></Route>
-            <Route path="/contact"><ContactUs /></Route>
-            <Route path="/signup"  ><Signup /></Route>
-            <Route path="/"><Main /></Route>
+            <Route path='/gallery'> 
+            <ProtectedRoutes  component={Gallery}/>
+            </Route>
+            <Route exact path='/navbar'><Navbar /></Route>
+            <Route exact path='/dashboard/data/:id'><SingleUserDetails /></Route>
+            <Route exact path='/dashboard/request/data/:id'><RequesterView /></Route>
+            <Route exact path='/usertable'><CharityTable /></Route>
+            <Route exact path='/dashboard'><Dashboard /></Route>
+            <Route exact path='/dashboard/update/request/:id'><UpdateRequestStatus /></Route>
+            <Route exact path='/gal'><Gal /></Route>
+            <Route exact path='/applicants'><Nav /></Route>
+            <Route exact path='/requestblood'><RequestBlood /></Route>
+            <Route exact path='/donateblood'><DonateBlood /></Route>
+            <Route exact path='/charity'><DonateForm /></Route>
+            <Route exact path="/login"><Login /></Route>
+            <Route exact path="/contact"><ContactUs /></Route>
+            <Route exact path="/signup"  ><Signup /></Route>
+            <Route exact path="/"><Main /></Route>
           </Switch>
         </BrowserRouter>
       </>

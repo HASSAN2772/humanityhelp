@@ -7,7 +7,55 @@ import Slider from './Slider.js'
 import OwlCarousel from 'react-owl-carousel'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-export default function main() {
+import axios from 'axios'
+import { useState } from 'react'
+import { useEffect } from 'react'
+export default function Main() {
+
+    const [donors,setDonors] = useState("")
+    const [charityDonors,setCharityDonors] = useState("")
+    let counter = 9;
+    const getDonors  = async (req,res) =>
+    {
+        await axios.get('http://localhost:5000/api/v1/donors').then((res)=>
+        {
+            setDonors(res.data)
+        }).then((err)=>
+        {
+            console.log(err)
+        })
+    }
+    const getCharityDonor = async (req,res) =>
+    {
+        await axios.get('http://localhost:5000/api/v1/charity/donors').then((res)=>
+        {
+            setCharityDonors(res.data)
+        }).then((err)=>
+        {
+            console.log(err)
+        })
+    }
+    const [totalRegisterUser, setTotalRegisterUser] = useState("");
+
+const getTptalRegister  = async (req,res) =>
+{
+    await axios.get('http://localhost:5000/api/v1/users').then((res)=>
+    {
+        setTotalRegisterUser(res.data)
+    }).then((err)=>
+    {
+        console.log(err)
+    })
+}
+
+    useEffect(()=>
+    {
+        getDonors();
+        getCharityDonor()
+        getTptalRegister()
+
+    },[])
+    
     return (
         <div>
             <Navbar />
@@ -63,25 +111,25 @@ export default function main() {
                     <div className='countDoantion'>
                         <div className='countDonationBox-1'>
                             <div className='donoCountLogo'>
-                                Total $2304
+                              <span>Donated {donors.getTotalDonors} </span>  
                             </div>
 
                         </div>
                         <div className='countDonationBox-2'>
                             <div className='donoCountLogo'>
-                                Doners 32
+                            <span>Charity {charityDonors.numberCharityDonors} </span>  
                             </div>
 
                         </div>
                         <div className='countDonationBox-3'>
                             <div className='donoCountLogo'>
-                                Charity Dnr's
+                               Helped {counter}
                             </div>
 
                         </div>
                         <div className='countDonationBox-4'>
                             <div className='donoCountLogo'>
-                                Helped 3843
+                                Users {totalRegisterUser.gettotalUsers}
                             </div>
 
                         </div>
