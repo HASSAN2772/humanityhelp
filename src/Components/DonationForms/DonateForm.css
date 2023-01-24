@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+.main-DonationForm {
+    width: 100%;
+    background-image: url("C:/Users/Hassan Ali/Desktop/Project Donate Happiness/DonateHapiness/public/assets/sliderimgs/Form-background-img.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: 100%;
+}
+
+.donation-conatiner {
+    width: 90%;
+    padding: 50px 0px;
+    margin: 0px 5%;
+}
+
+.donationAmountForm {
+    z-index: 1;
+    width: 40%;
+    margin: 0px 5%;
+    border: 1px solid silver;
+    padding: 50px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}
+
+.donation-conatiner form h1 {
+    margin: 0px;
+    color: white;
+}
+
+.donationAmountForm p {
+    margin: 5px 0px 5px 0px;
+    color: white;
+}
+
+.donation-conatiner .donateAmountBtn {
+    width: 100%;
+    height: 55px;
+    margin: 20px 0%;
+    font-weight: bold;
+    color: #F2963A;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #212121;
+    transition-duration: 0.5s;
+}
+
+.donation-conatiner .donateAmountBtn:hover {
+    color: white;
+}
+
+.donationPaymentMethodLogos {
+    position: relative;
+    width: 100%;
+}
+
+.paymentMethods {
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.paymentMethods .jazzcash {
+    margin-top: 30px;
+    width: 50%;
+    float: left;
+    cursor: pointer;
+}
+
+.paymentMethods .easypaisa {
+    margin-top: -75px;
+    width: 68%;
+    float: right;
+    cursor: pointer;
+}
+
+.jazzDialog-box {
+    z-index: 2;
+    position: absolute;
+    top: 11%;
+    left: 27%;
+    height: 170px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.jazzdialogBox-Content {
+    height: 130px;
+    color: white;
+    width: 80%;
+    margin: 20px auto 0px;
+}
+
+.jazzdialogBox-Content h3 {
+    margin: 0px 0px 5px 0px;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jazzdialogBox-Content p {
+    margin: 0px;
+    font-size: 14px;
+}
+
+.jazzdialogBox-Content span {
+    color: #f7941d;
+}
+
+.jazzCash-CloseBtn {
+    padding: 9px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    float: right;
+    margin-right: 20px;
+    border-style: none;
+    cursor: pointer;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -25px;
+}
+
+.easypaisaDialog-box {
+    z-index: 2;
+    position: absolute;
+    top: 11%;
+    left: 56%;
+    height: 170px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.easydialogBox-Content {
+    height: 130px;
+    color: white;
+    width: 80%;
+    margin: 20px auto 0px;
+}
+
+.easydialogBox-Content h3 {
+    margin: 0px 0px 5px 0px;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.easydialogBox-Content p {
+    margin: 0px;
+    font-size: 14px;
+}
+
+.easydialogBox-Content span {
+    color: #f7941d;
+}
+
+.easypaisa-CloseBtn {
+    padding: 9px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    float: right;
+    margin-right: 20px;
+    border-style: none;
+    cursor: pointer;
+    color: #f7941d;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -25px;
+}
+
+/* text  */
+.charity-textfields {
+    width: 100%;
+    height: 76px;
+}
+
+.charity-textfields .charity-textfield {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 10px 0px;
+}
+
+.charity-textfield input {
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border-style: none;
+    border-radius: 5px;
+    padding: 0px 20px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+.charity-textfield span {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    transition: 0.3s;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.charity-textfield input:focus~span {
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #F2963A;
+    background-color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+}
+
+.charity-textfield input:valid~span {
+    transform: translateX(10px);
+    transform: translateY(-23px);
+    color: #F2963A;
+    background-color: #212121;
+    padding: 0px 5px;
+    font-size: 11px;
+}
+
+#charity-textfield-Cvv {
+    width: 50%;
+}
+
+#error-message {
+    font-size: 14px;
+    color: #f7941d;
+    margin: 0px;
+}

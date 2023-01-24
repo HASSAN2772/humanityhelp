@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap');
+
+.contactUs-Header {
+    height: 400px;
+    width: 100%;
+    background-image: url("C:/Users/Hassan Ali/Desktop/Project Donate Happiness/DonateHapiness/public/assets/sliderimgs/contactUsCover.jpg");
+    background-size: cover;
+}
+
+.contactUs-HeaderLogo {
+    width: 20%;
+    height: 90px;
+    position: relative;
+    top: 60%;
+    left: 5%;
+    background-color: #F2963A;
+    opacity: 0.9;
+    border-radius: 3px;
+}
+
+.contactUs-HeaderLogo h1 {
+    margin: 0px;
+    text-align: center;
+    padding: 25px 0px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contactUs-row-2 {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contactInfo {
+    width: 90%;
+    height: 500px;
+    margin: 50px 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.contactInfoLeft {
+    width: 26%;
+    float: left;
+    margin: 0px 2%;
+}
+
+#contactInfoLeft-logo {
+    color: #F2963A;
+}
+
+.contactInfoLeft-details p {
+    color: #999;
+    margin: 10px 10px;
+}
+
+.contactInfoRight {
+    width: 70%;
+    float: left;
+}
+
+.contactInfoRight h1 {
+    color: #F2963A;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.commentForm {
+    width: 90%;
+    padding: 10px 0px;
+}
+
+.commentFormSumbitBtn {
+    width: 100%;
+    height: 55px;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #F2963A;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border-style: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.5s;
+    background-color: #212121;
+}
+
+.commentFormSumbitBtn:hover {
+    color: white;
+}
+
+.contactInfoLeft-details {
+    margin: 50px 0px;
+}
+
+.contactInfoLeft-details h1 {
+    color: #212121;
+    margin: 0px;
+}
+
+.contactUs-row-3 {
+    background-color: chocolate;
+}
+
+.contactMap {
+    width: 100%;
+    height: 550px;
+    background-color: cornflowerblue;
+}
+
+.comment-textfields {
+    width: 100%;
+    height: 76px;
+}

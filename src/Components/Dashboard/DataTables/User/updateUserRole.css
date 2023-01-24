@@ -1,0 +1,20 @@
+.updateRole-Div
+{
+    width: 100%;
+}
+.updateRole-Div .updateField
+{
+    width: 40%;
+    height: 170px;
+    margin: 50px auto;
+}
+.updateRole-Div .updateField button{
+    padding: 15px 30px;
+    margin: 0px 5px ;
+    border-style: none;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: #212121;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}

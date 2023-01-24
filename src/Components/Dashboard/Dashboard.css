@@ -15,7 +15,9 @@ body {
 .dashboard {
     width: 100%;
 }
-
+.dashboard h2 {
+    color: #f7941d;
+}
 .dashboard-conatiner {
     width: 95%;
     margin: 0px 2.5%;

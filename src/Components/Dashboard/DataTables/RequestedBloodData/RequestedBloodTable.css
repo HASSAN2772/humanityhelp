@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap");
+
+body {
+  padding: 0px;
+  margin: 0px;
+  min-width: 320px;
+  font-family: "Montserrat", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.requestBlood-table {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  max-height: 400px;
+}
+.requestBlood-table .table {
+  width: 100%;
+  margin: 30px 0px;
+  border-collapse: collapse;
+}
+.requestBlood-table .table thead {
+  height: 55px;
+  border-collapse: collapse;
+  border: none;
+  color: white;
+  text-align: left;
+  background-color: #cc3f3f;
+}
+
+.requestBlood-table .table tr td {
+  height: 40px;
+  width: 16.6%;
+}
+#requested-thead {
+  height: 55px;
+  width: 100%;
+}
+#requested-thead-tr th {
+  width: 5%;
+}
+
+.requestBlood-table .oprBtn {
+  display: flex;
+  justify-content: space-between;
+}
+.requestBlood-table .oprBtn button {
+  color: #212121;
+  border-radius: 3px;
+  background-color: #eee;
+  padding: 9px 10px;
+  border-style: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}

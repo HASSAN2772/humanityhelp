@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&family=Stoke&display=swap");
+.img {
+  height: 480px;
+  width: 100%;
+  background-size: cover;
+}
+.bnr-Img1 {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 350px;
+}
+.bnr-Img1Para {
+  margin: 0px;
+  color: white;
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+}
+.bnr-Img1Paraspan {
+  color: #f7941d;
+}
+.bnr-Img1Para::after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 40%;
+  background: #f7941d;
+  margin: 10px 0px;
+}
+.bnr-Img1Para2 {
+  margin: 3px 0px 30px 0px;
+  color: white;
+  font-style: italic;
+  font-family: "Playball", cursive;
+  font-weight: bold;
+}
+.bnr-Img2 {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 60%;
+}
+.bnr-Img2Para {
+  color: white;
+  font-size: 66px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 20px;
+  font-weight: bolder;
+}
+.bnr-Img2Paraspan {
+  color: #f7941d;
+}
+.bnr-Img2Para2 {
+  color: white;
+  font-size: 66px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 20px;
+  font-weight: bolder;
+}
+.bnr-Img2Para2::after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 20%;
+  background: #f7941d;
+  margin: 10px 0px;
+}
+.bnr-Img2Para3 {
+  margin: 0px 20px;
+  width: 82%;
+  color: white;
+  font-family: "Playball", cursive;
+  font-weight: bold;
+  font-style: italic;
+}
+.bnr-Img3 {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 60%;
+}
+.bnr-Img3Para {
+  color: white;
+  font-size: 66px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 20px;
+  font-weight: bolder;
+}
+.bnr-Img3Para::after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 20%;
+  background: #f7941d;
+  margin: 10px 0px;
+}
+.bnr-Img3Para2 {
+  margin: 0px 20px;
+  width: 80%;
+  color: white;
+  font-family: "Playball", cursive;
+  font-weight: bold;
+  font-style: italic;
+}
+.bnr-Img4 {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 60%;
+}
+.bnr-Img4Para {
+  color: white;
+  font-size: 66px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 20px;
+  font-weight: bolder;
+}
+.bnr-Img4Paraspan {
+  color: #f7941d;
+}
+.bnr-Img4Para2 {
+  color: white;
+  font-size: 66px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 20px;
+  font-weight: bolder;
+}
+.bnr-Img4Para2::after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 20%;
+  background: #f7941d;
+  margin: 10px 0px;
+}
+.bnr-Img4Para3 {
+  margin: 0px 20px;
+  width: 70%;
+  color: white;
+  font-family: "Playball", cursive;
+  font-weight: bold;
+  font-style: italic;
+}
+.owl-theme .owl-dots {
+  position: absolute;
+  top: 90%;
+  left: 45%;
+  height: 45px;
+  width: 10%;
+}
+.Slider-Bnr-2-Img img {
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
