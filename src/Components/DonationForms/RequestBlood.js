@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./RequestBlood.css";
-import {MenuItem,TextField,} from "@mui/material";
+import { MenuItem, TextField } from "@mui/material";
 import Navbar from "../Header/Navbar";
 import Footer from "../Footer/Footer";
 import { useHistory } from "react-router-dom";
@@ -78,7 +78,7 @@ export default function DonateBlood() {
     if (name && cnic && city && blood && age && phone && address) {
       if (cnic.length == 13 && phone.length == 11 && age > 18 && age < 100) {
         setIsSubmit(true);
-        const result = axios
+        axios
           .post("http://localhost:5000/api/v1/blood/request", requestuser)
           .then((res) => {
             console.log(res.data);

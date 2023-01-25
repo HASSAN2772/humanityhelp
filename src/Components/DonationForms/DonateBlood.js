@@ -4,7 +4,6 @@ import Navbar from "../Header/Navbar";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import { TextField, MenuItem } from "@mui/material";
-import { BASE_URL } from "../../App";
 
 export default function DonateBlood() {
   const [formErrors, setFormErrors] = useState({});
@@ -79,7 +78,7 @@ export default function DonateBlood() {
       if (cnic.length === 13 && phone.length === 11 && age > 18 && age < 100) {
         setIsSubmit(true);
         axios
-          .post(`${BASE_URL}donate/blood`, donateBlood)
+          .post("http://localhost:5000/api/v1/donate/blood", donateBlood)
           .then((res) => {
             alert("Your Request Submitted Successfully");
             console.log("donate_blood", res.data);

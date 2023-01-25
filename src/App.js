@@ -30,7 +30,7 @@ import UpdateUserRole from "./Components/Dashboard/DataTables/User/updateUserRol
 import SubmitOttp from "./Components/ApiFeatures/SubmitOttp";
 import CharityView from "./Components/Dashboard/DataTables/Charity/charityView";
 
-export const BASE_URL = "http://localhost:5000/api/v1/";
+// export const BASE_URL = "http://localhost:5000/api/v1/";
 
 function App() {
   return (
