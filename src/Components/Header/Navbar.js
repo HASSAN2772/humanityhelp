@@ -27,24 +27,33 @@ export default function Navbar() {
             <nav className="header-nav">
               <ul className="header-ul">
                 <li>
-                  <Link>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100011483130209"
+                    target={"_blank"}
+                  >
                     <FontAwesomeIcon icon={faFacebookSquare} />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link>
+                  <a href="https://wa.me/+923228039792" target={"_blank"}>
                     <FontAwesomeIcon icon={faWhatsapp} />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link>
+                  <a
+                    href="https://twitter.com/Muhamma13489729"
+                    target={"_blank"}
+                  >
                     <FontAwesomeIcon icon={faTwitter} />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link>
+                  <a
+                    href="https://www.instagram.com/call_me_mr_ra/"
+                    target={"_blank"}
+                  >
                     <FontAwesomeIcon icon={faInstagram} />
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <div className="header-btn">

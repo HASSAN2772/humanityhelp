@@ -21,6 +21,7 @@ export default function DonateBlood() {
   const handler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
+    console.log("requestph", value);
     setRequestuser({
       ...requestuser,
       [name]: value,
@@ -78,6 +79,7 @@ export default function DonateBlood() {
     if (name && cnic && city && blood && age && phone && address) {
       if (cnic.length == 13 && phone.length == 11 && age > 18 && age < 100) {
         setIsSubmit(true);
+        console.log(requestuser);
         axios
           .post("http://localhost:5000/api/v1/blood/request", requestuser)
           .then((res) => {
@@ -291,12 +293,12 @@ export default function DonateBlood() {
             <div className="textfields-ful">
               <TextField
                 name="phone"
-                value={requestuser.phone}
                 onChange={handler}
                 fullWidth
                 id="outlined-basic"
-                type="number"
                 autoComplete="off"
+                type="tel"
+                value={requestuser.phone}
                 label="Phone no."
                 variant="outlined"
                 margin="normal"

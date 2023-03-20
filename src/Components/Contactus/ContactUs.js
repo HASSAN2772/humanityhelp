@@ -9,20 +9,20 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
-import { axios } from "axios";
+import axios from "axios";
 export default function ContactUs() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
 
   const SaveUser = () => {
-    const commentData = { firstname, lastname, email, comment };
+    const commentData = { name, email, comment };
     console.log(commentData);
     axios
-      .post("http://localhost:5000/comment", commentData)
+      .post("http://localhost:5000/api/v1/user-comments", commentData)
       .then((res) => {
         console.log(res);
+        alert("Commented successfully");
       })
       .then((err) => {
         console.log(err);
@@ -83,7 +83,11 @@ export default function ContactUs() {
             <div className="commentForm">
               <div className="comment-textfields">
                 <TextField
-                  // name='name' value={} onChange={}
+                  value={name}
+                  onChange={(e) => {
+                    const { name, value } = e.target;
+                    setName(value);
+                  }}
                   fullWidth
                   id="outlined-basic"
                   autoComplete="off"
@@ -119,7 +123,11 @@ export default function ContactUs() {
               </div>
               <div className="comment-textfields">
                 <TextField
-                  // name='name' value={} onChange={}
+                  value={email}
+                  onChange={(e) => {
+                    const { name, value } = e.target;
+                    setEmail(value);
+                  }}
                   fullWidth
                   id="outlined-basic"
                   autoComplete="off"
@@ -155,7 +163,12 @@ export default function ContactUs() {
               </div>
               <div className="comment-textfields">
                 <TextField
-                  // name='name' value={} onChange={}
+                  name="name"
+                  value={comment}
+                  onChange={(e) => {
+                    const { name, value } = e.target;
+                    setComment(value);
+                  }}
                   fullWidth
                   id="outlined-multiline-static"
                   multiline
@@ -201,6 +214,7 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
+
         <div className="contactUs-row-3">
           <div className="contactMap">
             <iframe

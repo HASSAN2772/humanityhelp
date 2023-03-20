@@ -173,23 +173,28 @@
   margin-top: 50px;
   height: 50px;
   width: 130px;
-  font-size: 15px;
   background-color: #f7941d;
   border-style: none;
   border-radius: 5px;
-  color: white;
-  font-weight: bold;
   margin-right: 5px;
   transition-duration: 1s;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
     rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 .aboutDonationBtn:hover {
-  color: #fff;
   background-color: #212121;
+}
+.aboutDonationBtn-1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.aboutDonationBtn-1:hover {
+  color: #f7941d;
 }
 /* row 3 counter showing no of cause and about donations */
 .row-3 {
@@ -204,7 +209,7 @@
 }
 .donoCountLogo {
   width: 80%;
-  margin: 28% 10%;
+  margin: 18% 10%;
   text-align: center;
   font-size: 25px;
   font-family: "Montserrat", sans-serif;

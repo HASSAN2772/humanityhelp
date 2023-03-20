@@ -13,8 +13,9 @@ import { useEffect } from "react";
 export default function Dashboard() {
   //getting data from props
   const history = useHistory();
-  let counter = 4;
+  let counter = 9;
   const [getTotalBloodRequest, setGetTotalBloodRequest] = useState({});
+  const [charitySum, setCharitySum] = useState({ _id: null, donate: 0 });
   const result = async (req, res) => {
     await axios
       .get(`http://localhost:5000/api/v1/requested/users`)
@@ -30,7 +31,18 @@ export default function Dashboard() {
   const [donors, setDonors] = useState("");
   const [charityDonors, setCharityDonors] = useState("");
   const [totalRegisterUser, setTotalRegisterUser] = useState("");
-
+  const getCharitySum = async (req, res) => {
+    await axios
+      .get(`http://localhost:5000/api/v1/charitySum`)
+      .then((res) => {
+        console.log("setCharitySum", res.data);
+        setCharitySum(res.data[0]);
+      })
+      .catch((err) => {
+        console.error("setCharitySum", err);
+      });
+  };
+  console.log("setCharitySum", charitySum);
   const getTptalRegister = async (req, res) => {
     await axios
       .get("http://localhost:5000/api/v1/users")
@@ -70,6 +82,7 @@ export default function Dashboard() {
   };
   useEffect(() => {
     result();
+    getCharitySum();
     getDonors();
     getCharityDonor();
     getTptalRegister();
@@ -144,7 +157,7 @@ export default function Dashboard() {
               <div className="box-1-bloodRequest">
                 <div className="bloodRequest">
                   <h3>Total Charity Recieved</h3>
-                  <p>{getTotalBloodRequest.numberRequestedBloood}</p>
+                  <p>{charitySum.donate}</p>
                 </div>
               </div>
             </div>

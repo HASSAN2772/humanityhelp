@@ -324,13 +324,14 @@ export default function DonateForm() {
                 }}
               />
               <p id="error-message"> {formErrors.longCard}</p>
+
               <TextField
                 name="donateAmount"
                 value={bloodRequesterUser.donateAmount}
                 onChange={handler}
                 id="outlined-basic"
                 autoComplete="off"
-                label="Amount to Donate"
+                label="Amount to Donate $"
                 type="number"
                 variant="outlined"
                 margin="normal"

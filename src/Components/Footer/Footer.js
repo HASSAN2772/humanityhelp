@@ -29,7 +29,8 @@ export default function Footer() {
         <div className="footer-Container">
           <div className="footerLogo">
             <img
-              src="/assets/sliderimgs/Logo.png" alt="logo"
+              src="/assets/sliderimgs/Logo.png"
+              alt="logo"
               style={{ width: "250px", height: "130px" }}
             />
             <ul className="ul">
@@ -207,22 +208,28 @@ export default function Footer() {
           <div className="copyright-Links">
             <ul className="ul-copyright-Links">
               <li>
-                <a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100011483130209"
+                  target={"_blank"}
+                >
                   <FontAwesomeIcon icon={faFacebookSquare} size="xl" />
                 </a>
               </li>
               <li>
-                <a>
+                <a href="https://wa.me/+923228039792" target={"_blank"}>
                   <FontAwesomeIcon icon={faWhatsapp} size="xl" />
                 </a>
               </li>
               <li>
-                <a>
+                <a href="https://twitter.com/Muhamma13489729" target={"_blank"}>
                   <FontAwesomeIcon icon={faTwitter} size="xl" />
                 </a>
               </li>
               <li id="link-faInsta">
-                <a>
+                <a
+                  href="https://www.instagram.com/call_me_mr_ra/"
+                  target={"_blank"}
+                >
                   <FontAwesomeIcon icon={faInstagram} size="xl" />
                 </a>
               </li>

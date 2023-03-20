@@ -8,6 +8,8 @@ import { HashLink } from "react-router-hash-link";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 export default function Main() {
   const [donors, setDonors] = useState("");
   const [charityDonors, setCharityDonors] = useState("");
@@ -140,7 +142,15 @@ export default function Main() {
                 all play an important role in our efforts to end poverty in all
                 over the world.
               </p>
-              <button className="aboutDonationBtn">For More</button>
+              <button className="aboutDonationBtn">
+                <a
+                  className="aboutDonationBtn-1"
+                  href="https://en.wikipedia.org/wiki/Donation"
+                  target={"_blank"}
+                >
+                  For More
+                </a>
+              </button>
             </div>
           </div>
         </div>
@@ -148,6 +158,8 @@ export default function Main() {
           <div className="countDoantion">
             <div className="countDonationBox-1">
               <div className="donoCountLogo">
+                <FontAwesomeIcon icon={faInstagram} />
+                <br></br>
                 <span>Donated {donors.getTotalDonors} </span>
               </div>
             </div>
