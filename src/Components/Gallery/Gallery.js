@@ -6,10 +6,7 @@ import GalData from "./GalleryData";
 export default function Gallery() {
   const [data, setData] = useState(GalData);
   const Alldata = () => {
-    const allImagesData = GalData.filter((value) => {
-      return value;
-    });
-    setData(allImagesData);
+    setData(GalData);
   };
   const ForCategory = (type) => {
     const typedata = GalData.filter((value) => {

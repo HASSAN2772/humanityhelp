@@ -16,10 +16,12 @@ export default function ContactUs() {
   const [comment, setComment] = useState("");
 
   const SaveUser = () => {
-    const commentData = { name, email, comment };
-    console.log(commentData);
     axios
-      .post("http://localhost:5000/api/v1/user-comments", commentData)
+      .post("http://localhost:5000/api/v1/user-comments", {
+        name,
+        email,
+        comment,
+      })
       .then((res) => {
         console.log(res);
         alert("Commented successfully");
@@ -85,7 +87,7 @@ export default function ContactUs() {
                 <TextField
                   value={name}
                   onChange={(e) => {
-                    const { name, value } = e.target;
+                    const { value } = e.target;
                     setName(value);
                   }}
                   fullWidth
@@ -125,7 +127,7 @@ export default function ContactUs() {
                 <TextField
                   value={email}
                   onChange={(e) => {
-                    const { name, value } = e.target;
+                    const { value } = e.target;
                     setEmail(value);
                   }}
                   fullWidth
@@ -166,7 +168,7 @@ export default function ContactUs() {
                   name="name"
                   value={comment}
                   onChange={(e) => {
-                    const { name, value } = e.target;
+                    const { value } = e.target;
                     setComment(value);
                   }}
                   fullWidth

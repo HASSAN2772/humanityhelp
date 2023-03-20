@@ -15,33 +15,33 @@ export default function Main() {
   const [charityDonors, setCharityDonors] = useState("");
   const [totalRegisterUser, setTotalRegisterUser] = useState("");
   let counter = 9;
-  const getDonors = (req, res) => {
+  const getDonors = () => {
     axios
       .get("http://localhost:5000/api/v1/donors")
       .then((res) => {
         setDonors(res.data);
       })
-      .then((err) => {
+      .catch((err) => {
         console.log(err);
       });
   };
-  const getCharityDonor = (req, res) => {
+  const getCharityDonor = () => {
     axios
       .get("http://localhost:5000/api/v1/charity/donors")
       .then((res) => {
         setCharityDonors(res.data);
       })
-      .then((err) => {
+      .catch((err) => {
         console.log(err);
       });
   };
-  const getTptalRegister = (req, res) => {
+  const getTptalRegister = () => {
     axios
       .get("http://localhost:5000/api/v1/users")
       .then((res) => {
         setTotalRegisterUser(res.data);
       })
-      .then((err) => {
+      .catch((err) => {
         console.log(err);
       });
   };

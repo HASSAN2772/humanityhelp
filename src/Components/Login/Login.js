@@ -11,25 +11,15 @@ export default function Login() {
   const history = useHistory();
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  // const [data, setFata] = useState("");
-  // const loginSuccessNotify = () =>
-  //   toast("User Login Successfully", {
-  //     position: "top-center",
-  //   });
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      //   console.log(user)
-    }
-  }, [formErrors]);
+
   const validate = (values) => {
     const errors = {};
-    // const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     if (!values.email) {
-      errors.email = "email is Required*";
+      errors.email = "Email is Required*";
     }
     if (!values.password) {
       errors.password = "Password is Required*";
@@ -47,30 +37,14 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(user));
-    // const POST_URL = 'http://localhost:5000/api/v1/login'
-    // axios({
-    //   method:'post',
-    //   POST_URL,
-    //   user
-
-    // })
-    // fetch('http://localhost:5000/api/v1/login',{
-    //   method:'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(user)
-    // })
-
     axios
       .post("http://localhost:5000/api/v1/login", user)
       .then((res) => {
         if (res.status === 205) {
-          alert("Invalid Credials");
+          alert("Invalid credentials");
           setIsSubmit(false);
         } else if (res.status === 202) {
-          alert("Invalid Credials");
-          // history.push("/signup")
+          alert("Invalid credentials");
         } else {
           if (res.status === 200) {
             alert("Login Successfully");
@@ -81,14 +55,13 @@ export default function Login() {
             localStorage.setItem("isUser", res.data.user);
             localStorage.setItem("loginUserName", res.data.user.firstName);
           } else {
-            console.log("sameer");
           }
         }
 
         console.log(res.data);
       })
       .catch((err) => {
-        console.log(err, "error here in login");
+        console.log(err);
       });
   };
   return (

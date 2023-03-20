@@ -24,19 +24,14 @@ export default function Signup() {
       [name]: value,
     });
   };
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      //   console.log(user)
-    }
-  }, [formErrors]);
   const validate = (values) => {
     const errors = {};
     const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     if (!values.firstname) {
-      errors.firstname = "Firstname is Required*";
+      errors.firstname = "FirstName is Required*";
     }
     if (!values.lastname) {
-      errors.lastname = "Lastname is Required*";
+      errors.lastname = "LastName is Required*";
     }
     if (!values.email) {
       errors.email = "Email is Required*";
@@ -65,7 +60,7 @@ export default function Signup() {
           .post("http://localhost:5000/api/v1/register", user)
           .then((res) => {
             if (res.status === 204) {
-              alert("this email already exist ");
+              alert("This Email is already exist");
               setIsSubmit(false);
             } else {
               setIsSubmit(true);

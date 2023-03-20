@@ -21,20 +21,13 @@ export default function DonateBlood() {
   const handler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    console.log("requestph", value);
     setRequestuser({
       ...requestuser,
       [name]: value,
     });
   };
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(requestuser);
-    }
-  }, [formErrors]);
   const validate = (values) => {
     const errors = {};
-    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!values.name) {
       errors.name = "Name is Require";
     }

@@ -56,5 +56,4 @@ const GalData = [
     name: "Ali",
   },
 ];
-  console.log(GalData);
 export default GalData;

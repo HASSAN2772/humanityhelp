@@ -11,14 +11,12 @@ export default function Applicants() {
 
   const handler = (e) => {
     let key = e.target.value;
-    // let keyToString = key.toString();
     console.log(key);
     axios
       .get(`http://localhost:5000/api/v1/application/${key}`)
       .then((res) => {
         const resData = res.data.chechRequestApp;
         setSearchValue(resData);
-        console.log(searchValue);
       })
       .catch((err) => {
         console.log(err);

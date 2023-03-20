@@ -27,14 +27,8 @@ export default function DonateBlood() {
       [name]: value,
     });
   };
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(donateBlood);
-    }
-  }, [formErrors]);
   const validate = (values) => {
     const errors = {};
-    // const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!values.name) {
       errors.name = "Name is Require";
     }

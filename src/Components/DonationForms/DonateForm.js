@@ -71,11 +71,6 @@ export default function DonateForm() {
     }
     return errors;
   };
-  useEffect(() => {
-    if (Object.keys(formErrors).length == 0 && isSubmit) {
-      console.log(bloodRequesterUser);
-    }
-  }, [formErrors]);
 
   const handleSubmit = (e) => {
     const { name, cardName, cvv, longCard, donateAmount, phone } =
@@ -91,9 +86,7 @@ export default function DonateForm() {
             if (res.status === 200) {
               alert("Your Request Submitted Successfully");
             } else {
-              console.log("request field");
             }
-            // console.log(res.data);
           })
           .catch((error) => {
             console.log(error);
