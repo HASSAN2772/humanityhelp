@@ -75,7 +75,6 @@ export default function DonateBlood() {
           .post("http://localhost:5000/api/v1/donate/blood", donateBlood)
           .then((res) => {
             alert("Your Request Submitted Successfully");
-            console.log("donate_blood", res.data);
           })
           .catch((error) => {
             console.error(error);

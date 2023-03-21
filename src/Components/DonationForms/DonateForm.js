@@ -324,7 +324,7 @@ export default function DonateForm() {
                 onChange={handler}
                 id="outlined-basic"
                 autoComplete="off"
-                label="Amount to Donate $"
+                label="Amount to Donate in $"
                 type="number"
                 variant="outlined"
                 margin="normal"

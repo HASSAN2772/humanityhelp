@@ -220,11 +220,21 @@ export default function ContactUs() {
         <div className="contactUs-row-3">
           <div className="contactMap">
             <iframe
-              src="https://www.google.com/maps/d/embed?mid=1TfXeVTwnym2Gk4ID7wKP1aXB-H9NfxQ&ehbc=2E312F"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34687.32075293577!2d74.30430944277987!3d31.49970789431532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919045a28ff1d39%3A0xf71e739b84b3c3c!2sGulberg%20III%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1679376465595!5m2!1sen!2s"
               title="our-location"
               width="100%"
               height="550px"
             />
+
+            {/* <iframe
+
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            /> */}
           </div>
         </div>
         <Footer />

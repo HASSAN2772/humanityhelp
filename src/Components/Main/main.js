@@ -158,8 +158,6 @@ export default function Main() {
           <div className="countDoantion">
             <div className="countDonationBox-1">
               <div className="donoCountLogo">
-                <FontAwesomeIcon icon={faInstagram} />
-                <br></br>
                 <span>Donated {donors.getTotalDonors} </span>
               </div>
             </div>
@@ -169,7 +167,9 @@ export default function Main() {
               </div>
             </div>
             <div className="countDonationBox-3">
-              <div className="donoCountLogo">Helped {counter}</div>
+              <div className="donoCountLogo">
+                Helped <br></br> {counter}
+              </div>
             </div>
             <div className="countDonationBox-4">
               <div className="donoCountLogo">

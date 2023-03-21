@@ -54,7 +54,14 @@ export default function Signup() {
     e.preventDefault();
     setFormErrors(validate(user));
     const { firstname, lastname, email, password, cpassword } = user;
-    if (firstname && lastname && email && password && cpassword) {
+    if (
+      firstname &&
+      lastname &&
+      email &&
+      password &&
+      cpassword &&
+      password.length > 8
+    ) {
       if (password === cpassword) {
         await axios
           .post("http://localhost:5000/api/v1/register", user)
